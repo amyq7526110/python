@@ -7,9 +7,13 @@ def fib(x):
 #fibs(10)
 #febo(6)
 #febo(10)
+print(__name__)  # 保存模块名
 
+# 当模块直接执行是__name__的值为__name__
 
-
+#
+if __name__  == '__mian__':
+    fib(10)
 
 
 
