@@ -39,15 +39,15 @@ a = [ 9,2,5,3,7,1,4 ]
 a = [ randint(1,100) for i in range(10) ]
 def zuobiao(a,left,right):
      j = left
-     pri = a[right]
-     print(pri)
-     x = right - left
+#     pri = a[right]
+#     print(pri)
+#     x = right - left
      for i in range(left,right):
-         if a[i] < pri :
-            print(a)
+         if a[i] < a[right] :
+#            print(a)
             a[i],a[j]  = a[j],a[i] 
             j += 1
-            print(a)
+#            print(a)
   #       print()
      a[j],a[right] = a[right],a[j]
      return j
@@ -55,13 +55,13 @@ def zuobiao(a,left,right):
 def quicksort(a,left,right):
     if left  <  right:
         center =  zuobiao(a,left,right)
-        print(a,center)
+ #       print(a,center)
         quicksort(a,left,center-1)
  #       print(a)
         quicksort(a,center+1,right)
  #       print(a)
 
-quicksort(a,0,9)
+quicksort(a,0,len(a)-1)
 print(a)
 
              
