@@ -1,0 +1,885 @@
+##############################################################################
+
+  		————Python开发入门 Day01————
+
+	  	————python简介————
+linux权限是八进制的,python是十进制的
+
+
+python起源
+•  贵铎·范·罗萨姆(Guido van Rossum)于1989年底始创了python
+•  1991年初,python发布了第一个公开发行版
+•  为了更好的完成荷兰的CWI(国家数学和计算机科学研究院)的一个研究项目而创建
+
+python的特点
+• 高级:有高级的数据结构,缩短开发时间与代码量
+• 面向对象:为数据和逻辑相分离的结构化和过程化编程添加了新的活力
+• 可升级:提供了基本的开发模块,可以在它上面开发软件,实现代码的重用
+• 可扩展:通过将其分离为多个文件或模块加以组织管理
+• 可移植性:python是用C写的,又由于C的可移植性,是的python可以运行在任何带有ANSI C编译器的平台上
+• 易学:python关键字少、结构简单、语法清晰
+• 易都:没有其他语言通常用来访问变量、定义代码块和进行模式匹配的命令式符号
+• 内存管理器:内存管理是由python解释器负责的
+
+  	————git 本地操作————
+Git简介
+• Git是一个开源的分布式版本控制系统,用于敏捷高效地处理任何或小或大的项目
+• Git是Linux Torvalds为了帮助管理Linux内核开发而开发的一个开放源码的版本控制软件
+• Git与常用的版本控制工具CVS,Subversion等不同,它采用了分布式版本库的方式,不必服务器端软件支持
+
+安装及配置
+• Git安装后需要配置用户相关信息
+例:
+]# yum -y install git
+]# git config --global user.name "Mr.Zhang"  #设置用户名
+]# git config --global user.email "zhangzg@tedu.cn" #设置邮箱地址
+]# git config --global core.editor vim  	#设置安装模块
+]# git config --list  			#列出已配置信息
+]# cat ~/.gitconfig  			#查看本地已配置信息
+
+工作区、暂存区和版本库
+• 工作区:就是你在电脑能看到的目录
+• 暂存区:英文叫stage,或index.一般存放在".git目录下"的index文件(.git/index)中,所以我们把暂存区有时也叫索引(index)
+• 版本库:工作区有一个隐藏目录.git,这个不算工作区,而是Git的版本库
+
+创建仓库
+• Git使用git init命令来初始化一个Git仓库,Git的很多命令都需要在Git的仓库中运行,所以git init是使用Git的第一个命令
+]# mkdir devops
+]# cd devops/
+]# git init或git init devops
+
+添加文件到暂存区
+• 添加指定文件
+]# echo 'print("hello world")' > hello.py
+]# git add hello.py
+]# git status
+• 添加所有文件
+]# cp hello.py welcome.py
+]# git add .
+]# git status -s
+
+确认至仓库
+• 提交之前务必先设置用户信息
+]# git commit -m "初始化仓库"
+]# git status
+• 添加追踪文件并提交到版本库
+]# echo 'print("domne.")' >> hello.py
+]# git commit -am "向hello.py添加新行"
+
+删除跟踪文件
+• 要从Git中移除某个文件,就必须要从已跟踪文件清单中移除,然后提交
+]# git ls-files  	#查看版本库中文件
+]# git rm welcome.py
+]# git commit -m '删除welcome.py'
+
+  	————使用远程服务器————
+搭建本地gitlab服务器
+• 导入中文版gitlab镜像
+]# docker load < /path/to/gitlab_zh.tar
+• 将物理主机ssh端口改为2022后,起动容器(注意:ssh服务需要提前修改端口号或关闭服务)
+]# docker run -d -h gitlab --name gitlab -p 443:443 -p 80:80 -p 22:22 --restart always -v /srv/gitlab/config:/etc/gitlab -v /srv/gitlab/logs:/var/log/gitlab -v /srv/gitlab/data gitlab_zh:latest
+
+初始化gitlab服务器
+• 密码需大于8位
+• 默认用户名为root
+
+添加gitlab项目
+• 创建群组group
+- 使用群组管理项目和人员是非常好的方式
+• 创建目录project
+- 存储代码的地方,里面还包含为题列表、维基文档以及其他一些gitlab功能
+• 创建成员member
+- 添加你的团队成员或其他人员到gitlab
+
+创建用户
+• 创建用户后,再次编辑可设置密码
+• root用户将新用户加入组,并设置新用户为"主程序员"
+• 新用户初次登陆,需要设置自己的密码
+
+用户管理
+• 将本地生成的公钥上传至服务器
+• 将本地仓库推送至服务器
+]# git remote rename origin old-origin
+]# git remote add origin
+git@192.168.113.248:/devops/core_py.git
+]# git push -u origin --all
+• 添加新文件
+]# echo '# this is a test'> hi.py
+]# git add hi.py
+]# git commit hi.py -m '新的测试'
+]# git push origin master
+• 下载代码到本地
+]# git clone git@192.168.113.249:devops/
+copy_py.tit
+]# ls -a core_py/
+. .. .git hello.py hi.py
+• 更新代码到本地
+]# git pull
+
+  	————python运行方式————
+交互解释器
+• 进入交互解释器
+]# python 或 python3  	#日常使用python3
+退出交互解释器
+>>> exit() 或 快捷键ctrl+d
+
+文件形式
+• 明确指定解释器
+]# python3 hello.py
+• 赋予python文件可执行权限
+]# chmod +x hello.py
+]# ./hello.py
+
+  	————Python语法结构————
+语句块缩进
+• python代码快通过缩进对齐表达马逻辑而不是使用大括号
+• 缩进表哥一个语句属于哪个代码块
+• 缩进风格
+  -1或-2:可能不够,很难决定代码语句属于哪个块
+  -8至10:可能太多,如果代码内嵌的层次太多,就会是的代码很难阅读
+  -4个空格:非常流行,范·罗萨姆支持的风格
+• 缩进相同的一组语句构成一个代码块,称之代码组
+• 首行以关键字开始,以冒号:结束,该行之后的一面或多行代码构成代码组
+• 如果代码组只有一行,可以将其直接写在冒号后面,但是这样的写法可读性差,不推荐
+
+注释及续行
+• 首要说明的是:尽管Python是可读性最好的语言之一,这并不意味着程序员在代码中就可以不写注释
+• 和很多UNIX脚本类似,python注释语句从#字符开始
+• 注释可以在一行的任何地方开始,解释器会忽略调该行#之后的所有内容
+• 一行过长的语句可以使用反斜杠、分解成几行
+
+同行多个语句
+• 分号;允许你将多个语句写在同一行上
+• 但是这些语句不能在这开始一个新的代码块
+• 因为可读会变差,所以不推荐使用
+
+输出语句
+• 获取帮助
+>>> help(print)
+• 使用方式
+>>> print('Hello World!')
+>>>print('Hello'+'World!') 
+>>>print('Hello','World!') 
+>>>print('Hello','World!',sep='***') 
+>>>print('Hello','World!',sep='***',end='') 
+
+输入语句
+• 获得帮助
+>>> helo(input)
+• 使用方式(注意,返回值一定是字符类型)
+>>> num = input("Number: ") 
+Number: 20 
+>>> num + 10 
+Traceback (most recent call last): 
+File "<stdin>", line 1, in <module> 
+TypeError: must be str, not int
+
+		  	————Python变量————
+变量定义
+• 变量名称约定
+  - 第一个字符只能是大小写字母或下划线
+  - 后续字符只能是大小写字母或数字或下划线
+  - 区分大小写
+• python是动态类型语言,即不需要预先声明变量的类型
+• 推荐采用的全名方法
+  - 变量名全部采用小写字母
+  - 简短、有意义
+  - 多个单词间用下划线分隔
+  - 变量名用名词,函数名用谓词(动词+名词)
+  - 类名采用驼峰形式
+
+变量赋值
+• 变量的类型和值在赋值那一刻被初始化
+• 变量赋值通过等号来执行
+>>> counter = 0
+>>> name = 'bob'
+• python也支持增量赋值
+>>> n += 1 #等价于n = n+1
+>>> n *= 1 #等价于n = n*1
+>>> i++
+ File "<stdin>", line 1 
+   i++ 
+    ^ 
+SyntaxError: invalid syntax
+
+运算符
+• 标准算术运算符
++ - * / // % **
+• 比较运算符
+< <= > >= == != <>
+• 逻辑运算符
+and not or
+
+##############################################################################
+
+		 	————Python开发入门 Day02————
+		
+		  	————数据类型————
+基本数字类型
+• int:有符号整数
+• bool:布尔值
+  - Ture:1
+  - False:0
+• float:浮点数
+• complex:复数
+
+数字表示方式
+• python默认以十进制数显示
+• 数字以0o或0O开头表示为8进制数
+• 数字以0x或0X开头表示16进制数
+• 数字以0b或0B开头表示2进制数
+
+  	————字符串————
+定义字符串
+• python中字符串被定义为引号之间的字符集合
+• python支持使用成对的单引号或双引号
+• 无论单引号,还是双引号,表示的意义相同
+• python还支持三引号(三个连续的单引号或者双引号),可以用来包含特殊字符
+• python不区分字符和字符串
+
+字符串切片
+• 使用索引运算符[]和切片运算符[:]可得到子字符串
+• 第一个字符的索引是0,最后一个字符的索引是-1
+• 子字符串包含切片中的初始下标,但不包含结束下标
+>>> py_str = 'python' 
+>>> py_str[0] 
+'P' 
+>>> py_str[-2] 
+'o' 
+>>> py_str[2:4] 
+'th' 
+>>> py_str[2:] 
+'thon' 
+>>> py_str[:4] 
+'Pyth' 
+
+字符串连接操作
+• 使用+号可以将多个字符串拼接在一起
+• 使用*号可以将一个字符串重复多次
+>>> py_str = 'python' 
+>>> is_cool = 'is Cool‘ 
+>>> print py_str + ' ' + is_cool 
+python is Cool 
+>>> py_str * 2 
+'pythonpython'
+
+定义列表
+• 可以将列表当成普通的"数组",它能保存任意数量、任意类型的python对象
+• 像字符串一样,列表也支持下标和切片操作
+• 列表中的项目可以改变
+>>> alist = [1, "tom", 2, "alice"] 
+>>> alist[1] = 'bob‘ 
+>>> alist[2:] 
+
+列表操作
+• 使用in或not in判断成员关系
+• 使用append方法向列表中追加元素
+>>> alist = [1,	"tom", 2, "alice"]	
+>>> 'tom' in alist	
+True 
+>>> 'alice' not	in alist	
+False 
+>>> alist.append(3) 
+>>> alist[5] = 'bob' 
+Traceback (most recent call last): 
+ File "<stdin>", line 1, in <module> 
+ IndexError: list assignment index out of range
+
+元组的定义及操作
+• 可以认为元组是"静态"的列表
+• 元组一旦定义,不能改变
+>>> atuple = (1, "tom", 2, "alice") 
+>>> 'tom' in atuple 
+True 
+>>> atuple[0] = 3 
+Traceback (most recent call last): 
+ File "<stdin>", line 1, in <module> 
+ TypeError: 'tuple' object does not support item assignment
+
+  			————字典————
+字典的定义及操作
+• 字典是由键-值(key-value)对构成的映射数据类型
+• 通过键取值,不支持下标操作
+>>> user_dict = {'name':'bob', 'age':23} 
+>>> use_dict['gender'] = 'male' 
+>>> 'bob' in user_dict 
+False 
+>>> 'name' in user_dict 
+True 
+>>> user_dict[0] 
+Traceback (most recent call last): 
+ File "<stdin>", line 1, in <module> 
+ KeyError: 0
+
+数据类型比较
+• 按存储模型分类
+  - 标量类型:数值、字符串
+  - 容器类型:列表、元组、字典
+• 按更新模型分类:
+  - 可变类型:列表、字典
+  - 不可变类型:数字、字符串、元组
+• 按访问模型分类
+  - 直接访问:数组
+  - 顺序访问:字符串、列表、元组
+  - 映射访问:字典
+
+  			————判断语句————
+if语句语法结构
+• 标准if条件语句的语法
+if expression:
+   if_suite
+else:
+   else_suite
+• 如果表达式的值非0或者为布尔值Ture,则代码组if_suite被执行;否则就去执行else_suite
+• 代码组是一个python术语,它由一条或多条语句组成,表示一个代码块
+
+if语句示例解析
+• 只要表达式数字为非零值即为True
+>>> if 10:
+... print('Yes')
+Yes
+• 空字符串、空列表、空元组,空字典的值均为False
+>>> if "":
+...     print('Yes')
+... else:
+...     print('No')
+No
+
+  			————扩展if语句————
+扩展if语句结构
+• 扩展if语句结构
+if expression1:
+   if_suite
+elif expression2:
+   elif_suite
+else:
+   else_suite
+
+条件表达式
+• Python在很长的一段时间里没有条件表达式(C?X:Y),或陈三元运算符,因为范·罗萨姆一直拒绝加入这样的功能
+• 从Python 2.5集成的语法确定为: X if C else Y
+>>> x,y = 3,4
+>>> smaller = X if X < y else y
+>>> print smaller
+3
+
+  			————while循环————
+循环概述
+• 一组被重复执行的语句称之为循环体,能否继续重复,决定循环的终止条件
+• Python中的循环有while循环和for循环
+• 循环次数未知的情况下,建议采用while循环
+• 循环次数可以预知的情况下,建议采用for循环
+
+while循环语法结构
+• 当需要语句不断的重复执行时,可以使用while循环
+while expression:
+    while_suite
+• 语句while_suite会被连续不断的循环执行,直到表达式的值变成0或False
+sum100 = 0
+counter = 1
+
+while counter <= 100:
+  sum100 += counter
+  counter += 1
+print("result is %d" %sum100)
+
+  	————循环语句进阶————
+break语句
+• break语句可以结束当前循环然后跳转到下条语句
+• 写程序的时候,应尽量避免重复的代码,在这种情况下可以使用while-break结构
+name = input('username: ') 
+while name != 'tom': 
+  name = input('username: ') 
+#可以替换为
+while True: 
+name = input('username: ') 
+if name == 'tom': 
+break
+
+continue语句
+• 当遇到continue语句时,程序会终止当前循环,并忽略剩余的语句,然后回到循环的顶端
+• 如果仍然满足循环条件,循环体内语句继续执行,否则推出循环
+sum100 = 0 
+counter = 0 
+while counter <= 100: 
+  counter += 1 
+  if counter % 2: 
+      continue 
+  sum100 += counter 
+print ("result is %d" % sum100)
+
+else语句
+• python中的while语句也支持else字句
+• els字句只在循环完成后执行
+• break语句也会跳过else块
+sum10 = 0 
+i = 1 
+ 
+while i <= 10: 
+  sum10 += i 
+  i += 1 
+else:
+   print (sum10)
+
+##############################################################################
+
+  	————Python开发入门 Day03————
+
+  	————for循环详解————
+for循环语法结构
+• python中的for接受可迭代对象(例如序列或迭代器)作为其参数,每次迭代其中一个元素
+for iter_var in iterable:
+  suite_to_repeat
+• 与while循环一样,支持break、continue、else语句
+• 一般情况下,循环次数未知采用while循环,循环次数已知,采用for循环
+
+range函数
+• for循环常与range函数一起使用
+• range函数提供循环条件
+• range函数的完整语法为:
+     range(start,end,step =1)
+
+列表解析
+• 它是一个非常有用、简单、而且灵活的工具,可以用来动态地创建列表
+• 语法:
+  [expr for iter_var in iterable]
+• 这个语句的核心是for循环,它迭代iterable对象的所有条目
+• expr应用于序列的每个成员,最后的结果值是该表达式产生的列表
+
+  	————文件对象————
+
+  	————文件打开方法————
+open及file内建函数
+• 作为打开文件之门的"钥匙",内建函数open()以及file()提供了初始化输入/输出(I/O)操作的通用接口
+• 成功打开文件后时候会返回一个文件对象,否则引发一个错误
+• open()方法和file()方法可以完全相互替换
+• 基本语法:
+file_object = open(file_name, access_mode='r', buffering=-1)
+
+文件对象访问模式
+ 文件模式 	操作
+ r 		以读方式打开(文件不存在则报错)
+ w 		以写方式打开(文件存在则清空,不存在则创建)
+ a 		以追加模式打开(必要时创建新文件)
+ r+ 		以读写模式打开(参见r)
+ w+ 		以读写模式打开(参见w)
+ a+ 		以读写模式打开(参见a)
+ b 		以二进制模式打开
+  
+  	————文件输入————
+read方法
+• read()方法用来直接读取字节到字符串中,最多读取给定数目个节目
+• 如果没有给定size参数(默认值为-1)或者size值为负,文件将被读取至末尾
+>>> data = fobj.read() 
+>>> print(data)
+
+readline方法
+• 读取打开文件的一行(读取下个行结束符之前的所有字节)
+• 然后整行,包括行结束符,作为字符串返回
+• 它也有一个可选的size参数,默认为-1,代表读至行结束符
+• 如果提供了该参数,那么在超过size个字节后会返回不完整的行
+>>> data = fobj.readline() 
+>>> print(data)
+• readlines()方法读取所有(剩余的)行然后把它们作为一个字符串列表返回
+>>> data = fobj.readlines() 
+>>> print(data) 
+
+文件迭代
+• 如果需要逐行处理文件,可以结合for循环迭代文件
+• 迭代文件的方法与处理其他序列类型的数据类似
+>>> fobj = open('star.py') 
+>>> for eachLine in fobj: 
+...    print(eachLine, end= '') 
+
+  	————文件输出————
+write方法
+• write()内建方法功能与read()和readline()相反.它把含有文本数据或二进制数据块的字符串写入到文件中去
+• 写入文件时,不会自动添加行结束标志,需要程序员手工输入
+>>> fobj.write('Hello World!\n') 
+13
+
+writelines方法
+• 和readlines()一样,writelines()方法是针对列表的操作
+• 它接受一个字符串列表作为参数,将它们写入文件
+• 行结束符并不会被自动加入,所以如果需要的话,必须在调用writelines()前给每行结尾加上行结束符
+>>> fobj.writelines(['Hello World!\n', 'python programing\n'])
+
+  	————操作文件————
+with子句
+• with语句是用来简化代码的
+• 在将打开文件的操作放在with语句中,代码块结束后,文件将自动关闭
+>>> with open('foo.py') as f: 
+...    data = f.readlines() 
+... 
+>>> f.closed 
+True 
+
+文件内移动
+• seek(offset[,whence]):移动文件指针到不同的位置
+  - offset是相对于某个位置的偏移量
+  - whence的值,0表示文件开头,1表示当前位置,2表示文件的结尾
+• tell():返回当前文件指针的位置
+
+标准文件
+• 程序一执行,就可以访问三个标准文件
+  - 标准输入:一般是键盘,使用sys.stdin
+  - 标准输出:一般是显示器缓冲输出,使用sys.stdout
+  - 标准错误:一般是显示器的非缓冲输出,使用sys.stderr
+>>> import sys 
+>>> sys.stdout.write('hello world!\n') 
+hello world! 
+>>> hi = sys.stdin.readline() 
+hello
+>>> hi 
+'hello\n'
+
+  	————函数基础————
+函数基本概念
+• 函数是对程序逻辑进行结构化或过程化的一种变成方法
+• 将整块代码巧妙地隔离成易于管理的小块
+• 把重复代码放到函数中而不是进行大量的拷贝,这样既能节省空间,也有助于保持一致性
+• 通常函数都是用于实现某一种功能
+
+创建函数
+• 函数是用def语句来创建的,语法如下:
+def funcOon_name(arguments): 
+  "funcOon_documentaOon_string" 
+  funcOon_body_suite
+• 标题行由def关键字,函数的名字,以及参数的集合(如果有的话)组成
+• def子句的剩余部分包括了一个虽然可选但是强烈推荐的文档字串,和必需的函数体
+
+调用函数
+• 同大多数语言相同,python用一对圆括号调用函数
+• 如果没有加圆括号,只是对函数的引用
+>>> def foo(): 
+...  print('hello') 
+... 
+>>> foo() 
+hello 
+>>> foo 
+<funcOon foo at 0x7ff2328967d0>
+
+函数的返回值
+• 多数情况下,函数并不直接输出数据,而是向调用者返回值
+• 函数的返回值使用return关键字
+• 没有return的话,函数默认返回None
+>>> def foo(): 
+...  res = 3 + 4 
+>>> i = foo() 
+>>> print i 
+None
+
+  	————函数参数————
+定义参数
+• 形式参数
+  - 函数定义时,紧跟在函数名后(圆括号内)的参数被成为形式参数,简称形参.由于它不是实际存在变量,所以又称虚拟变量
+• 实际参数
+  - 在主调函数中调用一个函数时,函数名后面括弧中的参数(可以是一个表达式)称为"实际参数",简称实参
+
+传递参数
+• 调用函数时,实参的个数需要与形参个数一致
+• 实参将依次传递给形参
+>>> def foo(x,y): 
+... print('x=%d, y=%d' % (x, y)) 
+>>> foo()
+Traceback (most recent call last): 
+ File "<stdin>", line 1, in <module> 
+TypeError: foo() takes exactly 2 arguments (0 given) 
+>>> foo(3) 
+Traceback (most recent call last): 
+ File "<stdin>", line 1, in <module> 
+TypeError: foo() takes exactly 2 arguments (1 given) 
+>>> foo(3, 4) 
+x=3,y=4
+
+位置参数
+• 与shell脚本类似,程序名以及参数都以未知参数的方式传递给python程序
+• 使用sys模块的argv列表接受
+[root@zzghost1 day02]# vim args.py 
+#!/usr/bin/env python3 
+import sys 
+print sys.argv 
+ 
+[root@zzghost1 day02]# ./args.py hello world 
+['./args.py', 'hello', 'world']
+
+默认参数
+• 默认参数就是声明了默认值的参数
+• 因为给参数赋予了默认值,所以在函数调用时,不想该参数传入值也是允许的
+>>> def pstar(num = 30): 
+...print('*' * num) 
+... 
+>>> pstar() 
+****************************** 
+>>> pstar(40) 
+****************************************
+
+  	————模块基础————
+
+  	————定义模块————
+模块基本概念
+• 模块时从逻辑上组织python代码的形式
+• 当代码量变得相当大的时候,最好把代码分成一些有组织的代码段,前提是保证他们的彼此交互
+• 这些代码片段相互间有一定联系,可能是一个包含数据成员和方法的类,也可能是一组相关彼此独立的操作函数
+
+创建模块
+• 模块物理层面上组织模块的方法是文件,每一个以.py作为结尾的python文件都是一个模块
+• 模块名称切忌不要与系统中以存在的模块重名
+• 模块文件名字去掉后面的扩展名(.py)即为模块名
+
+导入模块(import)
+• 使用import导入模块
+• 模块被导入后,程序会自动生成pyc的字节码文件以提高性能
+• 模块属性通过"模块名.属性"的方法调用
+• 如果进需要模块中的某些属性,也可以单独导入
+>>> import sys 
+>>> import os, string 
+>>> string.digits 
+'0123456789' 
+>>> from random import randint 
+>>> randint(1, 10) 
+3
+
+模块加载(load)
+• 一个模块只被加载一次,无论它被导入多少次
+• 只加载一次可以组织多重导入时代码被多次执行
+• 如果两个文件互相导入,防止了无限的相互加载
+• 模块加载时,顶层代码会自动执行,所以只将函数放入模块的顶层时良好的编程习惯
+
+模块导入的特性
+• 模块具有一个__name__特殊属性
+• 当模块文件直接执行时,__name__的值为'__main__'
+• 当模块被另一个文件导入时,__name__的值就是该模块的名字
+[root@zzghost1 day02]# vim	foo.py	
+#!/usr/bin/env python3 
+print(__name__) 
+[root@py01 bin]# ./foo.py 
+__main__ 
+[root@zzghost1 day02]# python 
+>>> import foo 
+foo
+
+##############################################################################
+
+  	————Python开发入门 Day04————
+
+  	————shell相关模块————
+
+  	————shutil模块————
+
+复制和移动
+• shutil.copyfileobj(fsrc,fdst[,length])
+  将类似文件的对象fsrc的内容复制到类似文件的对象fdst
+• shutil.copyfile(src,dst,*,follow_symlinks=True)
+  将名为src的文件的内容(无元数据)复制到名为dst的文件,然后返回dst.
+• shutil.copy(src,dst,*,follow_symlinks=True)
+  将文件src复制到文件或目录dst.src和dst应为字符串.如果dst指定目录,则文件将使用src的基本文件名复制到dst中.返回新创建的文件的路径
+• shutil.copy2(src,dst,*,follow_symlinks=True
+  与copy()相同,但copy2()也尝试保留所有文件元数据
+• shutil.move(src,dst,copy_function=copy2)
+  递归地将文件或目录(src)移动到另一个位置(dst),并返回目标
+
+目录操作
+• shutil.copytree(src,dst,symlinks=False,ignore=None,copy_function=copy2,ignore_dangline_symlinks=False)
+  递归的复制以src为根的整个目录树,返回目标目录.有dst命名的目标目录不能已经存在
+• shutil.rmtree(path,ignore_errors=False,onerror=None)
+  删除整个目录树;路径必须指向目录(而不是指向目录的符号链接)
+
+权限管理
+• shutil.copymode(src,dst,*,follow_symlinks=True)
+  将权限为从src复制到dst.文件内容,所有者和组不受影响,src和dst是一字符串形式给出的路径名称
+• shutil.copystat(src,dst,*,follow_symlinks=True)
+  将权限位,最后访问时间,上次修改时间和标志从src复制到dst
+• shutil.chown(path,user=None,Group=None)
+  更改给定路径的所有者用户和/或组
+
+  	————语法风格————
+变量赋值
+• python支持链式多重赋值
+  x = y = 10
+• 另一种将多个变量同时赋值的方法成为多元赋值,次阿用这种方法赋值时,等号两边的对象都是元组
+  a,b = 10,20
+
+合法标识符
+• python标识符字符串规则和其他大部分用C编写的高级语言相似
+• 第一个字符必须是字母或下划线(_)
+• 剩下的字符可以使字母和数字或下划线
+• 大小写敏感
+
+关键字
+• 和其他的高级语言一样,python也拥有一些被称作关键字的保留字符
+• 任何语言的关键字应该保持相对的稳定,但是因为python是一门不断成长和进化的语言,其关键字偶尔会更新
+• 关键字列表和iskeyword()函数都放入了keyword模块以便查阅
+
+内建
+• 除了关键字之外,python还有可以在任何一级代码使用的"内建"的名字集合,这些名字可以有解释器设置或使用
+• 虽然built-in不是关键字,但是应该把它当作"系统保留字"
+• 保留的常量如:True、False、None
+
+模块结构及布局
+• 编写程序时,应该建立一种统一且容易阅读的结构,并将它应用到每一个文件中去
+#!/usr/bin/env python 		#起始行
+“this is a test module” 	#模块文档字符串
+import sys  			#导入模块
+import os 
+debug = True 			#全局变量声明
+class FooClass(object): 	#类定义
+ 'Foo class' 
+pass 
+def test():  			#函数定义
+ "test funcDon"	
+ foo = FooClass()	
+if __name__ == ‘__main__’:	#程序主体
+     test()
+
+			————字符串详解————
+		
+			————序列————
+序列类型操作符
+	序列操作符			作用
+ 	seq[ind]		获得下标为ind的元素
+	seq[ind1:ind2]		获得下标从ind1到ind2只见的元素集合
+	seq*expr		序列重复expr次
+	seq1+seq2		连接序列seq1和seq2
+	obj in seq		判断obj元素是否包含在seq中
+	obj not in seq		判断obj元素是否不包含在seq中
+
+内建函数
+	函数				含义
+	list(iter)		把可迭代对象转换为列表
+	str(obj)		把obj对象转换成字符串
+	tuple(iter)		把一个可迭代对象转换成一个元组对象
+
+>>> list('hello')	
+['h', 'e', 'l',	'l', 'o']	
+>>> list(('hello', 'world'))	
+['hello', 'world']	
+>>> str(['hello', 'world'])	
+"['hello', 'world']"
+
+• len(seq):返回seq的长度
+• max(iter,key=None):返回iter中的最大值
+• enumerate:接受一个可迭代对象作为参数,返回一个enumerate对象
+>>> alist = ['hello', 'world']	
+>>> for	i, j in	enumerate(alist):	
+...  print('index %d: %s' % (i, j))	
+...	
+index 0: hello	
+index 1: world
+
+• reversed(seq):接受一个序列作为参数,返回一个以逆序访问的迭代器
+• sorted(iter):接受一个可迭代对象作为参数,返回一个有序的列表
+
+			————字符串————
+字符串操作符
+• 比较操作符:字符串大小按ASCII码值大小进行比较
+• 切片操作符:[]、[:]、[::]
+• 成员关系操作符:in、not in
+>>> py_str = 'Hello	World!'	
+>>> py_str[::2]	
+'HloWrd'	
+>>> py_str[::-1]	
+'!dlroW	olleH'
+
+格式化操作符
+• 字符串可以使用格式化符号来表示特定含义
+	格式化字符			转换方式
+	%c				转换成字符
+	%s				优先用str()函数进行字符串转换
+	%d/%i				转成有符号十进制数
+	%o				转成无符号八进制数
+	%e/%E				转成科学计数法
+	%f/%F				转成浮点数
+	*				定义宽度或者小数点精度
+	-				左对齐
+	+				在正数前面显示加号
+	<sp>				在整数前面显示空格
+	#		在八进制数前面显示零0,在十六进制前面显示'0x'或者'0X'
+	0				显示的数字前面填充0而不是默认的空格
+
+format函数
+• 使用位置参数
+  - 'my name is {},age{}'.format('hoho',18)
+• 使用关键字参数
+  - 'my name is {name},age is {age}'.format({'name':'bob','age':23})
+• 填充与格式化
+  - {:[填充字符][对齐方式 <^>][宽度]}
+• 使用索引
+  - 'name is {0[0]} age is {0[1]}'.format(['bob',23])
+
+原始字符串操作符
+• 原始字符串操作符是为了对付那些在字符串中出现的特殊字符
+• 在原始字符串里,所有的字符都是直接按照字面的意思来使用,没有转义特殊或不能打印的字符
+>>> winPath = "c:\windows\temp"	
+>>> print(winPath)	
+c:\windows						emp	
+>>> newPath = r"c:\windows\temp"	
+>>> print(newPath)	
+c:\windows\temp
+
+内建函数
+• string.capitalize():把字符串的第一个字符大写
+• string.center(width):返回一个原字符串居中,并使用空格填充值长度width的新字符串
+• string.count(str,beg=0,end=len(string)):返回str在string里面出现的次数,如果beg或者end指定则返回指定范围内str出现的次数
+• string.endswith(obj,beg=0,end=len(string)):检查字符串是否以obj结束,如果beg或者end指定则检查指定的范围内是否以obj结束,如果是,返回True,否则返回False
+• string.islower():如果string中包含至少一个区分大小写的字符,并且所有这些字符都是小写,则返回True,否则返回False
+• string.strip():删除string字符串两端的空白
+• string.upper():转换string中的小写字母为大写
+• string.split(str="",num=string.count(str)):以str为分隔符切片string,如果num有指定值,则仅分隔num个子字符串
+
+			————列表和元组————
+
+			————列表————
+创建及访问列表
+• 列表是有序、可变的数据类型
+• 列表中可以包含不同类型的对象
+• 列表可以由[]或工厂函数创建
+• 支持下标及切片操作
+
+更新列表
+• 通过下标只能更新值,不能使用标添加新值
+>>> alist = [10, 35, 20, 80]	
+>>> alist[-1] =	100	
+>>> alist[1:3] = [30, 50, 80]
+
+列表内建函数
+	列表方法			操作
+	list.append(obj)		向列表中添加一个对象obj
+	list.count(obj)			返回一个对象obj在列表中出现的次数
+	list.extend(seq)		把序列seq的内容添加到列表中
+	list.index(obj)			返回obj对象的下标
+	list.insert(index,obj)		在索引量为index的位置插入对象obj
+	list.reverse()			原地翻转列表
+	list.sort()			排序
+
+			————元组————
+创建元组
+• 通过()或工厂函数tuple()创建元组
+• 元组是有序的、不可变类型
+• 与列表类似,作用于列表的操作,绝大数也可以作用于元组
+
+单元素元组
+• 如果一个元组中只有一个元素,那么创建该元组的时候,需要加上一个逗号
+>>> atuple = ('hello')	
+>>> print(atuple)	
+hello	
+>>> type(atuple)	
+<class 'str'>	
+>>> atuple = ('hello',)	
+>>> print(atuple)	
+('hello',)	
+>>> type(atuple)	
+<class 'tuple'>
+
+"更新"元组
+• 虽然元组本身是不可变的,但是因为它同时属于容器类型,也就意味着元组的某一个元素是可变的容器类型,那么这个元素中的项目仍然可变
+>>> atuple = ('bob', ['boy', 23])	
+>>> atuple[-1] = ['boy', 22]	
+Traceback (most	recent call last):	
+  File "<stdin>", line 1, in <module>	
+TypeError: 'tuple' object does not support item	assignment	
+>>> atuple[-1][-1] = 22	
+>>> atuple[-1].append(175)	
+>>> atuple	
+('bob',	['boy',	22, 175])	
+
