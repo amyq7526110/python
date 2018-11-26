@@ -2,9 +2,51 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b35c2d31-f0f7-4dbd-af1f-243a35ccda96" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/bj" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/Multithreading.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/Scanning_surviving_host.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/cttcpser.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/dforks.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/focker.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/fzfork.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/haha.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/hello.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/lele.txt" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/mtping.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/piliang.sh" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/ping.sh" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/sendcls.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/sendcls2.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/tcpclass.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/threadping.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/timeit.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/yiyitime.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/zb2.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/zb3.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/zb4.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/zb5.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python6/zomcom.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python7/.idea/vcs.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python7/PyMysqlin.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python7/cre_mysql.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python7/del_mysql.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python7/handle_mysql.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python7/modify_mysql.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python7/piliang.sh" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python7/query2_mysql.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python7/query_mysql.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python7/sqlalme.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python8/fffddd.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python8/patad.py" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/python8/rcmd.py" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/python.iml" afterPath="$PROJECT_DIR$/.idea/python.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/check.sh" afterPath="$PROJECT_DIR$/check.sh" />
-      <change beforePath="$PROJECT_DIR$/zhan.py" afterPath="$PROJECT_DIR$/zhan.py" />
+      <change beforePath="$PROJECT_DIR$/python3/.idea/modules.xml" afterPath="$PROJECT_DIR$/python3/.idea/modules.xml" />
+      <change beforePath="$PROJECT_DIR$/python3/.idea/python3.iml" afterPath="$PROJECT_DIR$/python3/.idea/python3.iml" />
+      <change beforePath="$PROJECT_DIR$/python3/.idea/vcs.xml" afterPath="$PROJECT_DIR$/python3/.idea/vcs.xml" />
+      <change beforePath="$PROJECT_DIR$/python3/.idea/workspace.xml" afterPath="$PROJECT_DIR$/python3/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/python5/tcpclass.py" afterPath="$PROJECT_DIR$/python5/tcpclass.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,59 +56,38 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/python$adict.coverage" NAME="adict Coverage Results" MODIFIED="1541658291704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$createfile.coverage" NAME="createfile Coverage Results" MODIFIED="1542003761982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$rcmd.coverage" NAME="rcmd Coverage Results" MODIFIED="1542793022505" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python8" />
+    <SUITE FILE_PATH="coverage/python$testreh.coverage" NAME="testreh Coverage Results" MODIFIED="1542768425299" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python8" />
+    <SUITE FILE_PATH="coverage/python$forex.coverage" NAME="forex Coverage Results" MODIFIED="1541735800660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$testhtml.coverage" NAME="testhtml Coverage Results" MODIFIED="1542770198016" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python8" />
+    <SUITE FILE_PATH="coverage/python$paiqutp.coverage" NAME="paiqutp Coverage Results" MODIFIED="1542776306852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python8" />
+    <SUITE FILE_PATH="coverage/python$testif.coverage" NAME="testif Coverage Results" MODIFIED="1541664142511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$suiji.coverage" NAME="suiji Coverage Results" MODIFIED="1541666648200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$fibs.coverage" NAME="fibs Coverage Results" MODIFIED="1541758918295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$shuju.coverage" NAME="shuju Coverage Results" MODIFIED="1542784899474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python8" />
+    <SUITE FILE_PATH="coverage/python$random.coverage" NAME="random Coverage Results" MODIFIED="1541666498707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$tryhtml.coverage" NAME="tryhtml Coverage Results" MODIFIED="1542785871619" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python8" />
+    <SUITE FILE_PATH="coverage/python$adict.coverage" NAME="adict Coverage Results" MODIFIED="1541658291704" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$stjdb.coverage" NAME="stjdb Coverage Results" MODIFIED="1541677707079" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$chebi.coverage" NAME="chebi Coverage Results" MODIFIED="1542023533374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$PI.coverage" NAME="PI Coverage Results" MODIFIED="1541821966827" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$shellpai.coverage" NAME="shellpai Coverage Results" MODIFIED="1541997511004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$moclie.coverage" NAME="moclie Coverage Results" MODIFIED="1542791107229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python8" />
     <SUITE FILE_PATH="coverage/python$while.coverage" NAME="while Coverage Results" MODIFIED="1541667052236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python$forex.coverage" NAME="forex Coverage Results" MODIFIED="1541735800660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$zistr.coverage" NAME="zistr Coverage Results" MODIFIED="1542008804166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python$testif.coverage" NAME="testif Coverage Results" MODIFIED="1541664142511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$fffddd.coverage" NAME="fffddd Coverage Results" MODIFIED="1542776429263" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python8" />
     <SUITE FILE_PATH="coverage/python$zhan.coverage" NAME="zhan Coverage Results" MODIFIED="1542071466688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python$suiji.coverage" NAME="suiji Coverage Results" MODIFIED="1541666648200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python$fibs.coverage" NAME="fibs Coverage Results" MODIFIED="1541758918295" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$test.coverage" NAME="test Coverage Results" MODIFIED="1541657640654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$grade.coverage" NAME="grade Coverage Results" MODIFIED="1541663464001" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/python$random.coverage" NAME="random Coverage Results" MODIFIED="1541666498707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/python$patad.coverage" NAME="patad Coverage Results" MODIFIED="1542789647943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/python8" />
     <SUITE FILE_PATH="coverage/python$mokuai.coverage" NAME="mokuai Coverage Results" MODIFIED="1541758935923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/python$filecz.coverage" NAME="filecz Coverage Results" MODIFIED="1541756041585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="stjdb.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/stjdb.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="22" column="7" lean-forward="false" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="zistr.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/zistr.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="65" column="28" lean-forward="false" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="chebi.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chebi.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="16" column="15" lean-forward="false" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shellpai.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shellpai.py">
+      <file leaf-file-name="testhtml.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python8/testhtml.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -75,50 +96,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shell_mod.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shell_mod.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shutil_dir.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shutil_dir.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shutil_type.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/shutil_type.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="zhan.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zhan.py">
+      <file leaf-file-name="shuju.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python8/shuju.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1542077721097" expanded="true" signature="1068:1083" ph="..." />
+                <element signature="e#1#27#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xvlist.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xvlist.py">
+      <file leaf-file-name="piliang.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python8/piliang.sh">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -127,12 +118,80 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pipei.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pipei.py">
+      <file leaf-file-name="paiqutp.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python8/paiqutp.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#23#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="fffddd.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python8/fffddd.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tryhtml.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python8/tryhtml.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testreh.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python8/testreh.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="moclie.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python8/moclie.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+              <folding>
+                <element signature="e#1#27#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="patad.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python8/patad.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="171">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rcmd.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/python8/rcmd.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="393">
+              <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -174,6 +233,15 @@
         <option value="$PROJECT_DIR$/zistr.py" />
         <option value="$PROJECT_DIR$/chebi.py" />
         <option value="$PROJECT_DIR$/zhan.py" />
+        <option value="$PROJECT_DIR$/python8/testreh.py" />
+        <option value="$PROJECT_DIR$/python8/testhtml.py" />
+        <option value="$PROJECT_DIR$/python8/paiqutp.py" />
+        <option value="$PROJECT_DIR$/python8/fffddd.py" />
+        <option value="$PROJECT_DIR$/python8/shuju.py" />
+        <option value="$PROJECT_DIR$/python8/tryhtml.py" />
+        <option value="$PROJECT_DIR$/python8/patad.py" />
+        <option value="$PROJECT_DIR$/python8/moclie.py" />
+        <option value="$PROJECT_DIR$/python8/rcmd.py" />
       </list>
     </option>
   </component>
@@ -184,8 +252,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="232" />
-    <option name="y" value="52" />
+    <option name="x" value="10" />
+    <option name="y" value="50" />
     <option name="width" value="1400" />
     <option name="height" value="978" />
   </component>
@@ -222,6 +290,23 @@
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="python" type="cbb8eebc:String" user="python" />
             </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="python" type="cbb8eebc:String" user="python" />
+              <item name="python" type="cbb8eebc:String" user="python" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="python" type="cbb8eebc:String" user="python" />
+              <item name="python" type="cbb8eebc:String" user="python" />
+              <item name="python4" type="cbb8eebc:String" user="python4" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="python" type="cbb8eebc:String" user="python" />
+              <item name="python" type="cbb8eebc:String" user="python" />
+              <item name="python7" type="cbb8eebc:String" user="python7" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -233,7 +318,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="Python" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/python4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pacong" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -247,116 +332,116 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.zhan">
-    <configuration name="chebi" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.rcmd">
+    <configuration name="moclie" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python8" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python" />
+      <module name="python8" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/chebi.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python8/moclie.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="createfile" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="patad" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python8" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python" />
+      <module name="python8" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/createfile.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python8/patad.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="shellpai" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="rcmd" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python8" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python" />
+      <module name="python8" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/shellpai.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python8/rcmd.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="zhan" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="shuju" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python8" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python" />
+      <module name="python8" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/zhan.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python8/shuju.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <configuration name="zistr" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="tryhtml" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python8" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="python" />
+      <module name="python8" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/zistr.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python8/tryhtml.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.shellpai" />
-      <item index="1" class="java.lang.String" itemvalue="Python.createfile" />
-      <item index="2" class="java.lang.String" itemvalue="Python.zistr" />
-      <item index="3" class="java.lang.String" itemvalue="Python.chebi" />
-      <item index="4" class="java.lang.String" itemvalue="Python.zhan" />
+      <item index="0" class="java.lang.String" itemvalue="Python.moclie" />
+      <item index="1" class="java.lang.String" itemvalue="Python.shuju" />
+      <item index="2" class="java.lang.String" itemvalue="Python.tryhtml" />
+      <item index="3" class="java.lang.String" itemvalue="Python.patad" />
+      <item index="4" class="java.lang.String" itemvalue="Python.rcmd" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.zhan" />
-        <item index="1" class="java.lang.String" itemvalue="Python.chebi" />
-        <item index="2" class="java.lang.String" itemvalue="Python.zistr" />
-        <item index="3" class="java.lang.String" itemvalue="Python.createfile" />
-        <item index="4" class="java.lang.String" itemvalue="Python.shellpai" />
+        <item index="0" class="java.lang.String" itemvalue="Python.rcmd" />
+        <item index="1" class="java.lang.String" itemvalue="Python.moclie" />
+        <item index="2" class="java.lang.String" itemvalue="Python.patad" />
+        <item index="3" class="java.lang.String" itemvalue="Python.tryhtml" />
+        <item index="4" class="java.lang.String" itemvalue="Python.shuju" />
       </list>
     </recent_temporary>
   </component>
@@ -377,21 +462,21 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="232" y="52" width="1400" height="978" extended-state="0" />
+    <frame x="10" y="50" width="1400" height="978" extended-state="0" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983682" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983682" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997669" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997669" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -416,145 +501,18 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testif.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1121">
-          <caret line="59" column="13" lean-forward="false" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grade.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" column="6" lean-forward="false" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/while.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/suiji.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testif.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1121">
-          <caret line="59" column="13" lean-forward="false" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grade.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" column="6" lean-forward="true" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/suiji.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/while.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="779">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adict" />
     <entry file="file://$PROJECT_DIR$/random.py" />
-    <entry file="file://$PROJECT_DIR$/yunsuan.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/while.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/testif.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="59" column="13" lean-forward="false" selection-start-line="59" selection-start-column="13" selection-end-line="59" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="22" lean-forward="false" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haha.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/yunsuan.py" />
+    <entry file="file://$PROJECT_DIR$/while.py" />
+    <entry file="file://$PROJECT_DIR$/testif.py" />
+    <entry file="file://$PROJECT_DIR$/test.py" />
+    <entry file="file://$PROJECT_DIR$/sum.py" />
+    <entry file="file://$PROJECT_DIR$/haha.py" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -562,27 +520,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/contine.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cp.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/PI.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/contine.py" />
+    <entry file="file://$PROJECT_DIR$/cp.py" />
+    <entry file="file://$PROJECT_DIR$/PI.py" />
     <entry file="file://$PROJECT_DIR$/list.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -590,113 +530,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mokuai.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/adict.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-475">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fibs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jiujiu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grade.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" column="6" lean-forward="false" selection-start-line="27" selection-start-column="6" selection-end-line="27" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forex.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="787">
-          <caret line="51" column="29" lean-forward="false" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/foucn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="62" column="9" lean-forward="true" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/else.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/filecz.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="123" column="11" lean-forward="true" selection-start-line="123" selection-start-column="11" selection-end-line="123" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/guessnum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/suiji.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/randpass.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/createfile.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/caofu.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/stjdb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="22" column="7" lean-forward="false" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/mokuai.py" />
+    <entry file="file://$PROJECT_DIR$/adict.py" />
+    <entry file="file://$PROJECT_DIR$/fibs.py" />
+    <entry file="file://$PROJECT_DIR$/jiujiu.py" />
+    <entry file="file://$PROJECT_DIR$/grade.py" />
+    <entry file="file://$PROJECT_DIR$/forex.py" />
+    <entry file="file://$PROJECT_DIR$/foucn.py" />
+    <entry file="file://$PROJECT_DIR$/else.py" />
+    <entry file="file://$PROJECT_DIR$/filecz.py" />
+    <entry file="file://$PROJECT_DIR$/guessnum.py" />
+    <entry file="file://$PROJECT_DIR$/suiji.py" />
+    <entry file="file://$PROJECT_DIR$/randpass.py" />
+    <entry file="file://$PROJECT_DIR$/createfile.py" />
+    <entry file="file://$PROJECT_DIR$/caofu.py" />
+    <entry file="file://$PROJECT_DIR$/stjdb.py" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -704,15 +552,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chebi.py">
+    <entry file="file://$PROJECT_DIR$/chebi.py" />
+    <entry file="file://$PROJECT_DIR$/shellpai.py" />
+    <entry file="file://$PROJECT_DIR$/shutil_dir.py" />
+    <entry file="file://$PROJECT_DIR$/shutil_type.py" />
+    <entry file="file://$PROJECT_DIR$/zhan.py" />
+    <entry file="file://$PROJECT_DIR$/xvlist.py" />
+    <entry file="file://$PROJECT_DIR$/pipei.py" />
+    <entry file="file://$PROJECT_DIR$/shell_mod.py" />
+    <entry file="file://$PROJECT_DIR$/zistr.py" />
+    <entry file="file://$PROJECT_DIR$/python8/http.py" />
+    <entry file="file://$PROJECT_DIR$/python8/gethttp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="16" column="15" lean-forward="false" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shellpai.py">
+    <entry file="file://$PROJECT_DIR$/python5/rematch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2412">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python8/urlbase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python8/testhtml.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -720,33 +591,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shutil_dir.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shutil_type.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="23" lean-forward="false" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zhan.py">
+    <entry file="file://$PROJECT_DIR$/python8/shuju.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1542077721097" expanded="true" signature="1068:1083" ph="..." />
+            <element signature="e#1#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xvlist.py">
+    <entry file="file://$PROJECT_DIR$/python8/piliang.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -754,7 +609,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pipei.py">
+    <entry file="file://$PROJECT_DIR$/python8/paiqutp.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python8/fffddd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python8/tryhtml.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -762,7 +637,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/shell_mod.py">
+    <entry file="file://$PROJECT_DIR$/python8/testreh.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -770,11 +645,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zistr.py">
+    <entry file="file://$PROJECT_DIR$/python8/moclie.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="65" column="28" lean-forward="false" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
+        <state relative-caret-position="437">
+          <caret line="25" column="21" lean-forward="false" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+          <folding>
+            <element signature="e#1#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python8/patad.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python8/rcmd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="25" column="15" lean-forward="false" selection-start-line="25" selection-start-column="15" selection-end-line="25" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

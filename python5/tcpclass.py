@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-
 import  socket
 import  time
-
+import  os
 class TcpTimeserv:
     def __init__(self,host='',port=12345):
         self.addr = (host,port)
@@ -18,8 +17,6 @@ class TcpTimeserv:
                 break
             data = '[%s] %s' % (time.strftime('%H:%M:%S'),data)
             cli_sock.send(data.encode())
-
-
     def mainloop(self):
         while True:
             try:
@@ -27,10 +24,18 @@ class TcpTimeserv:
             except KeyboardInterrupt:
                 print()
                 break
-            self.chat(cli_sock)
-            cli_sock.close()
-        cli_sock.close()
-
+            pid = os.fork()
+            if not pid:
+                self.chat(cli_sock)
+                cli_sock.close()
+                exit()
+            else:
+                cli_sock.close()
+                while True:
+                    result = os.waitpid(-1,1)
+                    print(result)
+                    if result == 0:
+                        break
 if __name__ == '__main__':
     s = TcpTimeserv()
     s.mainloop()
