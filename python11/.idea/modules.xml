@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$USER_HOME$/blog/.idea/blog.iml" filepath="$USER_HOME$/blog/.idea/blog.iml" />
+      <module fileurl="file://$USER_HOME$/ansible_project/myansible/.idea/myansible.iml" filepath="$USER_HOME$/ansible_project/myansible/.idea/myansible.iml" />
+      <module fileurl="file://$USER_HOME$/mysite/.idea/mysite.iml" filepath="$USER_HOME$/mysite/.idea/mysite.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../.idea/python.iml" filepath="$PROJECT_DIR$/../.idea/python.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/python11.iml" filepath="$PROJECT_DIR$/.idea/python11.iml" />
+      <module fileurl="file://$USER_HOME$/tickete/.idea/tickete.iml" filepath="$USER_HOME$/tickete/.idea/tickete.iml" />
+      <module fileurl="file://$USER_HOME$/web_server/.idea/web_server.iml" filepath="$USER_HOME$/web_server/.idea/web_server.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 阐述ansible七种武器有哪些</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>第一种武器：</p> 
+    <p>ansible 命令，用于执行临时性的工作，必须掌握</p> 
+    <p>第二种武器：</p> 
+    <p>ansible-doc是ansible模块的文档说明，针对每个模块都有详细的说明及</p> 
+    <p>应用案例介绍，功能和Linux系统man命令类似，必须掌握</p> 
+    <p>第三种武器：</p> 
+    <p>ansible-console是ansible为用户提供的交互式工具，用户可以在</p> 
+    <p>ansible-console虚拟出来的终端上像Shell一样使用ansible内置的各种命令，这为习惯使用Shell交互方式的用户提供了良好的使用体验</p> 
+    <p>第四种武器：</p> 
+    <p>ansible-galaxy从github上下载管理Roles的一款工具，与python的</p> 
+    <p>pip类似</p> 
+    <p>第五种武器：</p> 
+    <p>ansible-playbook是日常应用中使用频率最高的命令，工作机制：通过读取</p> 
+    <p>先编写好的playbook文件实现批量管理，可以理解为按一定条件组成的ansible任</p> 
+    <p>务集，必须掌握</p> 
+    <p>第六种武器：</p> 
+    <p>ansible-vault主要用于配置文件加密，如编写的playbook文件中包含敏</p> 
+    <p>感信息，不想其他人随意查看，可用它加密/解密这个文件</p> 
+    <p>第七种武器：</p> 
+    <p>ansible有两种工作模式pull/push ，默认使用push模式工作，pull和</p> 
+    <p>push工作模式机制刚好相反</p> 
+    <p>适用场景：有大批量机器需要配置，即便使用高并发线程依旧要花费很多时间</p> 
+    <p>通常在配置大批量机器的场景下使用，灵活性稍有欠缺，但效率几乎可以无限</p> 
+    <p>提升，对运维人员的技术水平和前瞻性规划有较高要求</p> 
+   </div> 
+   <div> 
+    <h3>2 什么是JSON以及其特性是什么</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>JSON简介：</p> 
+    <p>JSON是JavaScript对象表示法，它是一种基于文本独立于语言的轻量级数</p> 
+    <p>据交换格式</p> 
+    <p>JSON中的分隔符限于单引号&quot; ' &quot; 、小括号&quot; () &quot; 、中括号&quot; [ ] &quot; 、大</p> 
+    <p>括号&quot; { } &quot; 、冒号 &quot; : &quot; 和逗号 &quot; , &quot;</p> 
+    <p>JSON特性：</p> 
+    <p>JSON是纯文本、具有&quot;自我描述性&quot;（人类可读）、具有层级结构（值中存在值）、</p> 
+    <p>可通过JavaScript进行解析</p> 
+   </div> 
+   <div> 
+    <h3>3 简述YAML是什么</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>是一个可读性高，用来表达数据序列的格式</p> 
+    <p>YAML（YAML Ain't Markup Language）参考了多种语言，如：C语言、Python、Perl等，并从XML、电子邮件的数据格式中获得灵感，Clark Evans在2001年首次发表了这种语言，目前已有数种编程语言或脚本语言支持这种语言</p> 
+   </div> 
+   <div> 
+    <h3>4 简述什么是playbook</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>playbook是ansible用于配置，部署和管理托管主机剧本，通过playbook的详细描述，执行其中的一系列tasks，可以让远端主机达到预期状态</p> 
+    <p>也可以说，playbook字面意思即剧本，现实中由演员按剧本表演，在ansible中由计算机进行安装，部署应用，提供对外服务，以及组织计算机处理各种各样的事情</p> 
+   </div> 
+   <div> 
+    <h3>5 用playbook安装Apache,修改端口，配置ServerName，修改主页，设置开机自启</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@ansible ansible]# vim http.yml---- hosts: cache  remote_user: root  tasks:    - name: install one specific version of Apache      yum:        name: httpd		//安装Apache        state: installed    - lineinfile:        path: /etc/httpd/conf/httpd.conf        regexp: '^Listen '        line: 'Listen 8080'		//修改端口为8080    - replace:        path: /etc/httpd/conf/httpd.conf        regexp: '^#(ServerName).*'		//配置ServerName        replace: '\1 localhost'    - service:        name: httpd        enabled: yes		//开机自启        state: restarted    - copy:        src: /root/index.html		//修改主页，可以自己写个页面        dest: /var/www/html/index.html[root@ansible ansible]# curl 192.168.1.56:8080hello world[root@ansible ansible]# ssh cacheLast login: Fri Sep  7 09:32:05 2018 from 192.168.1.51[root@cache ~]# apachectl -tSyntax OK</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

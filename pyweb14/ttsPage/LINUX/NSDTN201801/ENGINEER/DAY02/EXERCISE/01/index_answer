@@ -1,0 +1,57 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 简述管道操作、重定向标准输出操作的基本用法</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>管道操作：</p> 
+    <pre class="code">命令1  |  命令2  |  命令.. ..</pre> 
+    <p>重定向标准输出：</p> 
+    <pre class="code">命令  &gt;  文件命令  &gt;&gt;  文件</pre> 
+   </div> 
+   <div> 
+    <h3>2 列出Shell环境中常用的环境变量及各自的作用</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>PWD：记录当前所在工作目录</p> 
+    <p>PATH：记录搜索可执行程序的默认目录范围</p> 
+    <p>USER：记录当前用户名</p> 
+    <p>LOGNAME：记录当前用户的登录名</p> 
+    <p>SHELL：记录当前用户登录Shell</p> 
+    <p>HOME：记录当前用户家目录位置</p> 
+   </div> 
+   <div> 
+    <h3>3 列出Shell环境中常用的预定义变量及各自的作用</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>$0：当前所在的进程或脚本名</p> 
+    <p>$$：当前运行进程的PID号</p> 
+    <p>$?：程序退出后的状态值，0表示正常，其他值异常</p> 
+    <p>$#：已加载的位置变量的个数</p> 
+    <p>$*：所有位置变量的值</p> 
+   </div> 
+   <div> 
+    <h3>4 在脚本中使用if语句时，如何判断“第一个命令行参数不是文件”</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>使用以下条件测试操作：</p> 
+    <pre class="code"> [  ! –f  &quot;$1&quot;  ] </pre> 
+   </div> 
+   <div> 
+    <h3>5 在脚本中使用for语句时，如果从第一个参数提供的文件名获取值列表</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>在脚本中使用如下代码：</p> 
+    <pre class="code">for  file  in $(cat  $1)do        命令序列.. ..done</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

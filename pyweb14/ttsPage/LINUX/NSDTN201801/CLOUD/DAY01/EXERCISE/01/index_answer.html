@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 阐述什么是虚拟化</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>虚拟化，是指通过虚拟化技术将一台计算机虚拟为多台逻辑计算机。在一台计算机上同时运行多个逻辑计算机，每个逻辑计算机可运行不同的操作系统，并且应用程序都可以在相互独立的空间内运行而互不影响，从而显著提高计算机的工作效率</p> 
+   </div> 
+   <div> 
+    <h3>2 安装虚拟化服务器平台需要哪些软件，作用分别是什么</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>需要安装的软件：</p> 
+    <p>qemu-kvm、libvirt-daemon、libvirt-client、libvirt-daemon-driver-qemu</p> 
+    <p>作用：</p> 
+    <p>qemu-kvm 为 kvm 提供底层仿真支持</p> 
+    <p>libvirt-daemon libvirtd 守护进程，管理虚拟机</p> 
+    <p>libvirt-client 用户端软件，提供客户端管理命令</p> 
+    <p>libvirt-daemon-driver-qemu libvirtd 连接 qemu 的驱动</p> 
+   </div> 
+   <div> 
+    <h3>3 KVM虚拟机的组成需要哪几部分？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1） 内核虚拟化模块（KVM）</p> 
+    <p>2） 系统设备仿真（QEMU）</p> 
+    <p>3） 虚拟机管理程序（LIBVIRT）</p> 
+    <p>4） 一个 XML 文件（虚拟机配置声明文件）</p> 
+    <p>5） 一个磁盘镜像文件（虚拟机的硬盘）</p> 
+   </div> 
+   <div> 
+    <h3>4 列出下列virsh管理命令的含义</h3> 
+    <p>virsh nodeinfo</p> 
+    <p>virsh list [--all]</p> 
+    <p>virsh net-list [--all]</p> 
+    <p>virsh start|reboot|shutdown node</p> 
+    <p>virsh destroy node</p> 
+    <p>virsh autostart node</p> 
+    <p class="answerTitle">参考答案</p> 
+    <p>virsh nodeinfo 查看KVM节点（服务器）信息</p> 
+    <p>virsh list [--all] 列出虚拟机</p> 
+    <p>virsh net-list [--all] 列出虚拟网络</p> 
+    <p>virsh dominfo node 查看指定虚拟机的信息</p> 
+    <p>virsh start|reboot|shutdown node 运行|重启|关闭指定的虚拟机</p> 
+    <p>virsh destroy node 强制关闭指定的虚拟机</p> 
+    <p>virsh autostart node 将指定的虚拟机设为开机自动运行</p> 
+   </div> 
+   <div> 
+    <h3>5 如何导入公钥</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>本地导入：</p> 
+    <pre class="code">rpm  --import  RPM-GPG-KEY-CentOS-7</pre> 
+    <p>网络导入：</p> 
+    <pre class="code">rpm  --import  ftp://192.168.1.254/centos7/RPM-GPG-KEY-CentOS-7</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

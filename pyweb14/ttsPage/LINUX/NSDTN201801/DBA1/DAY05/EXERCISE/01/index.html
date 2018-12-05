@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 简述备份策略的类型。</h3> 
+   </div> 
+   <div> 
+    <h3>2 按照题目要求，使用binlog日志恢复数据。具体要求如下</h3> 
+    <p>1）启动binlog日志，用plj给日志文件命名日志文件,存储到/logdir目录下。</p> 
+    <p>2）使用第1个binlog日志文件保存数据库webdbone的如下操作:</p> 
+    <ul class="list"> 
+     <li>create database webdbone; </li> 
+     <li>use webdbone; </li> 
+     <li>create table a(id int); </li> 
+     <li>insert into a values(100); </li> 
+     <li>insert into a values(200); </li> 
+    </ul> 
+    <p>3）使用第2个binlog日志文件保存数据库webdbtwo的如下操作:</p> 
+    <ul class="list"> 
+     <li>create database webdbtwo; </li> 
+     <li>use webdbtwo; </li> 
+     <li>create table b(id int); </li> 
+     <li>insert into b values(300); </li> 
+     <li>insert into b values(400); </li> 
+    </ul> 
+    <p>4）使用新binlog日志文件 保存如下操作</p> 
+    <ul class="list"> 
+     <li>insert into webdbone.a values(888); </li> 
+     <li>insert into webdbtwo.b balues(999); </li> 
+     <li>select * from webdbone.a; </li> 
+     <li>select * from webdbtwo.b; </li> 
+     <li>drop table webdbone.a; </li> 
+     <li>delete from webdbtwo.b; </li> 
+    </ul> 
+    <p>5）使用binlog日志，恢复2个表的所有记录。</p> 
+   </div> 
+   <div> 
+    <h3>3 如何使用innobackupex备份与恢复</h3> 
+   </div> 
+  </div>  
+  <button class="showAnswer" type="button" onclick="javascript:window.location.href=&quot;index_answer.html&quot;">查看答案</button>
+ </body>
+</html>

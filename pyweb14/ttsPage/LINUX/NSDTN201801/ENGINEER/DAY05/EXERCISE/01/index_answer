@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 RHEL7搭建iSCSI服务端与客户端需要安装什么软件</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">服务端：targetcli客户端：iscsi-initiator-utils</pre> 
+   </div> 
+   <div> 
+    <h3>2 客户端为了识别和加载iSCSI网络磁盘需要启动服务有哪些</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">客户端:iscsi（加载iSCSI网络磁盘）  iscsid（刷新客户端iqn名称）</pre> 
+   </div> 
+   <div> 
+    <h3>3 在虚拟机desktop0上搭建MariaDB数据库服务，并将数据库管理密码设为redhat</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@desktop0 ~]# yum  -y  install  mariadb-server  mariadb.. .. 														//装包[root@desktop0 ~]# systemctl  restart  mariadb.. .. 														//起服务[root@desktop0 ~]# mysqladmin  -u  root  password  'redhat'  		//更改密码[root@desktop0 ~]# mysql  -uroot  -patenorthMariaDB [(none)]&gt; 									//测试新密码登录成功.. ..MariaDB [(none)]&gt; quit[root@desktop0 ~]# </pre> 
+   </div> 
+   <div> 
+    <h3>4 新建一个库newdb，并授权用户zhsan对此库具有全部权限（密码为redhat）</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">MariaDB [none]&gt; CREATE  DATABASE  newdb;.. ..MariaDB [none]&gt; GRANT  all  ON  newdb.*  to  zhsan@localhost  IDENTIFIED  BY  'redhat'; </pre> 
+   </div> 
+   <div> 
+    <h3>5 如何查出Contacts库base表内所有记录的数量</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">MariaDB [none]&gt; SELECT  count(*)  FROM  Contacts.base; 5</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

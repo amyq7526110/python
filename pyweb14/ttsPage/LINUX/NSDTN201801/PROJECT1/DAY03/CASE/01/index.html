@@ -1,0 +1,137 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>CASE</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="index.files/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script>
+    <script type="text/javascript" src="index.files/main.js">
+    </script>
+    <link type="text/css" href="index.files/index.css" rel="Stylesheet" />
+    <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" />
+  </head>
+  <body>
+    <div class="source_style_case">
+      <a name="page_top_case" id="top_anchor" />
+      <a id="link_top" href="#page_top_case">Top</a>
+      <h1>NSD PROJECT1 DAY03</h1>
+      <ol class="index">
+        <li>
+          <a href="#case1">案例1：配置静态路由</a>
+        </li>
+        <li>
+          <a href="#case2">案例2：配置多路由环境网络</a>
+        </li>
+        <li>
+          <a href="#case3">
+          </a>
+        </li>
+        <li>
+          <a href="#case4">案例3：三层交换机基本配置</a>
+        </li>
+        <li>
+          <a href="#case5">案例4：三层交换机实现VLAN互通</a>
+        </li>
+        <li>
+          <a href="#case6">案例5：搭建小型办公网络</a>
+        </li>
+        <li>
+          <a href="#case7">案例6：动态路由</a>
+        </li>
+      </ol>
+      <a name="case1">
+      </a>
+      <h2>1 案例1：配置静态路由</h2>
+      <h3>1.1 问题</h3>
+      <p>按照图-1的拓扑结构配置接口ip地址并通过静态路由实现全网互通</p>
+      <div class="image">
+        <img src="index.files/image001.png" />
+        <p>图-1</p>
+      </div>
+      <h3>1.2 步骤</h3>
+      <p>R1配置</p>
+      <pre class="code">Router&gt;enableRouter#configure terminal Router(config)#interface gigabitEthernet 0/0Router(config-if)#ip address 192.168.1.254 255.255.255.0	//配置ip地址Router(config-if)#no shutdown 								//开启接口Router(config-if)#exitRouter(config)#interface gigabitEthernet 0/1Router(config-if)#ip address 192.168.2.1 255.255.255.0Router(config-if)#no shutdown Router(config-if)#exitRouter(config)#ip route 192.168.3.0 255.255.255.0 192.168.2.2  //配置静态路由</pre>
+      <p>R2配置</p>
+      <pre class="code">Router&gt;enableRouter#configure terminal Router(config)#interface gigabitEthernet 0/0Router(config-if)#ip address 192.168.3.254 255.255.255.0Router(config-if)#no shutdown Router(config-if)#exitRouter(config)#interface gigabitEthernet 0/1Router(config-if)#ip address 192.168.2.2 255.255.255.0Router(config-if)#no shutdown Router(config-if)#exitRouter(config)#ip route 192.168.1.0 255.255.255.0 192.168.2.1	</pre>
+      <a name="case2">
+      </a>
+      <h2>2 案例2：配置多路由环境网络</h2>
+      <h3>2.1 问题</h3>
+      <p>按照图-2拓扑结构配置接口ip地址并通过静态路由实现全网互通</p>
+      <div class="image">
+        <img src="index.files/image002.png" />
+        <p>图-2</p>
+      </div>
+      <h3>2.2 步骤</h3>
+      <p>注：以下配置需要在案例1的基础上完成</p>
+      <p>R1配置</p>
+      <pre class="code">Router(config)#ip route 192.168.4.0 255.255.255.0 192.168.2.2Router(config)#ip route 192.168.5.0 255.255.255.0 192.168.2.2</pre>
+      <p>R2配置</p>
+      <pre class="code">Router(config)#interface gigabitEthernet 0/2Router(config-if)#ip address 192.168.4.1 255.255.255.0Router(config-if)#no shutdown Router(config)#ip route 192.168.5.0 255.255.255.0 192.168.4.2</pre>
+      <p>R3配置</p>
+      <pre class="code">Router&gt;enableRouter#configure terminal Router(config)#interface gigabitEthernet 0/0Router(config-if)#ip address 192.168.5.254 255.255.255.0Router(config-if)#no shutdown Router(config-if)#exitRouter(config)#interface gigabitEthernet 0/1Router(config-if)#ip address 192.168.4.2 255.255.255.0Router(config-if)#no shutdown Router(config-if)#exitRouter(config)#ip route 192.168.1.0 255.255.255.0 192.168.4.1Router(config)#ip route 192.168.2.0 255.255.255.0 192.168.4.1Router(config)#ip route 192.168.3.0 255.255.255.0 192.168.4.1</pre>
+      <a name="case3">
+      </a>
+      <h2>3 </h2>
+      <a name="case4">
+      </a>
+      <h2>4 案例3：三层交换机基本配置</h2>
+      <h3>4.1 问题</h3>
+      <p>按照图-3的拓扑结构配置ip地址并通过三层交换实现VLAN间通信</p>
+      <div class="image">
+        <img src="index.files/image003.png" />
+        <p>图-3</p>
+      </div>
+      <h3>4.2 步骤</h3>
+      <p>三层交换机配置</p>
+      <pre class="code">Switch&gt;enable Switch#configure terminal Switch(config)#interface vlan 1Switch(config-if)#ip address 192.168.1.254 255.255.255.0Switch(config-if)#no shutdownSwitch(config-if)#vlan 2Switch(config-vlan)#vlan 3Switch(config-vlan)#exitSwitch(config)#interface vlan 2Switch(config-if)#ip address 192.168.2.254 255.255.255.0Switch(config-vlan)#exitSwitch(config)#interface vlan 3Switch(config-if)#ip address 192.168.3.254 255.255.255.0Switch(config-vlan)#exitSwitch(config)#ip routing							//开启路由功能Switch(config)#interface fastEthernet 0/2Switch(config-if)#switchport access vlan 2			//将f0/2接口加入vlan2Switch(config-if)#interface fastEthernet 0/3Switch(config-if)#switchport access vlan 3</pre>
+      <a name="case5">
+      </a>
+      <h2>5 案例4：三层交换机实现VLAN互通</h2>
+      <h3>5.1 问题</h3>
+      <p>按照图-5拓扑图配置ip地址并实现vlan间通信，二层交换机与三层交换机之间只有一条链路，为了在一条链路中传递不同VLAN的数据，需要将这条链路配置为TRUNK</p>
+      <div class="image">
+        <img src="index.files/image004.png" />
+        <p>图-4</p>
+      </div>
+      <h3>5.2 步骤</h3>
+      <p>注：以下配置需要在案例3的基础上完成</p>
+      <p>三层交换机配置</p>
+      <pre class="code">Switch(config)#interface fastEthernet 0/24Switch(config-if)#switchport trunk encapsulation dot1q 		  //打封装Switch(config-if)#switchport mode trunk					  //配置中继链路</pre>
+      <p>二层交换机配置</p>
+      <pre class="code">Switch&gt;enable Switch#configure terminal Switch(config)#interface fastEthernet 0/2Switch(config-if-range)#switchport access vlan 2Switch(config-if-range)#exitSwitch(config)#interface fastEthernet 0/3Switch(config-if-range)#switchport access vlan 3Switch(config)#interface fastEthernet 0/24Switch(config-if)#switchport mode trunk</pre>
+      <a name="case6">
+      </a>
+      <h2>6 案例5：搭建小型办公网络</h2>
+      <h3>6.1 问题</h3>
+      <p>按照图-5规划配置实现全网互通</p>
+      <p>这里的192.168.5.0网段模拟为外网网段，需要使用默认路由才能到达。</p>
+      <div class="image">
+        <img src="index.files/image005.png" />
+        <p>图-5</p>
+      </div>
+      <h3>6.2 步骤</h3>
+      <p>注：以下配置需要在案例4的基础上完成</p>
+      <p>三层交换机配置</p>
+      <pre class="code">Switch(config)#interface fastEthernet 0/23Switch(config-if)#no switchport Switch(config-if)#ip address 192.168.4.1 255.255.255.0Switch(config-if)#exitSwitch(config)#ip route 0.0.0.0 0.0.0.0 192.168.4.2		//配置默认路由前往外网</pre>
+      <p>路由器配置</p>
+      <pre class="code">Router&gt;enableRouter#configure terminal Router(config)#interface gigabitEthernet 0/0Router(config-if)#ip address 192.168.4.2 255.255.255.0Router(config-if)#no shutdown Router(config-if)#exitRouter(config)#interface gigabitEthernet 0/1Router(config-if)#ip address 192.168.5.254 255.255.255.0Router(config-if)#no shutdown Router(config-if)#exitRouter(config)#ip route 192.168.1.0 255.255.255.0 192.168.4.1Router(config)#ip route 192.168.2.0 255.255.255.0 192.168.4.1Router(config)#ip route 192.168.3.0 255.255.255.0 192.168.4.1</pre>
+      <a name="case7">
+      </a>
+      <h2>7 案例6：动态路由</h2>
+      <h3>7.1 问题</h3>
+      <p>通过配置静态路由协议ospf实现全网互通，可以先将静态路由删除</p>
+      <div class="image">
+        <img src="index.files/image006.png" />
+        <p>图-6</p>
+      </div>
+      <h3>7.2 步骤</h3>
+      <p>注：以下配置需要在案例5的基础上完成</p>
+      <p>三层交换机配置</p>
+      <pre class="code">Switch(config)#router ospf 1Switch(config-router)#network 192.168.1.0 0.0.0.255 area 0Switch(config-router)#network 192.168.2.0 0.0.0.255 area 0Switch(config-router)#network 192.168.3.0 0.0.0.255 area 0Switch(config-router)#network 192.168.4.0 0.0.0.255 area 0</pre>
+      <p>路由器配置</p>
+      <pre class="code">Router(config)#no ip route 192.168.1.0 255.255.255.0 192.168.4.1Router(config)#no ip route 192.168.2.0 255.255.255.0 192.168.4.1Router(config)#no ip route 192.168.3.0 255.255.255.0 192.168.4.1Router(config)#router ospf 1Router(config-router)#network 192.168.4.0 0.0.0.255 area 0</pre>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 简述rsync+SSH上/下行同步操作的命令用法</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>下行：rsync [...] user@host:源目录 本地目录</p> 
+    <p>上行：rsync [...] 本地目录 user@host:目标目录</p> 
+   </div> 
+   <div> 
+    <h3>2 简述如何实现无密码ssh远程控制</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>首先利用ssh-keygen命令生成公钥与私钥，然后利用ssh-copy-id拷贝到对方</p> 
+   </div> 
+   <div> 
+    <h3>3 使用inotifywait配置实时同步时，哪些事件是有必要监控的</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>凡是会引起原始目录的内容发生变化的事件，都有必要监控，主要包括：</p> 
+    <p>1）modify：文档的内容变更</p> 
+    <p>2）attrib：文档的权限、归属、修改时间、访问控制列表等变更</p> 
+    <p>3）move：文档被改名、移出或移入</p> 
+    <p>4）create：在被监控的目录中增加了新的子目录或文档</p> 
+    <p>5）delete：在被监控的目录中删除了某个子目录或文档</p> 
+   </div> 
+  </div>  
+ </body>
+</html>

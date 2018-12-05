@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 如何查看Hadoop集群文件系统的根以及怎么创建</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>查看</p> 
+    <pre class="code"> [root@nn01 hadoop]# /usr/local/hadoop/bin/hadoop fs -ls /</pre> 
+    <p>创建</p> 
+    <pre class="code">[root@nn01 hadoop]# /usr/local/hadoop/bin/hadoop fs -mkdir  /aaa	</pre> 
+   </div> 
+   <div> 
+    <h3>2 如何增加一个新的节点</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1）增加一个新的节点node4</p> 
+    <pre class="code">[root@hadoop5 ~]# echo node4 &gt; /etc/hostname 	//更改主机名为node4[root@hadoop5 ~]# hostname node4[root@node4 ~]# yum -y install rsync[root@node4 ~]# yum -y install java-1.8.0-openjdk-devel[root@node4 ~]# mkdir /var/hadoop[root@nn01 .ssh]# ssh-copy-id 192.168.1.25[root@nn01 .ssh]# vim /etc/hosts192.168.1.21  nn01192.168.1.22  node1192.168.1.23  node2192.168.1.24  node3192.168.1.25  node4[root@nn01 .ssh]# scp /etc/hosts 192.168.1.25:/etc/[root@nn01 ~]# cd /usr/local/hadoop/[root@nn01 hadoop]# vim ./etc/hadoop/slavesnode1node2node3node4[root@nn01 hadoop]# for i in {22..25}; do rsync -aSH --delete /usr/local/hadoop/\ 192.168.1.$i:/usr/local/hadoop/  -e 'ssh' &amp; done		//同步配置[1] 1841[2] 1842[3] 1843[4] 1844[root@node4 hadoop]# ./sbin/hadoop-daemon.sh start datanode  //启动2）查看状态	[root@node4 hadoop]# jps24439 Jps24351 DataNode</pre> 
+   </div> 
+   <div> 
+    <h3>3 如何设置同步带宽</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code"> [root@node4 hadoop]# ./bin/hdfs dfsadmin -setBalancerBandwidth 60000000Balancer bandwidth is set to 60000000[root@node4 hadoop]# ./sbin/start-balancer.sh</pre> 
+   </div> 
+   <div> 
+    <h3>4 启动NFS需要注意什么</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>portmap服务只能用root用户启动，nfs3只能用代理用户启动，用root用户执行jps可以看到portmap和nfs3，代理用户执行jps看不到portmap</p> 
+    <pre class="code">[root@nfsgw ~]# /usr/local/hadoop/sbin/hadoop-daemon.sh --script ./bin/hdfs start portmap		//portmap服务只能用root用户启动starting portmap, logging to /usr/local/hadoop/logs/hadoop-root-portmap-nfsgw.out[root@nfsgw ~]# jps23714 Jps23670 Portmap[root@nfsgw ~]# su - nfsLast login: Mon Sep 10 12:31:58 CST 2018 on pts/0[nfs@nfsgw ~]$ cd /usr/local/hadoop/[nfs@nfsgw hadoop]$ ./sbin/hadoop-daemon.sh  --script ./bin/hdfs start nfs3  //nfs3只能用代理用户启动starting nfs3, logging to /usr/local/hadoop/logs/hadoop-nfs-nfs3-nfsgw.out[nfs@nfsgw hadoop]$ jps					1362 Jps1309 Nfs3 [root@nfsgw hadoop]# jps			//root用户执行可以看到portmap和nfs31216 Portmap1309 Nfs31374 Jps</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

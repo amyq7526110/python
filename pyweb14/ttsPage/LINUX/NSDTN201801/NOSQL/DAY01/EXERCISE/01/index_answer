@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 什么是RDBMS</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>RDBMS即关系数据库管理系统（Relational Database Management System），按照预先设置的组织结构，将数据存储在物理介质上，数据之间可以做关联操作</p> 
+   </div> 
+   <div> 
+    <h3>2 主流的RDBMS软件有哪些</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>主流的RDBMS软件有：</p> 
+    <p>Oracle</p> 
+    <p>DB2</p> 
+    <p>MS SQL Server</p> 
+    <p>MySQL、MariaDB</p> 
+   </div> 
+   <div> 
+    <h3>3 什么是NOSQL以及软件有哪些</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>什么是NOSQL？</p> 
+    <p>NoSQL（NoSQL = Not Only SQL），意思是“不仅仅是SQL”，泛指非关系型数据库，不需要预先定义数据存储结构，表的每条记录都可以有不同的类型和结构</p> 
+    <p>NOSQL服务软件：</p> 
+    <p>1）MongoDB</p> 
+    <p>2）Memcached</p> 
+    <p>3）CouchDB</p> 
+    <p>4）Neo4j</p> 
+    <p>5）FlockDB</p> 
+   </div> 
+   <div> 
+    <h3>4 简述redis软件的作用</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1）速度比较快 因为数据是在内存中的，</p> 
+    <p>2）支持较多的数据类型 比如 string list set map 等</p> 
+    <p>3）支持事物 操作都是源自性的 对于数据而言要么全部执行 要么全部不执行</p> 
+    <p>4）丰富的特性 可用于缓存 消息 设置Key的过期时间</p> 
+   </div> 
+  </div>  
+ </body>
+</html>

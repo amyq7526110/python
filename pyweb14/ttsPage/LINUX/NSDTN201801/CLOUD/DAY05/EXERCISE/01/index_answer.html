@@ -1,0 +1,73 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 容器的核心技术有哪几种？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>Cgroups（Control Groups）-资源管理</p> 
+    <p>NameSpace-进程隔离</p> 
+    <p>SELinux安全</p> 
+   </div> 
+   <div> 
+    <h3>2 阐述docker的优缺点</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>优点：</p> 
+    <p>相比于传统的虚拟化技术，容器更加简洁高效</p> 
+    <p>传统虚拟机需要给每个VM安装操作系统</p> 
+    <p>容器使用的共享公共库和程序</p> 
+    <p>缺点：</p> 
+    <p>容器的隔离性没有虚拟化强</p> 
+    <p>共用Linux内核，安全性有先天缺陷</p> 
+    <p>SELinux难以驾驭</p> 
+    <p>监控容器和容器排错是挑战</p> 
+   </div> 
+   <div> 
+    <h3>3 如何上传，下载镜像</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>下载镜像</p> 
+    <pre class="code">[root@docker1 ~]# docker  pull  rhel7</pre> 
+    <p>上传镜像</p> 
+    <pre class="code">[root@docker1 ~]# docker  push  rhel7</pre> 
+   </div> 
+   <div> 
+    <h3>4 docker镜像常用命令有哪些</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>docker images 查看镜像列表</p> 
+    <p>docker history 查看镜像制作历史</p> 
+    <p>docker inspect 查看镜像底层信息</p> 
+    <p>docker pull 下载镜像</p> 
+    <p>docker push 上传镜像</p> 
+    <p>docker rmi 删除本地镜像</p> 
+    <p>docker save 镜像另存为tar包</p> 
+    <p>docker load 使用tar包导入镜像</p> 
+    <p>docker search 搜索镜像</p> 
+    <p>docker tag 修改镜像名称和标签</p> 
+   </div> 
+   <div> 
+    <h3>5 docker容器常用命令有哪些</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>docker run 运行容器</p> 
+    <p>docker ps 查看容器列表</p> 
+    <p>docker stop 关闭容器</p> 
+    <p>docker start 启动容器</p> 
+    <p>docker restart 重启容器</p> 
+    <p>docker attach|exec 进入容器</p> 
+    <p>docker inspect 查看容器底层信息</p> 
+    <p>docker top 查看容器进程列表</p> 
+    <p>docker rm 删除容器</p> 
+   </div> 
+  </div>  
+ </body>
+</html>

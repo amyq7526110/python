@@ -1,0 +1,71 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 简述MySQL体系结构的组成，并描述每个组成部分的作用。</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>mysql体系结构包括如下组成部分：</p> 
+    <p>连接池：检查是否有空闲的线程和是否有硬件资源分配给线程使用。</p> 
+    <p>sql接口： 把SQL命令传递给mysqld进程。</p> 
+    <p>分析器：检查执行的SQL命令是否语法错误。</p> 
+    <p>优化器：优化执行的SQL命令，以最节省硬件资源的方式运行。</p> 
+    <p>查询缓存：存储客户端曾经查找过的sql记录。</p> 
+    <p>存储引擎：访问表时，决定对表加锁的粒度。</p> 
+    <p>文件系统：存储数据的存储设备（如硬盘）</p> 
+    <p>管理工具：安装mysql数据库服务软件后自带的命令。</p> 
+   </div> 
+   <div> 
+    <h3>2 简述innodb存储引擎和myisam存储引擎的特点。</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>innodb的特点：共享表空间、支持行级锁、支持外键 、 支持事务 、支持事务回滚。</p> 
+    <p>myisam的特点：独享表空间、支持表级锁、不支持外键 、不支持事务 、不支持事务回滚</p> 
+   </div> 
+   <div> 
+    <h3>3 简述MySQL数据库中插入、更新、查询、删除表记录的指令格式。</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1）插入记录指令格式</p> 
+    <pre class="code">insert  into   库.表   values(值列表);   //一次插入一条记录 给记录的所有字段赋值insert  into   库.表   values(值列表),(值列表);  //一次插入多条记录 给记录的所有字段赋值insert  into   库.表(字段名列表)   values(值列表); //一次插入1条记录 给记录的指定字段赋值insert  into   库.表(字段名列表)   values(值列表)，(值列表); //一次插入多条记录 给记录的指定字段赋值</pre> 
+    <p>2）更新记录指令格式</p> 
+    <pre class="code">update  表名  set   字段名=值，字段名=&quot;值&quot;; 		//批量修改update  表名  set   字段名=值，字段名=&quot;值&quot; where  条件; //修改符合条件的记录字段的值</pre> 
+    <p>3）查询记录指令格式:</p> 
+    <pre class="code">select  字段列表   from  表名; //查询所有记录指定字段的值。select  字段列表   from  表名  where  条件表达式列表；//查询与条件匹配记录指定字段的值。</pre> 
+    <p>4）删除表记录指令格式：</p> 
+    <pre class="code">delete  from  表名； 		//删除表的所有记录。delete  from  表名  where  条件； 	//只删除符合条件的记录</pre> 
+   </div> 
+   <div> 
+    <h3>4 查询综合练习题，按要求写出对应查询语句。（使用userdb库userlist表做查询练习）</h3> 
+    <p>1、添加记录编号字段id 在所有字段上方，字段值可以自动增长。</p> 
+    <p>2、显示uid 是四位数的用户的用户名和uid号。</p> 
+    <p>3、显示名字是以字母r 开头 且是以字母d结尾的用户名和uid号。</p> 
+    <p>4、查看gid 小于10的用户使用shell的种类。</p> 
+    <p>5、查看shell不是/bin/bash用户中uid号最大用户名及uid号。</p> 
+    <p>6、统计uid是3位数的用户的个数。</p> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1、添加记录编号字段id 在所有字段上方，字段值可以自动增长。</p> 
+    <pre class="code">alter  table  userdb.userlist  add  id  int(2) primary key  auto_increment  first;</pre> 
+    <p>2、显示uid 是四位数的用户的用户名和uid号。</p> 
+    <pre class="code">select  name,uid  from userdb.userlist where uid &gt;=1000 and uid&lt;=9999; 或 select  name,uid  from userdb.userlist where uid  between  1000  and  9999; 或  select  name,uid  from userdb.userlist where uid regexp ‘^....$’;</pre> 
+    <p>3、显示名字是以字母r 开头 且是以字母d结尾的用户名和uid号。</p> 
+    <pre class="code">select name,uid  from userdb.userlist where  name regexp ‘^r.*d$’;或select user from mysql.user where user regexp '^r' and user regexp 'd$';</pre> 
+    <p>4、查看gid 小于10的用户使用shell的种类。</p> 
+    <pre class="code">select shell from userdb.userlist where uid&lt;10 group by shell;或Select distinct shell from userdb.userlist where uid&lt;10； </pre> 
+    <p>5、查看shell不是/bin/bash用户中uid号最大用户名及uid号。</p> 
+    <pre class="code">select name,uid  from userdb.userlist where shell!=”/bin/bash” order by uid desc limit 1;</pre> 
+    <p>6、统计uid是3位数的用户的个数。</p> 
+    <pre class="code">select count(name) from userdb.userlist where uid &gt;=100 and uid&lt;=999;</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

@@ -1,0 +1,184 @@
+    .md2017111301-x {
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, .9);
+            z-index:999;
+        }
+
+        .md2017111301-cont {
+            border-radius: 4px;
+            width: 670px;
+            min-height: 580px;
+            background: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left:-335px;
+            margin-top:-315px;
+        }
+@media (max-width: 1400px) {
+            .md2017111301-cont {
+                transform:scale(.8);
+            }
+        }
+
+        .md2017111301-cont .md2017111301-slider-h {
+            height: 130px;
+            background: url("../img/studyplan/hx_111401.jpg") no-repeat;
+            color: #fff;
+            padding-top: 39px;
+        }
+
+        .md2017111301-slider:first-child .md2017111301-slider-h {
+            text-align: center;
+        }
+
+        .md2017111301-slider:first-child.one-1116x .md2017111301-slider-h {
+            text-align: left;
+        }
+
+        .md2017111301-slider:first-child .questions-cont-x, .md2017111301-slider:last-child .questions-cont-x {
+            font-size: 16px;
+            padding-right: 200px;
+            background: url("../img/studyplan/qus_girl.jpg") no-repeat 400px 10px;
+            line-height: 30px;
+            padding-top: 55px;
+
+        }
+
+        .md2017111301-cont .md2017111301-slider-txt {
+            font-size: 30px;
+            margin-bottom: 34px;
+            padding: 0 50px;
+        }
+
+        .md2017111301-cont .qs-numberx {
+            padding-right: 10px;
+            text-align: right;
+        }
+
+        .md2017111301-slider-cont {
+            padding: 39px 54px 0;
+        }
+
+        .questions-list-x {
+            font-size: 20px;
+            color: #666;
+            height: 52px;
+            border: 2px solid #eff0f2;
+            border-radius: 4px;
+            padding-left: 30px;
+            line-height: 52px;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .questions-cont-x {
+            min-height: 326px;
+            padding: 1px;
+        }
+		.questions-list-x>p	{
+			font-size:18px;
+			overflow: hidden;
+			text-overflow:ellipsis;
+			white-space: nowrap;
+		}
+        .questions-list-x.cur-x,.questions-list-x:hover {
+            border-color: #547feb;
+        }
+        .questions-list-x.cur-x .success-icon-1114x {
+            display: inline-block;
+        }
+
+        .questions-list-x > p > span {
+            font-size: 13px;
+        }
+
+        .success-icon-1114x {
+            width: 24px;
+            height: 24px;
+            background: url("../img/studyplan/iconx_111402.jpg") no-repeat;
+            position: absolute;
+            right: -12px;
+            top: -12px;
+            display: none;
+        }
+
+        .btn-group-1115x {
+            text-align: center;
+        }
+
+        .btn-group-1115x .btn-1115x {
+            display: inline-block;
+            width: 172px;
+            height: 55px;
+            line-height: 55px;
+            cursor: pointer;
+        }
+
+        .btn-group-1115x .btn-1115x.btn-1115x-next {
+            color: #fff;
+            background: #547feb;
+            border-radius: 4px;
+            box-shadow: 0 8px 5px 0px #c9d5f5;
+        }
+
+        .btn-group-1115x .btn-1115x.btn-1115x-next:hover {
+            background: #6b90e9;
+        }
+
+        .btn-group-1115x .btn-1115x.btn-1115x-next:active {
+            background: #3267e9;
+        }
+
+        .md2017111301-slider {
+            display: none;
+        }
+
+        .md2017111301-slider.active-1115x {
+            display: block;
+        }
+
+        .col-2x-1114 .questions-list-x {
+            width: 258px;
+            display: inline-block;
+        }
+
+        .col-2x-1114 .questions-list-x:nth-child(2n) {
+            margin-left: 39px;
+        }
+
+        .hidden-x {
+            display: none !important;
+        }
+
+        .md2017111301-slider:last-child .md2017111301-slider-cont {
+            background: url("../img/studyplan/eng_bg.png") no-repeat;
+        }
+
+        .md2017111301-slider:last-child .questions-cont-x {
+            padding-top: 0;
+            background-position: 471px 0;
+        }
+
+        .md2017111301-slider:last-child .md2017111301-slider-cont {
+            padding: 39px 20px 0;
+        }
+
+        .md2017111301-slider:last-child .md2017111301-slider-h {
+            padding-top: 25px;
+        }
+
+        .md2017111301-slider:last-child .md2017111301-slider-txt {
+            font-size: 16px;
+            line-height: 40px;
+        }
+
+        .qus-tit-1115x {
+            color: #000;
+            font-size: 50px;
+            line-height: initial;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }

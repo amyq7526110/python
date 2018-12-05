@@ -2,51 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b35c2d31-f0f7-4dbd-af1f-243a35ccda96" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/bj" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/Multithreading.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/Scanning_surviving_host.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/cttcpser.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/dforks.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/focker.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/fzfork.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/haha.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/hello.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/lele.txt" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/mtping.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/piliang.sh" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/ping.sh" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/sendcls.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/sendcls2.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/tcpclass.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/threadping.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/timeit.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/yiyitime.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/zb2.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/zb3.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/zb4.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/zb5.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python6/zomcom.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python7/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python7/PyMysqlin.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python7/cre_mysql.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python7/del_mysql.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python7/handle_mysql.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python7/modify_mysql.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python7/piliang.sh" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python7/query2_mysql.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python7/query_mysql.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python7/sqlalme.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python8/fffddd.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python8/patad.py" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/python8/rcmd.py" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/python.iml" afterPath="$PROJECT_DIR$/.idea/python.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/python3/.idea/modules.xml" afterPath="$PROJECT_DIR$/python3/.idea/modules.xml" />
-      <change beforePath="$PROJECT_DIR$/python3/.idea/python3.iml" afterPath="$PROJECT_DIR$/python3/.idea/python3.iml" />
-      <change beforePath="$PROJECT_DIR$/python3/.idea/vcs.xml" afterPath="$PROJECT_DIR$/python3/.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/python3/.idea/workspace.xml" afterPath="$PROJECT_DIR$/python3/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/python5/tcpclass.py" afterPath="$PROJECT_DIR$/python5/tcpclass.py" />
+      <change beforePath="$PROJECT_DIR$/python10/.idea/workspace.xml" afterPath="$PROJECT_DIR$/python10/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/python5/tcpser2.py" afterPath="$PROJECT_DIR$/python5/tcpser2.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -86,62 +43,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="testhtml.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python8/testhtml.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="shuju.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python8/shuju.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#1#27#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="piliang.sh" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python8/piliang.sh">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="paiqutp.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python8/paiqutp.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="e#23#49#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fffddd.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python8/fffddd.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="5" column="24" lean-forward="false" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="tryhtml.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python8/tryhtml.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -184,7 +85,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rcmd.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="rcmd.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python8/rcmd.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="393">
@@ -192,6 +93,56 @@
               <folding>
                 <element signature="e#0#16#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="zb5.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python6/zb5.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tcpclass.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python6/tcpclass.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-58">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tcp_server.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python5/tcp_server.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tcpclass.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python5/tcpclass.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tcpser2.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/python5/tcpser2.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -242,6 +193,7 @@
         <option value="$PROJECT_DIR$/python8/patad.py" />
         <option value="$PROJECT_DIR$/python8/moclie.py" />
         <option value="$PROJECT_DIR$/python8/rcmd.py" />
+        <option value="$PROJECT_DIR$/python5/tcpser2.py" />
       </list>
     </option>
   </component>
@@ -272,6 +224,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -292,33 +245,64 @@
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="python" type="cbb8eebc:String" user="python" />
-              <item name="python" type="cbb8eebc:String" user="python" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="python" type="cbb8eebc:String" user="python" />
-              <item name="python" type="cbb8eebc:String" user="python" />
-              <item name="python4" type="cbb8eebc:String" user="python4" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+              <item name="/" type="cbb8eebc:String" user="/" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="python" type="cbb8eebc:String" user="python" />
-              <item name="python" type="cbb8eebc:String" user="python" />
-              <item name="python7" type="cbb8eebc:String" user="python7" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+              <item name="/" type="cbb8eebc:String" user="/" />
+              <item name="root" type="cbb8eebc:String" user="root" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+              <item name="/" type="cbb8eebc:String" user="/" />
+              <item name="root" type="cbb8eebc:String" user="root" />
+              <item name=".PyCharm2017.3" type="cbb8eebc:String" user=".PyCharm2017.3" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+              <item name="/" type="cbb8eebc:String" user="/" />
+              <item name="root" type="cbb8eebc:String" user="root" />
+              <item name=".PyCharm2017.3" type="cbb8eebc:String" user=".PyCharm2017.3" />
+              <item name="system" type="cbb8eebc:String" user="system" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+              <item name="/" type="cbb8eebc:String" user="/" />
+              <item name="root" type="cbb8eebc:String" user="root" />
+              <item name=".PyCharm2017.3" type="cbb8eebc:String" user=".PyCharm2017.3" />
+              <item name="system" type="cbb8eebc:String" user="system" />
+              <item name="python_stubs" type="cbb8eebc:String" user="python_stubs" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="External Dependencies" type="cbb8eebc:String" user="External Dependencies" />
+              <item name="/" type="cbb8eebc:String" user="/" />
+              <item name="root" type="cbb8eebc:String" user="root" />
+              <item name=".PyCharm2017.3" type="cbb8eebc:String" user=".PyCharm2017.3" />
+              <item name="system" type="cbb8eebc:String" user="system" />
+              <item name="python_stubs" type="cbb8eebc:String" user="python_stubs" />
+              <item name="-1199943127" type="cbb8eebc:String" user="-1199943127" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="Python" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/pacong" />
+    <property name="last_opened_file_path" value="$USER_HOME$/python100" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -466,17 +450,17 @@
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983682" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32983682" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997669" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -506,11 +490,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/random.py" />
-    <entry file="file://$PROJECT_DIR$/yunsuan.py" />
-    <entry file="file://$PROJECT_DIR$/while.py" />
-    <entry file="file://$PROJECT_DIR$/testif.py" />
-    <entry file="file://$PROJECT_DIR$/test.py" />
     <entry file="file://$PROJECT_DIR$/sum.py" />
     <entry file="file://$PROJECT_DIR$/haha.py" />
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -670,6 +649,46 @@
           <folding>
             <element signature="e#0#16#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python6/zb5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python6/tcpclass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-58">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python5/tcp_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python5/tcpclass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python5/tcpser2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>

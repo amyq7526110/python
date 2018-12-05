@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 如何批量导入数据</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>使用_bulk批量导入数据</p> 
+    <p>使用POST方式批量导入数据，数据格式为json，url 编码使用data-binary导入含有index配置的json文件</p> 
+    <pre class="code">[root@room9pc01 ~]# scp /var/ftp/elk/*.gz 192.168.1.66:/root/[root@kibana ~]# gzip  -d logs.jsonl.gz [root@kibana ~]#  gzip  -d accounts.json.gz [root@kibana ~]# gzip  -d shakespeare.json.gz[root@kibana ~]# curl -X POST &quot;http://192.168.1.61:9200/_bulk&quot; \ --data-binary @shakespeare.json[root@kibana ~]# curl -X POST &quot;http://192.168.1.61:9200/xixi/haha/_bulk&quot; \ --data-binary @accounts.json  //索引是xixi，类型是haha，必须导入索引和类型，没有索引，要加上[root@kibana ~]# curl -X POST &quot;http://192.168.1.61:9200/_bulk&quot;  \ --data-binary @logs.jsonl</pre> 
+   </div> 
+   <div> 
+    <h3>2 如何实现数据批量查询</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@kibana ~]# curl -XGET 'http://192.168.1.61:9200/_mget?pretty' -d '{ &quot;docs&quot;:[     {        &quot;_index&quot;:&quot;shakespeare&quot;,        &quot;_type:&quot;:&quot;act&quot;,        &quot;_id&quot;:0},{        &quot;_index&quot;:&quot;shakespeare&quot;,        &quot;_type:&quot;:&quot;line&quot;,        &quot;_id&quot;:0},{        &quot;_index&quot;:&quot;xixi&quot;,        &quot;_type:&quot;:&quot;haha&quot;,        &quot;_id&quot;:25}]}'{		//查询的结果   &quot;docs&quot; : [ {    &quot;_index&quot; : &quot;shakespeare&quot;,    &quot;_type&quot; : &quot;act&quot;,    &quot;_id&quot; : &quot;0&quot;,    &quot;_version&quot; : 1,    &quot;found&quot; : true,    ...    ...      &quot;employer&quot; : &quot;Filodyne&quot;,      &quot;email&quot; : &quot;virginiaayala@filodyne.com&quot;,      &quot;city&quot; : &quot;Nicholson&quot;,      &quot;state&quot; : &quot;PA&quot;    }  } ]}</pre> 
+   </div> 
+   <div> 
+    <h3>3 map映射的作用及分类是什么</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>作用：这样会让索引建立得更加的细致和完善</p> 
+    <p>分类：静态映射和动态映射</p> 
+    <p>动态映射：自动根据数据进行相应的映射</p> 
+    <p>静态映射：自定义字段映射数据类型</p> 
+   </div> 
+   <div> 
+    <h3>4 Logstash插件有哪些</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>codec类插件、file插件、tcp和udp插件、syslog插件、filter grok插件</p> 
+   </div> 
+  </div>  
+ </body>
+</html>

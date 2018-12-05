@@ -1,0 +1,166 @@
+gett                    	
+gett                                   		haha01：
+gett                                   		lele
+gett                                   		haha02：
+gett                                   		lele
+gett                                   		haha03：
+gett                                   		lele
+gett                                   		haha04：
+gett                                   		lele
+gett                                   		haha05：
+gett                                   		lele
+gett                                   		haha06：
+gett                                   		lele
+gett                                   		haha07：
+gett                                   		lele
+gett                    	
+gett                          -->
+gett                                   				分区规划及使用、LVM逻辑卷、总结和答疑
+gett                                   				Shell脚本基础、使用变量、条件测试及选择、列表式循环、总结和答疑
+gett                                   				系统安全保护 配置用户环境 配置高级连接 防火墙策略管理 总结和答疑
+gett                                   				配置SMB共享 配置NFS共享 总结和答疑
+gett                                   				iSCSI技术应用 数据库服务基础 管理表数据 总结和答疑
+gett                                   				HTTP服务基础 网页内容访问 部署动态网站 总结和答疑
+gett                                   				综合串讲 综合练习
+gett                                   				扩展的几个应用 发布网络YUM源 vim编辑技巧 源码编译安装 systemctl控制 总结和答疑
+gett                                   				DNS服务基础 特殊解析 DNS子域授权 缓存DNS 总结和答疑
+gett                                   				Split分离解析 RAID磁盘阵列 进程管理 日志管理 总结和答疑
+gett                                   				批量装机环境 配置PXE引导 kickstart自动应答 总结和答疑
+gett                                   				rsync同步操作 inotify实时同步 Cobbler装机平台 总结和答疑
+gett                                   				项目实战一：part01
+gett                                   				项目实战一：part02
+gett                                   				项目实战一：part03
+gett                                   				项目实战一：part04
+gett                                   				项目实战一：part05
+gett                                   				项目实战一：part06
+gett                                   				项目实战一：part07
+gett                                   				答辩准备 答辩演练及点评
+gett                                   				答辩准备 答辩演练及点评
+gett                                   				项目答辩会 阶段1必备知识考查
+gett                                   				Shell概述 编写及执行脚本
+gett                                   				Shell变量 总结和答疑
+gett                                   				数值运算 条件测试
+gett                                   				if选择结构 总结和答疑
+gett                                   				循环结构 case语句
+gett                                   				函数及中断控制 总结和答疑
+gett                                   				字符串处理 扩展的脚本技巧 正则表达式
+gett                                   				sed基本用法 sed文本块处理
+gett                                   				sed高级应用 总结和答疑
+gett                                   				awk基本用法 awk高级应用 总结和答疑
+gett                                   				项目实战
+gett                                   				Nginx安装与升级 Nginx服务器 Nginx虚拟主机
+gett                                   				HTTPS加密网站 总结和答疑
+gett                                   				部署LNMP Nginx+FastCGI
+gett                                   				Nginx高级技术 总结和答疑
+gett                                   				Nginx调度器 Nginx优化 总结和答疑
+gett                                   				memcached原理 部署memcached
+gett                                   				Session共享 总结和答疑
+gett                                   				Tomcat服务器 Tomcat应用案例
+gett                                   				Varnish代理服务器 总结和答疑
+gett                                   				版本控制 SVN基础 实战案例
+gett                                   				RPM打包 总结和答疑
+gett                                   				VPN服务器 NTP时间同步
+gett                                   				PSSH远程工具 总结和答疑
+gett                                   				存储技术与应用 iSCSI技术应用
+gett                                   				udev配置 NFS网络文件系统
+gett                                   				Multipath多路径
+gett                                   				NFS网络文件系统
+gett                                   				udev配置
+gett                                   				集群及LVS简介 LVS-NAT集群 LVS-DR集群
+gett                                   				Keepalived热备 Keepalived+LVS
+gett                                   				HAProxy服务器
+gett                                   				Ceph概述 部署Ceph集群 Ceph块存储
+gett                                   				块存储应用案例 分布式文件系统 对象存储
+gett                                   				数据库服务概述 构建MySQL服务器
+gett                                   				数据库基本管理 MySQL数据类型
+gett                                   				约束条件 修改表结构 MySQL键值
+gett                                   				MySQL存储引擎
+gett                                   				数据导入导出 管理表记录 匹配条件
+gett                                   				多表查询 MySQL管理工具
+gett                                   				用户授权及撤销
+gett                                   				mysqldump 实时增量备份
+gett                                   				innobackupex
+gett                                   				MySQL主从同步
+gett                                   				主从同步模式 
+gett                                   				MySQL读写分离 MySQL多实例
+gett                                   				MySQL性能调优
+gett                                   				MHA集群概述
+gett                                   				部署MHA集群 测试配置
+gett                                   				MySQL视图 MySQL存储过程 
+gett                                   				分库分表概述 配置mycat
+gett                                   				NoSQL概述 部署Redis服务
+gett                                   				部署LNMP+Redis
+gett                                   				创建Redis集群 管理集群
+gett                                   				redis主从复制 RDB/AOF持久化 数据类型
+gett                                   				部署MongoDB服务
+gett                                   				MongoDB基本使用
+gett                                   				MongoDB副本集 MongoDB文档管理
+gett                                   				Linux基本防护 用户切换与提权 SSH访问控制 SELinux安全
+gett                                   				 SSH访问控制 SELinux安全
+gett                                   				加密与解密 AIDE入侵检测系统 扫描与抓包
+gett                                   				系统审计 服务安全 Linux安全之打补丁
+gett                                   				iptables防火墙 filter表控制 扩展匹配 nat表典型应用
+gett                                   				监控概述
+gett                                   				Zabbix基础
+gett                                   				Zabbix监控服务
+gett                                   				Zabbix报警机制
+gett                                   				Zabbix进阶操作
+gett                                   				监控案例
+gett                                   				KVM简介、 Virsh管理
+gett                                   				自定义虚拟机、虚拟设备管理
+gett                                   				Openstack概述 部署安装环境
+gett                                   				部署Openstack OpenStack操作基础
+gett                                   				用户配额管理 云主机类型管理
+gett                                   				镜像管理 网络管理 案例和实例管理
+gett                                   				安装额外计算节点
+gett                                   				云计算产品、华为云
+gett                                   				ECS云服务器管理
+gett                                   				Docker概述、部署Docker
+gett                                   				Docker镜像、Docker基本命令
+gett                                   				自定义镜像及仓库、持久化存储
+gett                                   				Docker网络架构
+gett                                   				ansible概述、ansible基础
+gett                                   				ad-hoc、批量配置管理
+gett                                   				playbook基础
+gett                                   				playbook进阶
+gett                                   				分布式ELK平台、ES安装
+gett                                   				扩展插件 、Kibana安装
+gett                                   				Kibana使用
+gett                                   				Logstash配置扩展插件
+gett                                   				大数据、Hadoop
+gett                                   				Hadoop安装与配置
+gett                                   				HDFS
+gett                                   				完全分布式
+gett                                   				节点管理
+gett                                   				NFS网关
+gett                                   				常用组件
+gett                                   				Kafka集群
+gett                                   				Hadoop高可用
+gett                                   				项目说明 项目讲解
+gett                                   				系统安装 web 服务搭建
+gett                                   				系统压力测试 架构调优 
+gett                                   				mysql主从 读写分离
+gett                                   				web集群 session共享 redis集群
+gett                                   				haproxy高可用 共享文件系统
+gett                                   				Python概述 环境准备 使用git Pthon起步
+gett                                   				数据类型概述 判断语句 while循环
+gett                                   				for循环 文件对象 函数基础 模块基础
+gett                                   				shell相关模块 字符串详解 列表和元组
+gett                                   				字典和集合 时间方法 异常处理 文件系统相关模块
+gett                                   				函数基础 函数高级应用
+gett                                   				模块 OOP基础 OOP进阶
+gett                                   				re模块 socket模块
+gett                                   				多进程编程 多线程编程
+gett                                   				PyMySQL模块 SQLAlchemy基础 SQLAlchemy进阶
+gett                                   				HTTP客户端 urllib模块 paramiko模块
+gett                                   				邮件和JSON requests模块 zabbix编程
+gett                                   				Jenkins基础 准备git仓库 应用jenkins 管理应用服务器
+gett                                   				Ansible基础 Ansible编程 编写ansible模块
+gett                                   				WEB概述 HTML快速入门 基本标签用法 Form表单及控件
+gett                                   				CSS概述 CSS基础语法 尺寸与框模型 常用样式属性
+gett                                   				定位 Bootstrap起步 全局CSS样式 组件与插件
+gett                                   				部署django Django应用基础 Django模型
+gett                                   				Django API 视图和模板 使用表单
+gett                                   				入口映射 模板详解 模型详解
+gett                                   				CMDB异步架构 CMDB主机管理
+gett                                   				CMDB任务部署 CMDB文件传输及命令执行 

@@ -1,0 +1,54 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 简述什么是ELK</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>ELK是一整套解决方案，是三个软件产品的首字母缩写，很多公司都在使用，如：Sina、携程、华为、美团等</p> 
+    <p>ELK分别代表的意思</p> 
+    <p>Elasticsearch：负责日志检索和储存</p> 
+    <p>Logstash：负责日志的收集和分析、处理</p> 
+    <p>Kibana：负责日志的可视化</p> 
+    <p>这三款软件都是开源软件，通常是配合使用，而且又先后归于Elastic.co公司名下，故被简称为ELK</p> 
+   </div> 
+   <div> 
+    <h3>2 ELK可以实现什么功能</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>在海量日志系统的运维中，可用于解决分布式日志数据集中式查询和管理、系统监控，包含系统硬件和应用各个组件的监控、故障排查、安全信息和事件管理、报表功能</p> 
+   </div> 
+   <div> 
+    <h3>3 Elasticsearch主要特点</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1、实时分析</p> 
+    <p>2、分布式实时文件存储，并将每一个字段都编入索引</p> 
+    <p>3、文档导向，所有的对象全部是文档</p> 
+    <p>4、高可用性，易扩展，支持集群（Cluster） 、 分片和复制（Shards 和 Replicas）</p> 
+    <p>5、接口友好，支持JSON</p> 
+   </div> 
+   <div> 
+    <h3>4 如何插入，增加，删除和查询数据</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>增加数据</p> 
+    <pre class="code">[root@se5 ~]# locale[root@se5 ~]# LANG=en_US.UTF-8  //设置编码[root@se5 ~]# curl -X PUT &quot;http://192.168.1.65:9200/taindex/teacher/1&quot; -d '{&quot;职业&quot;:&quot;诗人&quot;,&quot;名字&quot;:&quot;李白&quot;,&quot;称号&quot;:&quot;诗仙&quot;,&quot;年代&quot;:&quot;唐&quot;}'{&quot;_index&quot;:&quot;taindex&quot;,&quot;_type&quot;:&quot;teacher&quot;,&quot;_id&quot;:&quot;1&quot;,&quot;_version&quot;:2,&quot;_shards&quot;:{&quot;total&quot;:2,&quot;successful&quot;:2,&quot;failed&quot;:0},&quot;created&quot;:false}</pre> 
+    <p>修改数据</p> 
+    <pre class="code">[root@se5 ~]# curl -X PUT &quot;http://192.168.1.65:9200/taindex/teacher/1&quot; -d '{ &quot;doc&quot;:{ &quot;年代&quot;: &quot;唐代&quot; } }'{&quot;_index&quot;:&quot;taindex&quot;,&quot;_type&quot;:&quot;teacher&quot;,&quot;_id&quot;:&quot;1&quot;,&quot;_version&quot;:3,&quot;_shards&quot;:{&quot;total&quot;:2,&quot;successful&quot;:2,&quot;failed&quot;:0},&quot;created&quot;:false}</pre> 
+    <p>查询数据</p> 
+    <pre class="code">[root@se5 ~]#  curl -X GET &quot;http://192.168.1.65:9200/taindex/teacher/3?pretty&quot;{  &quot;_index&quot; : &quot;taindex&quot;,  &quot;_type&quot; : &quot;teacher&quot;,  &quot;_id&quot; : &quot;3&quot;,  &quot;found&quot; : false}</pre> 
+    <p>删除数据</p> 
+    <pre class="code">[root@se5 ~]# curl -X DELETE &quot;http://192.168.1.65:9200/taindex/teacher/3?pretty&quot;{  &quot;found&quot; : false,  &quot;_index&quot; : &quot;taindex&quot;,  &quot;_type&quot; : &quot;teacher&quot;,  &quot;_id&quot; : &quot;3&quot;,  &quot;_version&quot; : 1,  &quot;_shards&quot; : {    &quot;total&quot; : 2,    &quot;successful&quot; : 2,    &quot;failed&quot; : 0  }}</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

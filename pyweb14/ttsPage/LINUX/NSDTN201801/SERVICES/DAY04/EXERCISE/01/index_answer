@@ -1,0 +1,57 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 简述DHCP租期、作用域、地址池的含义</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>租期：允许客户机租用IP地址的时间期限，单位为秒</p> 
+    <p>作用域：分配给客户机的IP地址所在的网段</p> 
+    <p>地址池：用来动态分配的IP地址的范围</p> 
+   </div> 
+   <div> 
+    <h3>2 为了指引客户机访问PXE服务器，对应的DHCP配置是什么</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>需要告知客户机TFTP引导服务器的地址、需要下载的启动文件名：</p> 
+    <pre class="code">     next-server  192.168.4.7;  		//PXE引导服务器     filename  &quot;pxelinux.0&quot;; 			//引导文件名</pre> 
+   </div> 
+   <div> 
+    <h3>3 PXE服务器提供vmlinuz和initrd.img文件的作用分别是什么</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>vmlinuz：为将要安装的客户机系统提供引导，并加载安装程序；</p> 
+    <p>initrd.img：为在客户机上加载并运行vmlinuz内核提供临时的Linux环境。</p> 
+   </div> 
+   <div> 
+    <h3>4 简要说明PXE装机引导的基本过程</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <ol class="list"> 
+     <li>客户端向DHCP服务器请求分配IP地址； </li> 
+     <li>DHCP服务器为客户端分配IP地址，告知Boot server； </li> 
+     <li>客户端向Boot server请求下载启动文件； </li> 
+     <li>Boot server向客户端提供启动文件； </li> 
+     <li>客户端向文件共享服务器请求应答文件； </li> 
+     <li>客户端根据应答文件信息，安装操作系统。 </li> 
+    </ol> 
+   </div> 
+   <div> 
+    <h3>5 使用system-config-kickstart工具时需要注意什么</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>注意事项：</p> 
+    <p>1）运行此工具的客户机最好与将要安装的客户机使用相同的操作系统。</p> 
+    <p>2）仅配置对应的YUM源，源ID设为 development。</p> 
+    <p>3）可以加载应答文件模板/root/anaconda-ks.cfg再修改，提高效率。</p> 
+   </div> 
+  </div>  
+ </body>
+</html>

@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 列出创建ext3、ext4、xfs、fat32文件系统的格式化工具及用法</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>mkfs.ext3 分区设备路径</p> 
+    <p>mkfs.ext4 分区设备路径</p> 
+    <p>mkfs.xfs 分区设备路径</p> 
+    <p>mkfs.vfat -F 32 分区设备路径</p> 
+   </div> 
+   <div> 
+    <h3>2 简述/etc/fstab开机挂载配置记录的格式组成</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">设备路径  挂载点  类型  参数  备份标记  检测顺序  </pre> 
+   </div> 
+   <div> 
+    <h3>3 如何从卷组systemvg中创建一个180MiB的逻辑卷vo</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@server0 ~]# lvcreate  -L 180M  -n  vo  systemvg  Logical volume &quot;vo&quot; created[root@server0 ~]# lvscan  ACTIVE            '/dev/systemvg/vo' [180.00 MiB] inherit</pre> 
+   </div> 
+   <div> 
+    <h3>4 如何将空闲分区/dev/vdb5扩展到现有的卷组systemvg中</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@server0 ~]# vgextend  systemvg  /dev/vdb5  Physical volume &quot;/dev/vdb5&quot; successfully created  Volume group &quot;systemvg&quot; successfully extended</pre> 
+   </div> 
+   <div> 
+    <h3>5 对于格式化过的逻辑卷，扩容以后如何将新的大小通知Linux内核</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>如果此逻辑卷采用的是EXT3或EXT4格式，则执行“resize2fs 逻辑卷路径”；</p> 
+    <p>如果此逻辑卷采用的是XFS格式，则执行“xfs_growfs 逻辑卷路径”；</p> 
+   </div> 
+  </div>  
+ </body>
+</html>

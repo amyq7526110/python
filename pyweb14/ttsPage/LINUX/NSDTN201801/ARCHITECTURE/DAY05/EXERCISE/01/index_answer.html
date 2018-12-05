@@ -1,0 +1,57 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 大数据的由来</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>随着计算机技术的发展，互联网的普及，信息的积累已经到了一个非常庞大的地步，信息的增长也在不断的加快，随着互联网、物联网建设的加快，信息更是爆炸是增长，收集、检索、统计这些信息越发困难，必须使用新的技术来解决这些问题</p> 
+   </div> 
+   <div> 
+    <h3>2 什么是大数据</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>数据指无法在一定时间范围内用常规软件工具进行捕捉、管理和处理的数据集合，需要新处理模式才能具有更强的决策力、洞察发现力和流程优化能力的海量、高增长率和多样化的信息资产</p> 
+    <p>是指从各种各样类型的数据中，快速获得有价值的信息</p> 
+   </div> 
+   <div> 
+    <h3>3 简述大数据特性有哪些</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>Volume (大体量)：可从数百TB到数十数百PB、甚至EB的规模</p> 
+    <p>Variety (多样性)：大数据包括各种格式和形态的数据</p> 
+    <p>Velocity (时效性)：很多大数据需要在一定的时间限度下得到及时处理</p> 
+    <p>Veracity (准确性)：处理的结果要保证一定的准确性</p> 
+    <p>Value (大价值)：大数据包含很多深度的价值，大数据分析挖掘和利用将带来巨大的商业价值</p> 
+   </div> 
+   <div> 
+    <h3>4 Hadoop常用组件以及核心组件有哪些</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>HDFS：Hadoop分布式文件系统（核心组件）</p> 
+    <p>MapReduce：分布式计算框架（核心组件）</p> 
+    <p>Yarn：集群资源管理系统（核心组件）</p> 
+    <p>Zookeeper：分布式协作服务</p> 
+    <p>Hbase：分布式列存数据库</p> 
+    <p>Hive：基于Hadoop的数据仓库</p> 
+    <p>Sqoop：数据同步工具</p> 
+    <p>Pig：基于Hadoop的数据流系统</p> 
+    <p>Mahout：数据挖掘算法库</p> 
+    <p>Flume：日志收集工具</p> 
+   </div> 
+   <div> 
+    <h3>5 Hadoop如何实现统计词频</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@nn01 ~]# cd /usr/local/hadoop/[root@nn01 hadoop]# mkdir /usr/local/hadoop/aa[root@nn01 hadoop]# lsbin  etc  include  lib  libexec  LICENSE.txt  NOTICE.txt  aa  README.txt  sbin  share[root@nn01 hadoop]# cp *.txt /usr/local/hadoop/aa[root@nn01 hadoop]# ./bin/hadoop jar  \ share/hadoop/mapreduce/hadoop-mapreduce-examples-2.7.6.jar  wordcount aa bb    	//wordcount为参数 统计aa这个文件夹，存到bb这个文件里面（这个文件不能存在，要是存在会报错，是为了防止数据覆盖）[root@nn01 hadoop]#  cat   bb/part-r-00000    //查看</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

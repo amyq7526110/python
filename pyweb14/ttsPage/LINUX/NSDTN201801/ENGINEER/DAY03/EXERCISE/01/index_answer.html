@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 配置虚拟机系统每次开机后SELinux处于强制启用模式</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@server0 ~]# vim  /etc/selinux/config SELINUX=enforcing  						//设置为强制启用.. ..[root@server0 ~]# reboot  </pre> 
+   </div> 
+   <div> 
+    <h3>2 为所有用户创建一个自定义命令，执行myls时相当于执行ls -lhd</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@server0 ~]# vim  /etc/bashrc.. ..alias  myls='/bin/ls –lhd  --color=auto'  </pre> 
+   </div> 
+   <div> 
+    <h3>3 简述为网络连接“System eth0”设置IPv6地址的命令行操作</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@server0 ~]# nmcli  con  mod  &quot;System eth0&quot;  ipv6.method manual  ipv6.addresses  &quot;IPv6地址/掩码长度  默认网关&quot; [root@server0 ~]# nmcli  connection  up  &quot;System eth0&quot;Connection successfully activated (D-Bus active path: /org/freedesktop/NetworkManager/ActiveConnection/1)</pre> 
+   </div> 
+   <div> 
+    <h3>4 写出创建聚合连接时针对热备份的JSON配置内容</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>热备份配置：</p> 
+    <pre class="code">'{ &quot;runner&quot;:{ &quot;name&quot;:&quot;activebackup&quot; }  }'</pre> 
+   </div> 
+   <div> 
+    <h3>5 RHEL7防火墙体系中的预设保护区域有哪些，各自的作用是什么</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>public：仅允许访问本机的sshd等少数几个服务</p> 
+    <p>trusted：允许任何访问</p> 
+    <p>block：阻塞任何来访请求</p> 
+    <p>drop：丢弃任何来访的数据包</p> 
+   </div> 
+  </div>  
+ </body>
+</html>

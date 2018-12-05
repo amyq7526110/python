@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 Audit配置文件是什么？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>/etc/audit/auditd.conf。</p> 
+   </div> 
+   <div> 
+    <h3>2 Auditctl命令的常用选项有哪些？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@svr7 ~]# auditctl  -s			//查询状态[root@svr7 ~]# auditctl  -l			//查看规则[root@svr7 ~]# auditctl  -D			//删除所有规则</pre> 
+   </div> 
+   <div> 
+    <h3>3 设置规则所有对passwd文件的写、属性修改操作都会被记录审计日志</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@svr7 ~]# audit  -w  /etc/passwd  -p wa  -k  passwd_change</pre> 
+   </div> 
+   <div> 
+    <h3>4 如何通过key搜索审计日志？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code"> [roo@svr7 ~]# ausearch -k sshd_config -i	</pre> 
+   </div> 
+   <div> 
+    <h3>5 简述ngx_http_limit_req_module模块的用法？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">limit_req_zone $binary_remote_addr  zone=one:10m rate=1r/s;limit_req zone=one burst=5;语法：limit_req_zone key zone=name:size rate=rate;将客户端IP信息存储名称为one的共享内存，空间为10M1M可以存储8千个IP的信息，10M存8万个主机状态每秒中仅接受1个请求，多余的放入漏斗漏斗超过5个则报错</pre> 
+   </div> 
+   <div> 
+    <h3>6 备份与还原MySQL数据库的方法？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[roo@svr7 ~]# mysqldump -uroot -predhat mydb table &gt; table.sql//备份mydb数据库中的table表[roo@svr7 ~]# mysqldump -uroot -predhat mydb &gt; mydb.sql//备份mydb数据库中的所有数据表[roo@svr7 ~]# mysqldump -uroot -predhat --all-databases &gt; all.sql//备份所有数据库[roo@svr7 ~]# mysql -uroot -predhat mydb  &lt; table.sql      	//还原表[roo@svr7 ~]# mysql -uroot -predhat mydb  &lt; mydb.sql    		//还原数据库[roo@svr7 ~]# mysql -uroot -predhat &lt; all.sql				//还原所有</pre> 
+   </div> 
+   <div> 
+    <h3>7 Linux系统中生成补丁与打补丁的命令是什么？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>生成补丁的命令是diff，打补丁的命令是patch。</p> 
+   </div> 
+  </div>  
+ </body>
+</html>

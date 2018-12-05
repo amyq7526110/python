@@ -1,0 +1,31 @@
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.hearder,.footer {
+    height: 100px;
+    background: silver;
+}
+
+.center {
+    margin-left: 200px;
+    width: 400px;
+    height: 400px;
+    background: #46f6fd;
+}
+
+.left {
+    width: 200px;
+    float: left;
+    height: 400px;
+    background: #d04b4e;
+}
+
+.right {
+    width: 200px;
+    float: right;
+    height: 400px;
+    background: #ffcc88;
+
+}

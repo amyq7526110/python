@@ -1,0 +1,234 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>CASE</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="index.files/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script>
+    <script type="text/javascript" src="index.files/main.js">
+    </script>
+    <link type="text/css" href="index.files/index.css" rel="Stylesheet" />
+    <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" />
+  </head>
+  <body>
+    <div class="source_style_case">
+      <a name="page_top_case" id="top_anchor" />
+      <a id="link_top" href="#page_top_case">Top</a>
+      <h1>NSD CLOUD DAY01</h1>
+      <ol class="index">
+        <li>
+          <a href="#case1">案例1：virsh基本管理操作</a>
+        </li>
+        <li>
+          <a href="#case2">案例2：qemu-img基本操作管理</a>
+        </li>
+        <li>
+          <a href="#case3">案例3：创建一个虚拟网络</a>
+        </li>
+        <li>
+          <a href="#case4">案例4：xml管理</a>
+        </li>
+        <li>
+          <a href="#case5">案例5：安装虚拟机</a>
+        </li>
+        <li>
+          <a href="#case6">案例6：离线访问虚拟机问题</a>
+        </li>
+      </ol>
+      <a name="case1">
+      </a>
+      <h2>1 案例1：virsh基本管理操作</h2>
+      <h3>1.1 问题</h3>
+      <p>本案例要求熟悉virsh的基本操作，可以熟练运用：</p>
+      <ul class="list">
+        <li>列出当前正在运行的虚拟机</li>
+        <li>查看虚拟机的信息</li>
+        <li>管理虚拟机</li>
+        <li>设置虚拟机开机自动运行</li>
+      </ul>
+      <h3>1.2 步骤</h3>
+      <p>实现此案例需要按照如下步骤进行。</p>
+      <p class="number">步骤一：virsh基本操作</p>
+      <p>1）列出当前正在运行的虚拟机</p>
+      <pre class="code"> [root@room9pc01 ~]# virsh list  Id    Name                           State---------------------------------------------------- 1     node1                          running</pre>
+      <p>2）查看虚拟机的信息</p>
+      <pre class="code">[root@room9pc01 ~]# virsh dominfo node1					//查看node1的信息Id:             1Name:           node1UUID:           20e15d2f-ea30-4aa3-96dc-91aab6283b10OS Type:        hvmState:          runningCPU(s):         2CPU time:       92.8sMax memory:     2048000 KiBUsed memory:    2048000 KiBPersistent:     yesAutostart:      disableManaged save:   noSecurity model: noneSecurity DOI:   0</pre>
+      <p class="number">步骤二：管理虚拟机</p>
+      <p>1）启动虚拟机</p>
+      <pre class="code">[root@room9pc01 ~]# virsh start node1</pre>
+      <p>2）重启虚拟机</p>
+      <pre class="code">[root@room9pc01 ~]# virsh reboot node1</pre>
+      <p>3）强制关闭虚拟机</p>
+      <pre class="code">[root@room9pc01 ~]# virsh destroy node1</pre>
+      <p>4）设置虚拟机开机自动运行</p>
+      <pre class="code">[root@room9pc01 ~]# virsh autostart node1</pre>
+      <a name="case2">
+      </a>
+      <h2>2 案例2：qemu-img基本操作管理</h2>
+      <h3>2.1 问题</h3>
+      <p>本案例要求：</p>
+      <ul class="list">
+        <li>创建一个新的镜像盘文件</li>
+        <li>使用后端模板文件创建一个新的镜像盘文件</li>
+        <li>查看镜像盘文件的信息</li>
+      </ul>
+      <h3>2.2 步骤</h3>
+      <p>实现此案例需要按照如下步骤进行。</p>
+      <p class="number">步骤一：创建一个新的镜像盘文件</p>
+      <p>qemu-img命令格式：qemu-img  命令  参数   块文件名称   大小</p>
+      <pre class="code">[root@room9pc01 ~]# qemu-img create   -f qcow2 disk.img 50G    //qcow2为创建的格式Formatting 'disk.img', fmt=qcow2 size=53687091200 encryption=off cluster_size=65536 lazy_refcounts=off</pre>
+      <p>2）使用后端模板文件创建一个新的镜像盘文件</p>
+      <p>备注：-b使用后端模板文件</p>
+      <pre class="code">[root@room9pc01 ~]# qemu-img create -b disk.img -f qcow2 disk1.imgFormatting 'disk1.img', fmt=qcow2 size=53687091200 backing_file='disk.img' encryption=off cluster_size=65536 lazy_refcounts=off</pre>
+      <p>3）使用后端模板文件创建一个16G的镜像盘文件</p>
+      <pre class="code"> [root@room9pc01 ~]# qemu-img create -b disk.img -f qcow2 disk2.img  16GFormatting 'disk1.img', fmt=qcow2 size=53687091200 backing_file='disk.img' encryption=off cluster_size=65536 lazy_refcounts=off</pre>
+      <p class="number">步骤二：查看镜像文件的信息</p>
+      <pre class="code">[root@room9pc01 ~]# qemu-img  info disk1.img image: disk.imgfile format: qcow2virtual size: 50G (53687091200 bytes)disk size: 196Kcluster_size: 65536Format specific information:    compat: 1.1    lazy refcounts: false | help_topic   || innodb_index_stats        || innodb_table_stats        || ndb_binlog_index          || plugin                     || proc                       || procs_priv                 || proxies_priv               || server_cost                || servers                    || slave_master_info         |</pre>
+      <a name="case3">
+      </a>
+      <h2>3 案例3：创建一个虚拟网络</h2>
+      <h3>3.1 问题</h3>
+      <p>创建一个虚拟网络，为之后的自定义安装虚拟机做准备：</p>
+      <ul class="list">
+        <li>创建一个名为vbr的虚拟网络</li>
+        <li>设置vbr的ip为192.168.1.254</li>
+        <li>配置vbr虚拟网络的dhcp分配地址范围100-200</li>
+        <li>启动vbr虚拟网络并用ifconfig验证</li>
+        <li>设置vbr虚拟网络开机自启动</li>
+      </ul>
+      <h3>3.2 步骤</h3>
+      <p>实现此案例需要按照如下步骤进行。</p>
+      <p class="number">步骤一：创建一个名为vbr的虚拟网络</p>
+      <pre class="code">[root@room9pc01 ~]# vim  /etc/libvirt/qemu/networks/vbr.xml&lt;network&gt;  &lt;name&gt;vbr&lt;/name&gt;				//vbr为虚拟网络的名字  &lt;bridge name="vbr"/&gt;  &lt;forward mode="nat"/&gt;  &lt;ip address="192.168.1.254" netmask="255.255.255.0"&gt;		//ip为192.168.1.254    &lt;dhcp&gt;      &lt;range start="192.168.1.100" end="192.168.1.200"/&gt;     //ip范围是100-200    &lt;/dhcp&gt;  &lt;/ip&gt;&lt;/network&gt;</pre>
+      <p class="number">步骤二：启动vbr虚拟网络并用ifconfig验证</p>
+      <pre class="code">[root@room9pc01 ~]# virsh net-define vbr		//定义vbr虚拟网络[root@room9pc01 ~]# virsh net-start vbr      //启动vbr虚拟网络[root@room9pc01 ~]# ifconfig				//igconfig验证 vbr: flags=4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500        inet 192.168.1.254  netmask 255.255.255.0  broadcast 192.168.1.255        ether 52:54:00:b7:1c:10  txqueuelen 1000  (Ethernet)        RX packets 2460  bytes 176958 (172.8 KiB)        RX errors 0  dropped 0  overruns 0  frame 0        TX packets 1948  bytes 532542 (520.0 KiB)        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0</pre>
+      <p class="number">步骤三：设置vbr虚拟网络开机自启动</p>
+      <pre class="code">[root@room9pc01 ~]# virsh net-autostart vbr</pre>
+      <a name="case4">
+      </a>
+      <h2>4 案例4：xml管理</h2>
+      <h3>4.1 问题</h3>
+      <p>熟悉xml文件，并对虚拟机的配置进行调整：</p>
+      <ul class="list">
+        <li>导出一个虚拟机的xml配置文件</li>
+        <li>编辑xml文件</li>
+        <li>重新定义虚拟机</li>
+        <li>删除此虚拟机</li>
+      </ul>
+      <h3>4.2 步骤</h3>
+      <p>实现此案例需要按照如下步骤进行。</p>
+      <p class="number">步骤一：导出虚拟机xml的配置文件</p>
+      <p>1）查看xml配置文件</p>
+      <pre class="code">[root@room9pc01 ~]# cd /etc/libvirt/qemu/[root@room9pc01 qemu]# virsh  dumpxml  node1[root@room9pc01 qemu]# virsh  dumpxml  node1 &gt; node.xml     //导出虚拟机node1的配置文件为node.xml[root@room9pc01 qemu]# lsnode.xml</pre>
+      <p>virsh命令： virsh edit 虚拟机名</p>
+      <p>备注：可以修改name，memory，disk、network等字段</p>
+      <pre class="code">[root@room9pc01 qemu]# virsh edit node1			&lt;domain type='kvm'&gt;  &lt;name&gt;node1&lt;/name&gt;						//node1为虚拟机的名称，可以随意修改  &lt;uuid&gt;76d5dc2c-5eef-4e30-8b6c-e58851814f84&lt;/uuid&gt;  //uuid可以去掉  &lt;memory unit='KiB'&gt;2048000&lt;/memory&gt;				//内存大小可以调整  &lt;currentMemory unit='KiB'&gt;2048000&lt;/currentMemory&gt;  &lt;disk type='file' device='disk'&gt;      &lt;source file='/var/lib/libvirt/images/rhel7.2.qcow2'/&gt;		//后端盘路径   .. ..  &lt;interface type='network'&gt;      &lt;mac address='52:54:00:91:52:e4'/&gt;			//mac地址和带有address字样的全部去掉   .. ..</pre>
+      <p class="number">步骤二：重新定义虚拟机</p>
+      <p>1）重新定义虚拟机</p>
+      <pre class="code">[root@room9pc01 qemu]# virsh define node1.xml</pre>
+      <p>2）取消定义的虚拟机</p>
+      <pre class="code">[root@room9pc01 qemu]# virsh undefine node1</pre>
+      <a name="case5">
+      </a>
+      <h2>5 案例5：安装虚拟机</h2>
+      <h3>5.1 问题</h3>
+      <p>本案例要求可以成功安装一个自定义虚拟机：</p>
+      <ul class="list">
+        <li>配置一个网络yum，并安装一个虚拟机</li>
+        <li>制作一个虚拟机模板，包括配置yum，网卡等</li>
+        <li></li>
+      </ul>
+      <h3>5.2 步骤</h3>
+      <p>实现此案例需要按照如下步骤进行。</p>
+      <p class="number">步骤一：配置网络yum源</p>
+      <pre class="code">[root@room9pc01 ~]# yum -y install vsftpd[root@room9pc01 ~]# vim /etc/vsftpd/vsftpd.conf listen=YESlisten_ipv6=NO[root@room9pc01 ~]# systemctl restart vsftpd[root@room9pc01 ~]# mkdir /var/ftp/centos[root@room9pc01 ~]# mount /iso/CentOS-7-x86_64-DVD-1708.iso  /var/ftp/centos/mount: /dev/loop1 写保护，将以只读方式挂载[root@room9pc01 ~]# vim /etc/yum.repos.d/dvd.repo[dvd]name=dvdbaseurl=ftp://192.168.1.254/centosenabled=1gpgcheck=0[root@room9pc01 ~]# yum clean all[root@room9pc01 ~]# yum repolist[root@room9pc01 ~]# cd /var/lib/libvirt/images/[root@room9pc01 images]# qemu-img create -f qcow2 node.qcow2 16GFormatting 'node.qcow2',fmt=qcow2 size=17179869184 encryption=off cluster_size=65536 lazy_refcounts=off </pre>
+      <p class="number">步骤二：安装一个虚拟机</p>
+      <pre class="code">[root@room9pc01 images]# virt-manager		//真机操作，启动virt-manager</pre>
+      <p>使用virt-manager软件选择新建虚拟机如图-1所示：</p>
+      <div class="image">
+        <img src="index.files/image001.png" />
+        <p>图-1</p>
+      </div>
+      <p>选择安装方式如图-2所示：</p>
+      <div class="image">
+        <img src="index.files/image002.png" />
+        <p>图-2</p>
+      </div>
+      <p>选择内存，cpu和自定义存储如图-3所示：</p>
+      <div class="image">
+        <img src="index.files/image003.png" />
+        <p>图-3</p>
+      </div>
+      <p>选择虚拟机名称和网络如图-4所示：</p>
+      <div class="image">
+        <img src="index.files/image004.png" />
+        <p>图-4</p>
+        <p>
+        </p>
+      </div>
+      <p>选择分区和KDUMP如图-5所示：</p>
+      <div class="image">
+        <img src="index.files/image005.png" />
+        <p>图-5</p>
+      </div>
+      <p>选择创建分区如图-6所示：</p>
+      <div class="image">
+        <img src="index.files/image006.png" />
+        <p>图-6</p>
+        <p>
+        </p>
+      </div>
+      <p>选择standard Partition如图-7所示：<p>图-7</p></p>
+      <p>创建一个根分区如图-8所示：</p>
+      <div class="image">
+        <img src="index.files/image007.png" />
+        <p>图-8</p>
+      </div>
+      <p class="number">步骤三：制作一个虚拟机模板</p>
+      <p>1）禁用selinux</p>
+      <pre class="code">[root@localhost ~]# vim /etc/selinux/configSELINUX=disabled</pre>
+      <p>2）卸载防火墙与NetworkManager</p>
+      <pre class="code">[root@localhost ~]# yum -y remove NetworkManager-* firewalld-* python-firewall</pre>
+      <p>3）配置yum源</p>
+      <pre class="code">[root@localhost ~]# vim /etc/yum.repos.d/dvd.repo[dvd]name=dvdbaseurl=ftp://192.168.1.254/centosenabled=1gpgcheck=0[root@localhost ~]# yum clean all[root@localhost ~]# yum repolist</pre>
+      <p>4）导入公钥</p>
+      <p>注意：把/etc/yum.repos.d/dvd.repo的gpgcheck=0改成gpgcheck=1</p>
+      <pre class="code">[root@localhost ~]# lftp 192.168.1.254lftp 192.168.4.254:~&gt; cd centoslftp 192.168.4.254:/centos&gt; get RPM-GPG-KEY-CentOs-7lftp 192.168.4.254:/centos&gt; exit[root@localhost ~]# rpm --import RPM-GPG-KEY-CentOs-7[root@localhost ~]# yum -y install net-tools vim-enhanced bridge-utils psmisc</pre>
+      <p>5）配置网卡</p>
+      <pre class="code">[root@localhost ~]# vim /etc/sysconfig/network-scripts/ifcfg-eth0DEVICE="eth0"ONBOOT="yes"IPV6INIT="no"TYPE="Ethernet"BOOTPROTO ="dhcp"[root@localhost ~]# systemctl restart network</pre>
+      <p>6）禁用空路由</p>
+      <pre class="code">[root@localhost ~]# vim /etc/sysconfig/networkNOZEROCONF="yes"</pre>
+      <p>7）添加console配置</p>
+      <pre class="code">[root@localhost ~]# vim /etc/default/grubGRUB_CMDLINE_LINUX="biosdevname=0 net.ifnames=0 console=ttyS0,115200n8"GRUB_DISABLE_LINUX_UUID="true"GRUB_ENABLE_LINUX_LABEL="true"</pre>
+      <p>8）重新生成grub.cfg</p>
+      <pre class="code">[root@localhost ~]# grub2-mkconfig   -o  /boot/grub2/grub.cfg</pre>
+      <p>9）安装扩展分区软件</p>
+      <pre class="code">[root@localhost ~]# yum  install  -y  cloud-utils-growpart</pre>
+      <p>10）第一次开机自动扩容</p>
+      <pre class="code">[root@localhost ~]# /usr/bin/growpart /dev/vda 1[root@localhost ~]# /usr/sbin/xfs_growfs   /</pre>
+      <p>11）关闭虚拟机后执行信息清理工作</p>
+      <pre class="code">[root@room9pc01 ~]# virt-sysprep -d centos7.0    //真机上面操作，centos7.0为虚拟机名称</pre>
+      <a name="case6">
+      </a>
+      <h2>6 案例6：离线访问虚拟机问题</h2>
+      <p>本案例要求可以离线访问虚拟机：</p>
+      <ul class="list">
+        <li>利用xml文件生成一个新的虚拟机</li>
+        <li>利用guestmount实现离线访问虚拟机</li>
+      </ul>
+      <h3>6.1 步骤</h3>
+      <p>实现此案例需要按照如下步骤进行。</p>
+      <p class="number">步骤一：用xml生成一个新的虚拟机</p>
+      <pre class="code">[root@room9pc01 ~]# cd /etc/libvirt/qemu/[root@room9pc01 qemu]# cp centos7.0.xml  local.xml[root@room9pc01 qemu]# vim local.xml &lt;domain type='kvm'&gt;  &lt;name&gt;local&lt;/name&gt;		//修改名字  &lt;memory unit='KiB'&gt;2048000&lt;/memory&gt;		//修改内存  &lt;currentMemory unit='KiB'&gt;2048000&lt;/currentMemory&gt;...      &lt;source file='/var/lib/libvirt/images/local.img'/&gt; 	//img文件位置</pre>
+      <p>注意：除这些外还要把mac地址删掉，带address字样的全部删除</p>
+      <pre class="code">[root@room9pc01 ~]# cd /var/lib/libvirt/images/[root@room9pc01 images]# qemu-img  create –b node.qcow2 –f qcow2 local.img[root@room9pc01 images]# virsh define /etc/libvirt/qemu/local.xml[root@room9pc01 images]# virsh start local[root@room9pc01 images]# virsh console local</pre>
+      <p class="number">步骤二：guestmount实现离线访问</p>
+      <p>基本用法：guestmount  -a  虚拟机磁盘路径  -i  /挂载点</p>
+      <p>-a：指定虚拟磁盘</p>
+      <p>-i：挂载点</p>
+      <pre class="code">[root@room9pc01 ~]# mkdir /mnt/kdisk[root@room9pc01 ~]# guestmount  -a  node1.qcow2  -i  /mnt/kdisk[root@room9pc01 ~]# cd /mnt/kdisk[root@room9pc01 kdisk]#  lsbin   	home  	media  	opt    	sbin 	tmpboot  	lib      misc   	proc   	selinux 	usr</pre>
+      <h3>6.2 </h3>
+    </div>
+  </body>
+</html>

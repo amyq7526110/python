@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 简述什么是多表查询</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>多表查询，也称为连接查询，将2个或2个以上的表 按某个条件连接起来，从中选取需要的数据</p> 
+    <p>当多个表中 存在相同意义的字段（字段名可以不同）时，可以通过该字段连接多个表</p> 
+   </div> 
+   <div> 
+    <h3>2 简述用户授权命令的语法格式。</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">GRANT  权限列表  ON  库名.表名  TO  用户名@'客户端地址'   [ IDENTIFIED BY '密码' ]  [ WITH GRANT OPTION ];</pre> 
+   </div> 
+   <div> 
+    <h3>3 数据库授权综合练习，按题目要求写出对应的授权命令。</h3> 
+    <p>1、查看当前数据库服务器有哪些授权用户?</p> 
+    <p>2、授权管理员用户可以在网络中的任意主机登录，对所有库和表有完全权限且有授权的权限登陆密码123456</p> 
+    <p>3、授权webadmin用户可以从网络中的所有主机登录，对bbsdb库拥有完全权限，且有授权权限，登录密码为 123456</p> 
+    <p>4、不允许数据库管理员在数据库服务器本机登录。</p> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">1.select user from mysql.user;2.grant all on *.*  to  root@“%” identified  by “123456” with grant option;3.grant all  on  bbsdb.*  to   webadmin@“%” identified  by “123456” with grant option; grant insert  on  mysql.user to  webadmin@“%”;4.delete from mysql.user where host in (“::1”,”127.0.0.1”,”localhost”,”stu.tedu.cn”) and user=”host”;flush privileges;</pre> 
+   </div> 
+   <div> 
+    <h3>4 简述撤销用户授权命令的语法格式。</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">revoke   权限revoke  权限列表  on  数据库名  from  用户名@”客户端地址”；</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

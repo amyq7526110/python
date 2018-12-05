@@ -1,0 +1,579 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TTS视频播放</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" href="http://tts.tmooc.cn:80/private/ttsfront/css/customScrollbar/jquery.mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="http://tts.tmooc.cn:80/private/ttsfront/css/style.css">
+    <link rel="stylesheet" href="http://tts.tmooc.cn:80/private/ttsfront/css/studyplan.css">
+     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+
+        }
+
+        .md2017110601lty.md2017082401lty, .md2017110601lty.md2017082403lty {
+            min-width: 1308px;
+        }
+
+        .md2017092101lty {
+            min-height: 500px;
+            /*width: 1210px;*/
+            width: 1300px;
+            margin: 0 auto;
+            position: relative;
+            background:#000;
+        }
+
+        .page-body {
+            background: #000;
+            min-width: 1308px;
+        }
+
+        .md2017092101lty:before {
+            content: '';
+            display: table;
+        }
+
+        .md2017092101lty .video-box {
+            /*width: 880px;*/
+            width: 1200px;
+            height: 574px;
+            background: #000;
+            margin: 0px auto 0;
+            position: relative;
+        }
+
+        .md2017092101lty .video-box .v-lty {
+            /*width: 880px;*/
+            width: 100%;
+            height: 574px;
+            background: #000;
+            position: relative;
+            float: left;
+        }
+
+        .xxw1210 .l-lty {
+            width: 247px;
+            height: 574px;
+            background: rgba(41, 40, 41, .5);
+            padding: 0 0 20px 3px;
+            overflow-y: auto;
+        }
+
+        .xxw1210 .l-lty .video-list {
+            margin-bottom: 30px;
+        }
+
+        .xxw1210 .l-lty .video-list > h3 {
+            color: #cccccc;
+            font-size: 16px;
+        }
+
+        .xxw1210 .l-lty .video-list > h3 {
+            margin-bottom: 15px;
+        }
+
+        .xxw1210 .l-lty .video-list > p {
+            color: #fff;
+            font-size: 14px;
+            margin: 8px;
+        }
+
+        .xxw1210 .l-lty .video-list > p:hover,  .xxw1210 .l-lty .video-list > p.active {
+            color: #00abe1;
+        }
+
+        .xxw1210 .l-lty .video-list > p:hover b,  .xxw1210 .l-lty .video-list > p.active b {
+            color: #00abe1;
+        }
+
+        .xxw1210 .l-lty .video-list > p b {
+            display: table-cell;
+            width: 85px;
+            vertical-align: top;
+        }
+
+        .xxw1210 .l-lty .video-list > p a {
+            display: table-cell;
+            color: #fff;
+            font-size: 14px;
+            vertical-align: top;
+        }
+
+        .xxw1210 .l-lty .video-list > p:hover a, .xxw1210 .l-lty .video-list > p.active a {
+            color: #00abe1;
+        }
+        
+        .xxw1210 {
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: #000;
+            height: 100%;
+            width: 0;
+            padding:5px 0 5px 46px;
+        }
+        .xxw1210 .video-list-x {
+            overflow: hidden;
+            height: 100%;
+        }
+        .xxw1210 .l-lty {
+            width: 247px;
+            height: 100%;
+        }
+        .btns-rightboxx {
+            position: absolute;
+            left: 0;
+            top: 50px;
+            background: #1c1c1c;
+            border-radius: 2px;
+            width: 46px;
+        }
+
+        .btns-rightboxx .right-btnsx {
+            display: inline-block;
+            padding: 6px;
+            text-align: center;
+            color: #fff;font-size: 14px;
+            cursor: pointer;
+        }
+        .btns-rightboxx .right-btnsx:hover {
+            color: #fff;
+        }
+        .xxw1210 .xxwtit {
+            color: #fff;margin-bottom:10px;border-bottom:1px solid #545454;line-height:45px;
+        }
+          .md2017111301-slider:first-child .questions-cont-x, .md2017111301-slider:last-child .questions-cont-x {
+            background: url(http://tts.tmooc.cn:80/private/ttsfront/img_17/img_menu/qus_girl_new.png) no-repeat 460px 10px;
+            line-height: 30px;
+            padding-top: 0;
+        }
+        .md2017111301-x {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, .9);
+            z-index: 999;
+        }
+
+        .md2017111301-slider:last-child .md2017111301-slider-txt {
+            font-size: 40px;
+            line-height: 76px;
+        }
+        /*新增2018-5-28*/
+       .md2017092101lty .video-stage{
+            width:1200px;
+            margin:0 auto;
+            height:95px;
+            line-height: 95px;
+            font-size:22px;
+            color:#c3c3c3;
+       }
+       /*新增2018-5-29*/
+       #videoDIV .player-bg{
+            width:101%;
+            position:absolute;
+            top:0;
+            left:0;
+            right:0;
+            bottom:0;
+            background:rgba(0,0,0,.7);
+            z-index:10;
+            cursor:pointer;
+       }
+       #videoDIV .player-bg .video-ended{
+            height:120px;
+            position: absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+       }
+       #videoDIV .player-bg .video-ended .replay-lty{
+           float:left;
+           margin-right: 40px;
+       }
+       #videoDIV .player-bg .video-ended .next-video-lty{
+           float:right;
+           margin-top:4px;
+       }
+       #videoDIV .player-bg .video-ended p{
+           text-align: center;
+           font-size: 18px;
+           color:#fff;
+           margin-top:18px;
+       }
+    </style>
+</head>
+<body>
+<input type="hidden" value="E_bfuijdf" id="stuCode">
+<div class="page-header" id="headerDiv"></div>
+<div class="page-body">
+    <div class="md2017092101lty clearfix">
+        <div class="video-box" style="left:-145px;width:1000px;">
+            <div class="v-lty">
+                <div class="xdyplayer" id="videoDIV" style="height:100%; width:100%;"></div>
+            </div>
+        </div>
+        <!--显示视频所属阶段和天数-->
+        <div class="video-stage" id="video_stage_lty">LINUX第四阶段-PROJECT2-DAY01</div>        
+        <div class="xxw1210 active-x1210" style="width:293px;">
+            <div class="btns-rightboxx">
+                <span class="right-btnsx" id="menu_open"><img src="http://tts.tmooc.cn:80/private/ttsfront/img_17/img_menu/menu_icon_03.png">章节</span>
+            </div>
+           <div class="video-list-x">
+               <div class="l-lty">
+                   <div class="xxwtit">章节</div>
+                   <div class="l-lty-v">
+                       <div class="video-list">
+                           <!--<h3>APP原型分享</h3>-->
+                           <!--<h3>APP原型分享</h3>-->
+                            
+                                
+                                    <p id="active_nsd18061101pm.m3u8"><a href="javascript:;" onclick="changeVideo('nsd18061101pm.m3u8',this)" title="11月1日下午">11月1日下午</a></p>
+                                
+                                    <p id="active_nsd18061101am.m3u8"><a href="javascript:;" onclick="changeVideo('nsd18061101am.m3u8',this)" title="11月1日上午">11月1日上午</a></p>
+                                
+                                    <p id="active_nsd18061101pm2.m3u8"><a href="javascript:;" onclick="changeVideo('nsd18061101pm2.m3u8',this)" title="11月1日晚上">11月1日晚上</a></p>
+                                
+                            
+                            
+                       </div>
+                   </div>
+               </div>
+           </div>
+        </div>
+    </div>
+</div>
+<div class="md2017111301-x one-1116xp" style="display: none;">
+    <div class="md2017111301-cont">
+        <div class="md2017111301-slider active-1115x one-1116x">
+            <div class="md2017111301-slider-h">
+                <p class="md2017111301-slider-txt">感谢您报名达内VIP课程</p>
+            </div>
+            <div class="md2017111301-slider-cont">
+                <div class="questions-cont-x">
+                    <p id="groupName" class="qus-tit-1115x">VIP技术群</p>
+                    <p>学习过程中有问题由谁能解答？哪里可以获取到课程的相关资料和软件？有没有好的学习方法？如何定制学习计划？加入达内VIPQQ群，专业技术指导老师为你解答，更有精彩活动等你参加。</p>
+                    <p id="groupNumber" style="color: #000;font-size: 24px;line-height: 30px;font-weight: bold;">群号:</p>
+                </div>
+                <div class="btn-group-1115x" style="margin-top:-20px;padding-left:80px;">
+                    <a id="techerGroup" target="_blank" href="#" class="btn-1115x btn-1115x-next" style="margin-right:20px;">一键进群</a> <a id="jujue" style="color: #547efb;cursor: pointer;">残忍拒绝</a>
+                </div>
+                <p style="line-height: 40px;color: #547feb;text-align: center">点击一键进群，即可开始学习</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page-footer" id="footerDiv"></div>
+<script src="http://tts.tmooc.cn:80/private/ttsfront/js/jquery-2.1.1.js"></script>
+<script src="http://tts.tmooc.cn:80/private/ttsfront/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="http://tts.tmooc.cn:80/private/ttsfront/js/jquery-cookie.js"></script>
+<script src="http://tts.tmooc.cn:80/private/ttsfront/js/layer.js"></script>
+<script src="http://tts.tmooc.cn:80/private/ttsfront/js/main.js"></script> 
+<script src="http://tts.tmooc.cn:80/private/ttsfront/js/XDYplayer.js?v=1"></script>
+<script src="http://tts.tmooc.cn:80/private/ttsfront/js/video/ttsPlayer-lty.js?v=1"></script>
+<script src="http://tts.tmooc.cn:80/private/ttsfront/js/video/ccVideo.js"></script> 
+<script src="http://tts.tmooc.cn:80/private/ttsfront/js/video/checkLogin.js"></script> 
+<script>
+//视频服务器路径
+var videoBase = "http://videotts.it211.com.cn/";
+//获取列表个数
+var videoSize=3;
+//视频对象id
+var firstVideoId='';
+//第一个对象的url
+var firstVideoUrl='';
+//当前视频url,不包含路径
+var currentShortVidioUrl='';
+//百分比
+var schedule="0";
+//页面上默认的当前url，为了下边检测发成功过就不发了
+var videoUrl='';
+var videoUrls=new Array([10]);
+//个数不为0时获取第一个的id和url，cc的url就是ccVideoId
+if(videoSize>0){
+    firstVideoId="668643";
+    firstVideoUrl="nsd18061101pm.m3u8";
+    videoUrl=firstVideoUrl;
+    currentShortVidioUrl=firstVideoUrl.split("\.")[0];
+}
+
+/*播放结束事件回调-lty-2018-5-30*/
+        function ended_callback(){
+            console.log('end too');
+            $(".player-poster").hide();//隐藏广告截图
+            $(".player-state-icon").hide();//隐藏播放按钮
+            var next_video_id_=$(".video-list>p.active").next().attr("id"),
+                cur_video_id_=$(".video-list>p.active").attr("id");
+            //存在下一个视频
+            if(next_video_id_){
+                 //动态添加蒙层
+                var html_='<div class="player-bg"><div class="video-ended"><div class="replay-lty"><img src="http://tts.tmooc.cn:80/private/ttsfront/img_17/img_menu/replay-icon.png"  width="56" height="60" style="cursor:pointer;"><p class="tit">重播</p></div>'+
+                     '<div class="next-video-lty"><img src="http://tts.tmooc.cn:80/private/ttsfront/img_17/img_menu/next-video-icon.png" width="56" height="56" style="cursor:pointer;"><p class="tit">下一个</p></div></div></div>';
+                $(".xdyplayer-video-wrap").append(html_);
+                
+                $(".player-bg").on("click",".replay-lty",function(){
+                    $(".player-bg").hide();
+                    changeVideo(cur_video_id_.replace("active_",""),{"replay":true});
+                }).on("click",".next-video-lty",function(){
+                    $(".player-bg").hide();
+                    changeVideo(next_video_id_.replace("active_",""));
+                    $(".video-list>p.active").next().addClass("active").prev().removeClass("active");
+                });
+            
+            }else{//不存在需要跳转到下一天 或者  为当前教历最后一天的最后一个视频
+                var menuId=window.location.href.split('?')[1].split('&')[0].split('=')[1];
+                $.ajax({
+                    url:TTS_URL+'video/findNextDayVideo',
+                    dataType:'json',
+                    data:{menuId:menuId},
+                    success:function(d){
+                        if(d.code==1){
+                            var next_menuId=d.list[0].menuId;
+                             //动态添加蒙层
+                            var html_='<div class="player-bg"><div class="video-ended"><div class="replay-lty"><img src="http://tts.tmooc.cn:80/private/ttsfront/img_17/img_menu/replay-icon.png"  width="56" height="60" style="cursor:pointer;"><p class="tit">重播</p></div>'+
+                                 '<div class="next-video-lty"><img src="http://tts.tmooc.cn:80/private/ttsfront/img_17/img_menu/next-video-icon.png" width="56" height="56" style="cursor:pointer;"><p class="tit">下一天</p></div></div></div>';
+                            $(".xdyplayer-video-wrap").append(html_);
+                            
+                            $(".player-bg").on("click",".replay-lty",function(){
+                                $(".player-bg").hide();
+                                changeVideo(cur_video_id_.replace("active_",""),{"replay":true});
+                            }).on("click",".next-video-lty",function(){
+                                $(".player-bg").hide();
+                                var href_=location.href.split("?")[0],
+                                    version=location.href.split("&")[1];
+                                location.href=href_+"?menuId="+next_menuId+"&"+version;
+                                
+                            });
+                        }else if(d.code==-1){
+                            //当前播放视频为当前教历的最后一个 只显示重播按钮
+                            var html_='<div class="player-bg"><div class="video-ended"><div class="replay-lty"><img src="http://tts.tmooc.cn:80/private/ttsfront/img_17/img_menu/replay-icon.png" width="56" height="60" style="cursor:pointer;"><p class="tit">重播</p></div></div></div>';
+                            $(".xdyplayer-video-wrap").append(html_);
+                            
+                            $(".player-bg").on("click",".replay-lty",function(){
+                                $(".player-bg").hide();
+                                changeVideo(cur_video_id_.replace("active_",""),{"replay":true});
+                            });
+                            
+                        }
+                    }
+                })
+            }
+        }
+    function changeVideo(vedioURL, opt){
+      var videoName = vedioURL.split("\.")[0];
+      //此参数在定时器执行的时候用
+      currentShortVidioUrl=vedioURL.split("\.")[0];
+      window.ins.destory();
+      
+     
+      createVideo(videoBase + videoName + "/" +vedioURL,function(video_){
+        //注册播放结束的事件处理函数
+            video_.on("ended",function(){
+                ended_callback();
+            });
+            if(opt&&opt.replay){//点击重播 立即播放
+                video_[0].play();
+            }
+      });
+      /**保存观看日志**/
+      saveVideoStatsLog(vedioURL);
+    }
+
+
+//页面加载完执行
+    $(function(){
+        $("#headerDiv").load(TTS_URL+"ttsPage/main/header.html");
+        $("#footerDiv").load(TTS_URL+"ttsPage/main/footer.html");
+        /* $('.page-header .container').load(TTS_URL+"ttsPage/main/header.html");
+        $('.page-footer .container').load(TTS_URL+"ttsPage/main/footer.html"); */
+        
+        
+        //创建播放器
+        createVideo(videoBase + currentShortVidioUrl + "/" +firstVideoUrl,function(video_){
+            //注册播放结束的事件处理函数
+            video_.on("ended",function(){
+                ended_callback();
+            }).on("play",function(){
+                var lookingVideoInfo =  "notHave";
+                console.log("lookingVideoInfo:"+lookingVideoInfo);
+                if(lookingVideoInfo != "have") {
+                    console.log("学员今天还未有观看视频记录，进入保存学员观看视频记录方法");
+                    var cur_video_id_=$(".video-list>p.active").attr("id");
+                    saveVideoStatsLog(cur_video_id_.replace("active_",""));
+                }
+            });
+        });
+        checkLearningSchedule();
+        
+        //获取是不是tmooc的试听课程
+        var isTmoocTest="no";
+        if(isTmoocTest=='yes'){//是试听课程
+            //不验证登录
+        }else{
+            //每5分钟检测一下登录状态,踢出登录状态
+            checksession(TTS_URL);
+        }
+    });
+    
+    //视频观看超过85%就调用action，记录观看视频个数，如果是新版vip或者svip则开启下一阶段
+ function checkLearningSchedule(){
+      setInterval(function(){
+        schedule=Math.round((xdyplayer.getCurrentTime()/xdyplayer.getDuration())*100);
+        if(schedule>85 && checkVideoUrl(currentShortVidioUrl)){
+                $.ajax({
+                    type : "POST",
+                    url : "http://tts.tmooc.cn:80/video/saveVipStudentCount?menuId=627609",
+                    data:{'videoUrl':currentShortVidioUrl},
+                    dataType:"html",
+                    success : function(result) {
+                        console.info("you have watched this video");
+                        videoUrls.push(currentShortVidioUrl);
+                    },
+                    error : function() {
+                        console.info("error");
+                    }
+                });
+        }
+      },1000*30*1);
+    }
+  
+  /**
+   * 保存观看日志
+   * @param {Object} vedioURL
+   */
+  function saveVideoStatsLog(vedioURL){
+    $.ajax({
+            url:"http://tts.tmooc.cn:80/video/saveVideoStatsLog?menuId=627609",
+            type:'POST',
+            data:{'videoUrl':vedioURL},
+            dataType:'json',
+            async:false,
+            success:function(msg){
+                console.log("video log save success");
+            },
+            error:function(msg){
+                console.log("video log save fail");
+            }
+        });
+  }
+    
+    //检查数组里边有没这个
+    function checkVideoUrl(vu){
+    for(var i=0;i<videoUrls.length;i++){
+      if(videoUrls[i]==vu){
+        return false;
+      }
+     }
+      return true;
+    };
+    
+    
+    //浏览器关闭调用写日志方法
+    $(window).bind('beforeunload',function(){
+                 saveVideoStatsLog("");
+              });
+    
+    
+
+/*-------------------------以下是默认点亮效果------------------------------------*/
+     $('.video-list p:first').addClass('active');
+    $('.l-lty').mCustomScrollbar({theme: "dark-3"});
+    /*点击当前p高亮显示*/
+    $('.video-list>p').click(function () {
+        if (!$(this).hasClass('active')) {
+            $(this).addClass('active').siblings().removeClass('active').parent('.video-list').siblings().find('p.active').removeClass('active');
+        }
+    });
+    /*刷新后显示当前p高亮*/
+    $('#active_id').addClass('active');
+
+    $('#menu_open').click(function () {
+        if ($('.xxw1210').hasClass('active-x1210')) {
+            $('.xxw1210').removeClass('active-x1210').stop().animate({width: '46'}, 200);
+            $('.md2017092101lty .video-box').stop().animate({left: '0px',width:'1200'}, 200);
+        } else {
+            $('.xxw1210').addClass('active-x1210').stop().animate({width: '293'}, 200);
+            $('.md2017092101lty .video-box').stop().animate({left: '-145px',width:'1000'}, 200);
+        }
+    })
+    
+    
+    /*-----------------------以下是加群弹窗----------------------------------------*/
+   
+   /* 判断登录的时候需要不需要弹出加群弹窗*/
+      $.ajax({
+        url:TTS_URL + 'vipStudent/getGroupNum',
+        dataType : 'json',
+        data : {},
+        success:function(d){
+            if(d.code == 1){
+                if(d.list.length >0 && null != d.list[0]) {
+                    var groupName = d.list[0].groupName;
+                    var groupNumber = d.list[0].groupNumber;
+                    var idKey = d.list[0].idKey;
+                    if(null != groupName && null!= groupNumber && null != idKey) {
+                        $('#groupNumber').text("群号:"+ groupNumber);
+                        $('.md2017111301-x').show();
+                        $('#techerGroup').attr('href','//shang.qq.com/wpa/qunwpa?idkey=' + idKey);
+                        $('#techerGroup').click(function(){
+                            $('.md2017111301-x').hide();
+                            // 加群后修改学员字段
+                            $.ajax({
+                                url:TTS_URL + 'vipStudent/updateGroupNumByStuClsId',
+                                dataType : 'json',
+                                data : {groupNumber:"1"},
+                                success:function(d){
+                                    if(d.code == 1){
+                                    }
+                                }
+                                
+                            });
+                            
+                        });
+                        $('#jujue').click(function(){
+                             $('.md2017111301-x').hide();
+                             // 加群后修改学员字段
+                            $.ajax({
+                                url:TTS_URL + 'vipStudent/updateGroupNumByStuClsId',
+                                dataType : 'json',
+                                data : {groupNumber:"0"},
+                                success:function(d){
+                                    if(d.code == 1){
+                                    }
+                                }
+                                
+                            });
+                        });
+                        
+                    }else{
+                        $('.md2017111301-x').hide();
+                    }
+                    
+                }else{
+                    $('.md2017111301-x').hide();
+                }
+            }else{
+                 $('.md2017111301-x').hide();
+            }
+        }
+        
+    })  
+
+</script>
+</body>
+</html>

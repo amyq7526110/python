@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 简述HTTP、HTML的含义及作用</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>HTTP指的是Hyper Text Transfer Protocol，超文本传输协议，主要为网站服务器程序与浏览器之间传输网页定义相关的标准。</p> 
+    <p>HTML指的是Hyper Text Markup Language，超文本标记语言，是静态网页文件的标记规范。</p> 
+   </div> 
+   <div> 
+    <h3>2 已知Web站点server0的网页目录位于/var/www/html，那么对应与网址http://server0/private/的服务端文件是什么</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>URL网址的/对应Web服务端上DocumentRoot指定的网页目录，其后的URL路径也对应到服务端网页目录下的子目录；当未指定网页文件名时，默认首页为index.html。</p> 
+    <p>因此，此题对应的服务端文件应该是/var/www/html/private/index.html。</p> 
+   </div> 
+   <div> 
+    <h3>3 简述实现基于域名的多个虚拟Web主机时基本的配置内容</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@server0 ~]# /etc/httpd/conf.d/httpd.conf.. ..&lt;VirtualHost  IP地址:端口&gt;       ServerName  站点1的DNS名称       DocumentRoot  站点1的网页根目录&lt;/VirtualHost&gt;&lt;VirtualHost  IP地址:端口&gt;       ServerName  站点2的DNS名称       DocumentRoot  站点2的网页根目录&lt;/VirtualHost&gt;.. ..</pre> 
+   </div> 
+   <div> 
+    <h3>4 调整httpd服务配置，拒绝172.34.0.0/24网段的客户机访问/var/www/html/doc目录</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>修改网站配置文件，添加如下内容：</p> 
+    <pre class="code">&lt;Directory  &quot;/var/www/html/doc&quot;&gt;        Require  all  granted        Require  not  ip  172.34.0.0/24&lt;/Directory&gt;</pre> 
+   </div> 
+   <div> 
+    <h3>5 在启用SELinux保护的情况下，如何允许httpd开启8909端口</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@server0 ~]# semanage  port  -a  -t  http_port_t  -p tcp  8909.. ..[root@server0 ~]# semanage  port  -l  |  grep  http_port  		//确认结果http_port_t     tcp      8909,80, 81, 443, 488, 8008, 8009, 8443, 9000 .. ..</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

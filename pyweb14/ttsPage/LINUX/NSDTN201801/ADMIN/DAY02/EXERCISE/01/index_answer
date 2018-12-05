@@ -1,0 +1,58 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 请列举你所知道的Linux发行版</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>常见的Linux发行版：</p> 
+    <ul class="list"> 
+     <li>Red Hat Enterprise Linux 5/6/7 </li> 
+     <li>CentOS 5/6/7 </li> 
+     <li>Suse Linux Enterprise 11 </li> 
+     <li>Debian Linux 6.0 </li> 
+     <li>Ubuntu Linux 13.04/13.10 </li> 
+     <li>Oracle Linux 6 </li> 
+    </ul> 
+   </div> 
+   <div> 
+    <h3>2 Linux系统的根目录、/dev目录的作用是什么</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <ul class="list"> 
+     <li>/：linux文件系统的起点，linux所有的文件都放在其中。 </li> 
+     <li>/dev：存放硬盘、键盘、鼠标、光驱等各种设备文件。 </li> 
+    </ul> 
+   </div> 
+   <div> 
+    <h3>3 Linux中常用的文件系统类型有哪些</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <ul class="list"> 
+     <li>EXT4，第4代扩展（Extended）文件系统，RHEL 6.x系列默认 </li> 
+     <li>XFS，高性能日志文件系统，RHEL7.x系列默认 </li> 
+     <li>SWAP，交换文件系统，起虚拟内存的作用，在一定程度上缓解物理内存不足的问题 </li> 
+    </ul> 
+   </div> 
+   <div> 
+    <h3>4 从RHEL7桌面环境如何快速切换到字符控制台终端</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>按组合键Ctrl+Alt+Fn，其中Fn为F3、F4、F5、F6键中的任何一个。</p> 
+   </div> 
+   <div> 
+    <h3>5 如何查看当前主机的CPU处理信息</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@svr7 ~]# lscpuArchitecture:          x86_64CPU op-mode(s):        32-bit, 64-bit.. ..厂商 ID：           GenuineIntelCPU 系列：          6型号：              13型号名称：        QEMU Virtual CPU version (cpu64-rhel6).. ..</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

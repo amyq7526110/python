@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 iptables的4表和5链分别是什么</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1）4表包括：nat表、filter表、raw表、mangle表</p> 
+    <p>2）5链包括：INPUT链、OUTPUT链、FORWARD链、PREROUTING链、POSTROUTING链</p> 
+   </div> 
+   <div> 
+    <h3>2 查看iptables防火墙规则的命令是什么</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@svr7 ~]# iptables  -nL  INPUTtarget     prot opt source               destinationACCEPT     udp  --  0.0.0.0/0            0.0.0.0/0ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0ACCEPT     tcp  --  0.0.0.0/0            0.0.0.0/0[root@svr7 ~]# iptables  -L  INPUT  --line-numbersnum  target     prot opt source         destination1    ACCEPT     udp   --  anywhere     anywhere2    ACCEPT     icmp --  anywhere     anywhere3    ACCEPT     tcp  --  anywhere        anywhere</pre> 
+   </div> 
+   <div> 
+    <h3>3 清空iptables防火墙规则的命令是什么</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@svr7 ~]# iptables  -D  INPUT  3[root@svr7 ~]# iptables  -nL  INPUTChain INPUT (policy ACCEPT)target     prot opt source               destinationACCEPT     udp  --  0.0.0.0/0            0.0.0.0/0ACCEPT     icmp --  0.0.0.0/0            0.0.0.0/0[root@svr7 ~]# iptables  -F[root@svr7 ~]# iptables  -t  nat  -F[root@svr7 ~]# iptables  -t  mangle  -F[root@svr7 ~]# iptables  -t  raw  -F</pre> 
+   </div> 
+   <div> 
+    <h3>4 如何开启的Linux的路由转发功能</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code"># echo 'net.ipv4.ip_forward=1' &gt;&gt; /etc/sysctl.conf</pre> 
+    <p>或者</p> 
+    <pre class="code"># echo 1 &gt; /proc/sys/net/ipv4/ip_forward</pre> 
+   </div> 
+   <div> 
+    <h3>5 创建一条iptables防火墙规则，实现SNAT源地址转换的命令</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="hide">[root@proxy ~]# iptables  -t  nat  -A POSTROUTING \ &gt; -s  192.168.4.0/24  -p tcp –dport 80 -j SNAT  --to-source  192.168.2.5</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

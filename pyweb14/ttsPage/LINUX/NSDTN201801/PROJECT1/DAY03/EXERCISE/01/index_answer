@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 网络层的功能有哪些？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>定义了基于IP协议的逻辑地址</p> 
+    <p>连接不同的媒介类型</p> 
+    <p>选择数据通过网络的最佳路径</p> 
+   </div> 
+   <div> 
+    <h3>2 ping工具与哪个协议有关？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>ICMP</p> 
+   </div> 
+   <div> 
+    <h3>3 获取路由表的方式有哪些？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>静态路由、默认路由、动态路由</p> 
+   </div> 
+   <div> 
+    <h3>4 请描述默认路由以及作用</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>默认路由是一种特殊的静态路由</p> 
+    <p>默认路由的目标网络为 0.0.0.0 0.0.0.0，可匹配任何目标地址</p> 
+    <p>只有当从路由表中找不到任何明确匹配的路由条目时，才会使用默认路由，一般在企业网关出口使用</p> 
+   </div> 
+   <div> 
+    <h3>5 分别描述思科三层交换机的接口接配置ip地址以及配置中继链路的方法。</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>配置ip地址</p> 
+    <p>首先进入相关接口，使用 no switchport命令转换为路由器接口，然后使用ip address命令配置ip地址</p> 
+    <p>配置中继链路</p> 
+    <p>进入相关接口后首先使用switchport trunk encapsulation dot1q命令为接口打上公有封装，然后使用switchport mode trunk 命令改为中继模式</p> 
+   </div> 
+  </div>  
+ </body>
+</html>

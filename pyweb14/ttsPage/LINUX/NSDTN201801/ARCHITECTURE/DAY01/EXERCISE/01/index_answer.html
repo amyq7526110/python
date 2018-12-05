@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 简述什么是ansible</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>ansible是2013年推出的一款IT自动化和DevOps软件，2015年被RedHat收购。是基于Python研发，糅合很多老运维工具的优点，实现了批量操作系统配置，批量程序部署，批量运行命令等功能</p> 
+   </div> 
+   <div> 
+    <h3>2 ansible可以实现什么功能</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>自动化部署APP</p> 
+    <p>自动化管理配置项</p> 
+    <p>自动化持续交付</p> 
+    <p>自动化（AWS）云服务管理</p> 
+   </div> 
+   <div> 
+    <h3>3 ansible优点有哪些</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>只需要SSH和Python即可使用，无客户端</p> 
+    <p>ansible功能强大，模块丰富</p> 
+    <p>上手容易，门槛低</p> 
+    <p>基于Python开发，做二次开发更容易</p> 
+    <p>使用公司比较多，社区活跃</p> 
+   </div> 
+   <div> 
+    <h3>4 简述ansible中主机定义与分组的步骤</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1、ansible.cfg 配置文件：</p> 
+    <p>inventory定义托管主机地址配置文件</p> 
+    <p>2、编辑/etc/ansible/hosts文件，写入远程主机的地址。</p> 
+    <p>格式：</p> 
+    <p># 表示注释</p> 
+    <p>[组名称]</p> 
+    <p>主机名称或ip地址，登录用户名，密码、端口等信息</p> 
+    <p>测试：</p> 
+    <p>ansible [组名称] --list-hosts</p> 
+    <p>定义主机分组练习</p> 
+    <pre class="code">[root@ansible ~]# cd /etc/ansible/[root@ansible ansible]# lsansible.cfg  hosts  roles[root@ansible ansible]# vim ansible.cfg#inventory      = /etc/ansible/hosts	 //指定分组文件路径，主机的分组文件hosts[selinux]		//组名称，selinux的相关选项在这个下面配置...[colors]		//组名称，colors的相关选项在这个下面配置... [root@ansible ansible]# vim hosts [web]web1web2[root@ansible ansible]# ansible web --list-host   //显示web组的主机  hosts (2):    web1    web2</pre> 
+   </div> 
+   <div> 
+    <h3>5 如何用ansible批量部署证书文件，给所有主机部署密钥</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1）创建密钥</p> 
+    <pre class="code"> [root@ansible aaa]# cd /root/.ssh/[root@ansible .ssh]# vi /etc/ansible/hosts[web]web1web2[db]db[1:2][other]cache[root@ansible .ssh]# ansible all -m ping  //直接ping会报错 [root@ansible .ssh]# ssh-keygen -t rsa -b 2048 -N ''  //创建密钥</pre> 
+    <p>2）给所有主机部署密钥</p> 
+    <pre class="code">[root@ansible .ssh]# ansible all -m authorized_key -a &quot;user=root exclusive=true manage_dir=true key='$(&lt; /root/.ssh/id_rsa.pub)'&quot; -kSSH password:		//输入密码[root@ansible .ssh]# ansible all -m ping  //成功web2 | SUCCESS =&gt; {    &quot;changed&quot;: false,     &quot;ping&quot;: &quot;pong&quot;}db2 | SUCCESS =&gt; {    &quot;changed&quot;: false,     &quot;ping&quot;: &quot;pong&quot;}web1 | SUCCESS =&gt; {    &quot;changed&quot;: false,     &quot;ping&quot;: &quot;pong&quot;}cache | SUCCESS =&gt; {    &quot;changed&quot;: false,     &quot;ping&quot;: &quot;pong&quot;}db1 | SUCCESS =&gt; {    &quot;changed&quot;: false,     &quot;ping&quot;: &quot;pong&quot;}[root@ansible .ssh]# ssh web1		//不需要输入密码,可以直接登陆Last login: Thu Sep  6 11:49:00 2018 from 192.168.1.51[root@web1 ~]#</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

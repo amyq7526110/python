@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 阐述redis集群的工作原理</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>搭建好redis-cluster集群后，往redis中存入数据,数据会被随机存入不同主机</p> 
+    <p>但存入后位置相对固定，主机一中的数据如20条，会持续存储直到被修改或有效期结束，同时主机一的20条数据会备份到对应备用一服务器中</p> 
+    <p>主机宕机,对应的备用机返回数据,达到一个数据稳定高可用的目的</p> 
+    <p>取出数据时，与单个redis方式并无差异，即视整个集群为一个redis向其发出请求，即可得到对应的响应数据，多台集群降低了访问压力，达到一个高并发的目的</p> 
+   </div> 
+   <div> 
+    <h3>2 调整redis配置文件，每一行是什么意思</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>bind IP地址 只写物理接口IP地址</p> 
+    <p>daemonize yes 守护进程方式运行</p> 
+    <p>port xxxx 端口号不要使用默认的6379</p> 
+    <p>cluster-enabled yes 启用集群</p> 
+    <p>cluster-config-file nodes-xxxx.conf 指定集群信息文件</p> 
+    <p>cluster-node-timeout 5000 请求超时 5 秒</p> 
+   </div> 
+   <div> 
+    <h3>3 测试集群的命令是什么</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>redis-cli -c -h ip地址 -p 端口</p> 
+    <p>常用选项：</p> 
+    <p>-h IP地址</p> 
+    <p>-p 端口</p> 
+    <p>-c 集群模式</p> 
+    <pre class="code">[root@redisA ~]# redis-cli  -c -h 192.168.4.53 -p 6353</pre> 
+   </div> 
+   <div> 
+    <h3>4 如何查看集群主机信息</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>cluster info 查看集群信息</p> 
+    <p>cluster nodes 查看集群节点信息</p> 
+    <pre class="code">[root@redisA ~]# redis-cli  -h 192.168.4.51 -p 6351192.168.4.51:6351&gt; cluster  info</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

@@ -1,0 +1,56 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 什么是分库分表</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>将存放在一个数据库（主机）中的数据，按照特定方式进行拆分，分散存放到多个数据库（主机）中，以达到分散单台设备负载的效果</p> 
+   </div> 
+   <div> 
+    <h3>2 Mycat软件介绍</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1）基于Java的分布式数据库系统中间层，为高并发下的分布式提供解决方案</p> 
+    <p>2）支持JDBC形式连接</p> 
+    <p>3）支持MySQL、Oracle、Sqlserver、Mongodb等</p> 
+    <p>4）提供数据读写分离服务，可以实现数据库服务器的高可用，提供数据分片服务</p> 
+    <p>5）基于阿里巴巴Cobar进行研发的开源软件</p> 
+    <p>6）适合数据大量写入数据的存储需求</p> 
+   </div> 
+   <div> 
+    <h3>3 mycat 支持多少种分片规则并说出名字？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>一共支持10中分片规则</p> 
+    <p>1）枚举法 sharding-by-intfile</p> 
+    <p>2）固定分片 rule1</p> 
+    <p>3）范围约定 auto-sharding-long</p> 
+    <p>4）求模法 mod-long</p> 
+    <p>5）日期列分区法 sharding-by-date</p> 
+    <p>6）通配取模 sharding-by-pattern</p> 
+    <p>7）ASCII码求模通配 sharding-by-prefixpattern</p> 
+    <p>8）编程指定 sharding-by-substring</p> 
+    <p>9）字符串拆分hash解析 sharding-by-stringhash</p> 
+    <p>10）一致性hash sharding-by-murmur</p> 
+   </div> 
+   <div> 
+    <h3>4 mycat重要配置文件有几个，分别有什么作用</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>有3个，分别是：</p> 
+    <p>server.xml 设置连mycat的账号信息</p> 
+    <p>schema.xml 配置mycat的真实库表</p> 
+    <p>rule.xml 定义mycat分片规则</p> 
+   </div> 
+  </div>  
+ </body>
+</html>

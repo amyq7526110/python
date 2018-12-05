@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 什么是云计算</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>基于互联网的相关服务的增加、使用和交付模式</p> 
+    <p>这种模式提供可用的、便捷的、按需的网络访问， 进入可配置的计算资源共享池</p> 
+    <p>这些资源能够被快速提供，只需投入很少的管理工作，或与服务供应商进行很少的交互</p> 
+    <p>通常涉及通过互联网来提供动态易扩展且经常是虚拟化的资源</p> 
+   </div> 
+   <div> 
+    <h3>2 什么是Openstack</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>OpenStack是一个由NASA（美国国家航空航天局）和Rackspace合作研发并发起的项目</p> 
+    <p>OpenStack是一套IaaS解决方案</p> 
+    <p>OpenStack是一个开源的云计算管理平台</p> 
+    <p>以Apache许可证为授权</p> 
+   </div> 
+   <div> 
+    <h3>3 Openstack主要组件有哪些，作用是什么</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>Horizon：</p> 
+    <p>用于管理Openstack各种服务的、基于web的管理接口</p> 
+    <p>通过图形界面实现创建用户、管理网络、启动实例等操作</p> 
+    <p>Keystone：</p> 
+    <p>为其他服务提供认证和授权的集中身份管理服务</p> 
+    <p>也提供了集中的目录服务</p> 
+    <p>支持多种身份认证模式，如密码认证、令牌认证、以及AWS（亚马逊Web服务）登陆</p> 
+    <p>为用户和其他服务提供了SSO认证服务</p> 
+    <p>Neutron：</p> 
+    <p>一种软件定义网络服务</p> 
+    <p>用于创建网络、子网、路由器、管理浮动IP地址</p> 
+    <p>可以实现虚拟交换机、虚拟路由器</p> 
+    <p>可用于在项目中创建VPN</p> 
+    <p>Cinder：</p> 
+    <p>为虚拟机管理存储卷的服务</p> 
+    <p>为运行在Nova中的实例提供永久的块存储</p> 
+    <p>可以通过快照进行数据备份</p> 
+    <p>经常应用在实例存储环境中，如数据库文件</p> 
+    <p>Nova：</p> 
+    <p>在节点上用于管理虚拟机的服务</p> 
+    <p>Nova是一个分布式的服务，能够与Keystone交互实现认证，与Glance交互实现镜像管理</p> 
+    <p>Nova被设计成在标准硬件上能够进行水平扩展</p> 
+    <p>启动实例时，如果有则需要下载镜像</p> 
+    <p>Glance：</p> 
+    <p>扮演虚拟机镜像注册的角色</p> 
+    <p>允许用户为直接存储拷贝服务器镜像</p> 
+    <p>这些镜像可以用于新建虚拟机的模板</p> 
+   </div> 
+   <div> 
+    <h3>4 Openstack如何通过命令行管理项目</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>创建名为myproject项目</p> 
+    <pre class="code">[root@openstack ~(keystone_admin)]# openstack project create myproject</pre> 
+    <p>列出所有项目</p> 
+    <pre class="code">[root@openstack ~(keystone_admin)]# openstack project list</pre> 
+    <p>查看myproject详细信息</p> 
+    <pre class="code">[root@openstack ~(keystone_admin)]# openstack project show myproject</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

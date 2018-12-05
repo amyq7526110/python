@@ -1,0 +1,96 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 简述备份策略的类型。</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>完全备份：备份所有数据。</p> 
+    <p>差异备份：备份自完全备份后所有新产生的数据。</p> 
+    <p>增量备份：备份自上一次备份后所有新产生的数据。</p> 
+   </div> 
+   <div> 
+    <h3>2 按照题目要求，使用binlog日志恢复数据。具体要求如下</h3> 
+    <p>1）启动binlog日志，用plj给日志文件命名日志文件,存储到/logdir目录下。</p> 
+    <p>2）使用第1个binlog日志文件保存数据库webdbone的如下操作:</p> 
+    <ul class="list"> 
+     <li>create database webdbone; </li> 
+     <li>use webdbone; </li> 
+     <li>create table a(id int); </li> 
+     <li>insert into a values(100); </li> 
+     <li>insert into a values(200); </li> 
+    </ul> 
+    <p>3）使用第2个binlog日志文件保存数据库webdbtwo的如下操作:</p> 
+    <ul class="list"> 
+     <li>create database webdbtwo; </li> 
+     <li>use webdbtwo; </li> 
+     <li>create table b(id int); </li> 
+     <li>insert into b values(300); </li> 
+     <li>insert into b values(400); </li> 
+    </ul> 
+    <p>4）使用新binlog日志文件 保存如下操作</p> 
+    <ul class="list"> 
+     <li>insert into webdbone.a values(888); </li> 
+     <li>insert into webdbtwo.b balues(999); </li> 
+     <li>select * from webdbone.a; </li> 
+     <li>select * from webdbtwo.b; </li> 
+     <li>drop table webdbone.a; </li> 
+     <li>delete from webdbtwo.b; </li> 
+    </ul> 
+    <p>5）使用binlog日志，恢复2个表的所有记录。</p> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1）启动binlog日志，用plj给日志文件命名日志文件,存储到/logdir目录下。</p> 
+    <pre class="code">[root@server0 ~]# vim  /etc/my.cnf[mysqld]log-bin=/logdir/plj[root@server0 ~]# mkdir  /logdir[root@server0 ~]# chown  mysql  /logdir[root@server0 ~]# service  mysql  restart</pre> 
+    <p>2）使用第1个binlog日志文件保存数据库webdbone的如下操作:</p> 
+    <ul class="list"> 
+     <li>create database webdbone; </li> 
+     <li>use webdbone; </li> 
+     <li>create table a(id int); </li> 
+     <li>insert into a values(100); </li> 
+     <li>insert into a values(200); </li> 
+    </ul> 
+    <pre class="code"> [root@server0 ~]#mysql  -uroot  -p123456  mysql&gt; create database  webdbone;  mysql&gt; use webdbone;  mysql&gt; create talbe a(id int);  mysql&gt; insert into a values(100);  mysql&gt; insert into a values(200);  mysql&gt; flush logs;</pre> 
+    <p>3）使用第2个binlog日志文件保存数据库webdbtwo的如下操作:</p> 
+    <ul class="list"> 
+     <li>create database webdbtwo; </li> 
+     <li>use webdbtwo; </li> 
+     <li>create table b(id int); </li> 
+     <li>insert into b values(300); </li> 
+     <li>insert into b values(400); </li> 
+    </ul> 
+    <pre class="code"> [root@server0 ~]# mysql  -uroot  -p123456    mysql&gt; create database  webdbtwo;  mysql&gt; use webdbtwo;  mysql&gt; create table  b(id int);  mysql&gt; insert into  b values(300);  mysql&gt; insert into  b values(400);  Msyql&gt; flush logs;</pre> 
+    <p>4）使用新binlog日志文件 保存如下操作</p> 
+    <ul class="list"> 
+     <li>insert into webdbone.a values(888); </li> 
+     <li>insert into webdbtwo.b balues(999); </li> 
+     <li>select * from webdbone.a; </li> 
+     <li>select * from webdbtwo.b; </li> 
+     <li>drop table webdbone.a; </li> 
+     <li>delete from webdbtwo.b; </li> 
+    </ul> 
+    <pre class="code"> [root@server0 ~]#mysql  -uroot  -p123456  mysql&gt; insert into webdbone.a values(888);  mysql&gt; insert into webdbtwo.b balues(999);  mysql&gt; select   *  from   webdbone.a;  mysql&gt; select   *  from   webdbtwo.b;  mysql&gt; drop table webdbone.a;  mysql&gt; delete  from webdbtwo.b;</pre> 
+    <p>5）使用binlog日志，恢复2个表的所有记录。</p> 
+    <pre class="code">[root@server0 ~]# mysqlbinlog /logdir/plj.000001 --start-position=227  | mysql -uroot  -p123456[root@server0 ~]# mysqlbinlog  --start-position=207 --stop-position=354 /logdir/plj.000003  |  mysql -uroot  -p123456[root@server0 ~]# mysqlbinlog  --start-position=419 /logdir/plj.000002  |mysql -uroot  -p123456[root@server0 ~]# mysqlbinlog  --start-position=419 --stop-position=627 /logdir/plj.000003  |mysql -uroot  -p123456    </pre> 
+   </div> 
+   <div> 
+    <h3>3 如何使用innobackupex备份与恢复</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>备份数据</p> 
+    <pre class="code">[root@dbsvr1 ~]# innobackupex  --user root --password 123456  /backup  --no-timestamp  			</pre> 
+    <p>恢复数据</p> 
+    <pre class="code">[root@dbsvr1 ~]# rm -rf  /var/lib/mysql [root@dbsvr1 ~]# mkdir  /var/lib/mysql[root@dbsvr1 ~]# innobackupex  --user root --password 123456  --copy-back  /backup  [root@dbsvr1 ~]# chown  -R  mysql:mysql  /var/lib/mysql   </pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

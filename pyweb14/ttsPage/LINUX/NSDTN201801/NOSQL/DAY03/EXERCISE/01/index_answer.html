@@ -1,0 +1,65 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 简述redis主从复制工作原理</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1）slave向master发送sync命令</p> 
+    <p>2）master启动后台存盘进程，并收集所有修改数据命令</p> 
+    <p>3）master完成后台存盘后，传送整个数据文件到slave</p> 
+    <p>4）slave接收数据文件，加载到内存中完成首次完全同步</p> 
+    <p>5） 后续有新数据产生时，master继续将新的数据收集到的修改命令依次传给slave，完成同步</p> 
+   </div> 
+   <div> 
+    <h3>2 简述redis支持的几种持久化方式</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1）RDB（默认用这个）</p> 
+    <p>2）AOF</p> 
+    <p>RDB介绍:</p> 
+    <p>Redis数据库文件，全称 Redis DataBase</p> 
+    <p>数据持久化方式之一</p> 
+    <p>按照指定时间间隔，将内存中的数据集快照写入硬盘</p> 
+    <p>术语叫Snapshot快照</p> 
+    <p>恢复时，将快照文件直接读入内存</p> 
+    <p>AOF介绍：</p> 
+    <p>只做追加操作的文件，Append Only File</p> 
+    <p>记录redis服务所有写操作</p> 
+    <p>不断的将新的写操作，追加到文件的末尾</p> 
+    <p>使用cat命令可以查看文件内容</p> 
+   </div> 
+   <div> 
+    <h3>3 简述RDB持久化的实现原理</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>RDB：快照方式，允许你每隔一段时间对内存数据做一次快照然后存储到硬盘中。该方式是Redis默认的持久化方式。</p> 
+    <p>RDB可以通过在配置文件中配置时间或者改动键的个数来定义快照条件</p> 
+   </div> 
+   <div> 
+    <h3>4 简述AOF持久化的实现原理</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>AOF持久化默认是关闭的，需要在redis的配置文件里面开启AOF的持久化 appendonly yes</p> 
+    <p>当AOF持久化开启后，当对数据库进行一次更新操作后，更新命令就会被追加到aof_buf缓冲区的末尾，然后由缓冲区写入到AOF文件。</p> 
+    <p>AOF文件中记录的内容就是对数据更新操作的指令</p> 
+   </div> 
+   <div> 
+    <h3>5 redis的数据类型有哪些</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>redis数据类型：</p> 
+    <p>Stying字符串操作</p> 
+    <p>List列表</p> 
+    <p>Hash表</p> 
+   </div> 
+  </div>  
+ </body>
+</html>

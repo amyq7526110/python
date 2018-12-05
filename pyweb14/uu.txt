@@ -1,0 +1,149 @@
+分区规划及使用、LVM逻辑卷、总结和答疑
+Shell脚本基础、使用变量、条件测试及选择、列表式循环、总结和答疑
+系统安全保护 配置用户环境 配置高级连接 防火墙策略管理 总结和答疑
+配置SMB共享 配置NFS共享 总结和答疑
+iSCSI技术应用 数据库服务基础 管理表数据 总结和答疑
+HTTP服务基础 网页内容访问 部署动态网站 总结和答疑
+综合串讲 综合练习
+扩展的几个应用 发布网络YUM源 vim编辑技巧 源码编译安装 systemctl控制 总结和答疑
+DNS服务基础 特殊解析 DNS子域授权 缓存DNS 总结和答疑
+Split分离解析 RAID磁盘阵列 进程管理 日志管理 总结和答疑
+批量装机环境 配置PXE引导 kickstart自动应答 总结和答疑
+rsync同步操作 inotify实时同步 Cobbler装机平台 总结和答疑
+项目实战一：part01
+项目实战一：part02
+项目实战一：part03
+项目实战一：part04
+项目实战一：part05
+项目实战一：part06
+项目实战一：part07
+答辩准备 答辩演练及点评
+答辩准备 答辩演练及点评
+项目答辩会 阶段1必备知识考查
+Shell概述 编写及执行脚本
+Shell变量 总结和答疑
+数值运算 条件测试
+if选择结构 总结和答疑
+循环结构 case语句
+函数及中断控制 总结和答疑
+字符串处理 扩展的脚本技巧 正则表达式
+sed基本用法 sed文本块处理
+sed高级应用 总结和答疑
+awk基本用法 awk高级应用 总结和答疑
+项目实战
+Nginx安装与升级 Nginx服务器 Nginx虚拟主机
+HTTPS加密网站 总结和答疑
+部署LNMP Nginx+FastCGI
+Nginx高级技术 总结和答疑
+Nginx调度器 Nginx优化 总结和答疑
+memcached原理 部署memcached
+Session共享 总结和答疑
+Tomcat服务器 Tomcat应用案例
+Varnish代理服务器 总结和答疑
+版本控制 SVN基础 实战案例
+RPM打包 总结和答疑
+VPN服务器 NTP时间同步
+PSSH远程工具 总结和答疑
+存储技术与应用 iSCSI技术应用
+udev配置 NFS网络文件系统
+Multipath多路径
+NFS网络文件系统
+udev配置
+集群及LVS简介 LVS-NAT集群 LVS-DR集群
+Keepalived热备 Keepalived+LVS
+HAProxy服务器
+Ceph概述 部署Ceph集群 Ceph块存储
+块存储应用案例 分布式文件系统 对象存储
+数据库服务概述 构建MySQL服务器
+数据库基本管理 MySQL数据类型
+约束条件 修改表结构 MySQL键值
+MySQL存储引擎
+数据导入导出 管理表记录 匹配条件
+多表查询 MySQL管理工具
+用户授权及撤销
+mysqldump 实时增量备份
+innobackupex
+MySQL主从同步
+主从同步模式 
+MySQL读写分离 MySQL多实例
+MySQL性能调优
+MHA集群概述
+部署MHA集群 测试配置
+MySQL视图 MySQL存储过程 
+分库分表概述 配置mycat
+NoSQL概述 部署Redis服务
+部署LNMP+Redis
+创建Redis集群 管理集群
+redis主从复制 RDB/AOF持久化 数据类型
+部署MongoDB服务
+MongoDB基本使用
+MongoDB副本集 MongoDB文档管理
+Linux基本防护 用户切换与提权 SSH访问控制 SELinux安全
+ SSH访问控制 SELinux安全
+加密与解密 AIDE入侵检测系统 扫描与抓包
+系统审计 服务安全 Linux安全之打补丁
+iptables防火墙 filter表控制 扩展匹配 nat表典型应用
+监控概述
+Zabbix基础
+Zabbix监控服务
+Zabbix报警机制
+Zabbix进阶操作
+监控案例
+KVM简介、 Virsh管理
+自定义虚拟机、虚拟设备管理
+Openstack概述 部署安装环境
+部署Openstack OpenStack操作基础
+用户配额管理 云主机类型管理
+镜像管理 网络管理 案例和实例管理
+安装额外计算节点
+云计算产品、华为云
+ECS云服务器管理
+Docker概述、部署Docker
+Docker镜像、Docker基本命令
+自定义镜像及仓库、持久化存储
+Docker网络架构
+ansible概述、ansible基础
+ad-hoc、批量配置管理
+playbook基础
+playbook进阶
+分布式ELK平台、ES安装
+扩展插件 、Kibana安装
+Kibana使用
+Logstash配置扩展插件
+大数据、Hadoop
+Hadoop安装与配置
+HDFS
+完全分布式
+节点管理
+NFS网关
+常用组件
+Kafka集群
+Hadoop高可用
+项目说明 项目讲解
+系统安装 web 服务搭建
+系统压力测试 架构调优 
+mysql主从 读写分离
+web集群 session共享 redis集群
+haproxy高可用 共享文件系统
+Python概述 环境准备 使用git Pthon起步
+数据类型概述 判断语句 while循环
+for循环 文件对象 函数基础 模块基础
+shell相关模块 字符串详解 列表和元组
+字典和集合 时间方法 异常处理 文件系统相关模块
+函数基础 函数高级应用
+模块 OOP基础 OOP进阶
+re模块 socket模块
+多进程编程 多线程编程
+PyMySQL模块 SQLAlchemy基础 SQLAlchemy进阶
+HTTP客户端 urllib模块 paramiko模块
+邮件和JSON requests模块 zabbix编程
+Jenkins基础 准备git仓库 应用jenkins 管理应用服务器
+Ansible基础 Ansible编程 编写ansible模块
+WEB概述 HTML快速入门 基本标签用法 Form表单及控件
+CSS概述 CSS基础语法 尺寸与框模型 常用样式属性
+定位 Bootstrap起步 全局CSS样式 组件与插件
+部署django Django应用基础 Django模型
+Django API 视图和模板 使用表单
+入口映射 模板详解 模型详解
+CMDB异步架构 CMDB主机管理
+CMDB任务部署 CMDB文件传输及命令执行 

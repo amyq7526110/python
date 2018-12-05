@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 设置Zabbix触发器规则：当Linux系统账户数量大于35时触发</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">{count.line.passwd:count.line.passwd.last(,300)}&gt;35 </pre> 
+   </div> 
+   <div> 
+    <h3>2 Zabbix支持的报警媒介类型有哪些？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>Email、Jabber、SMS。</p> 
+   </div> 
+   <div> 
+    <h3>3 简单描述Zabbix自动发现的功能</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>当Zabbix需要监控的设备越来越多，手动添加监控设备越来越有挑战，此时，可以考虑使用自动发现功能，需要批量一次性添加一组监控主机，也可以使用自动发现功能。</p> 
+    <p>自动发现、添加主机，自动添加主机到组，自动连接模板到主机，自动创建监控项目与图形等。</p> 
+   </div> 
+   <div> 
+    <h3>4 查看网络连接状态的ss命令有哪些常用选项</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@localhost ~]# ss -antup</pre> 
+    <p>//-a显示所有</p> 
+    <p>//-t显示TCP连接状态</p> 
+    <p>//-u显示UDP连接状态</p> 
+    <p>//-n以数字形式显示端口号和IP地址</p> 
+    <p>//-p显示连接对应的进程名称</p> 
+   </div> 
+  </div>  
+ </body>
+</html>

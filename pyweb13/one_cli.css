@@ -1,0 +1,19 @@
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+.header {
+    height: 50px ;
+    background: silver;
+
+}
+
+.content {
+    height: 300px;
+    background: #46f6fd;
+
+}
+.footer {
+    height: 50px;
+    background: #9a9a9a;
+}

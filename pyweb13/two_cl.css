@@ -1,0 +1,25 @@
+.container {
+    width: 800px;
+    margin: 0 auto;
+}
+.header,.footer {
+    height: 50px ;
+    background: silver;
+
+}
+
+
+
+.zuo {
+    float: left;
+    width: 200px;
+    height: 400px;
+    background: wheat;
+}
+.you {
+    /*float: right;*/
+    margin-left: 200px;
+    width: 600px;
+    height: 410px;
+    background: #878787;
+}

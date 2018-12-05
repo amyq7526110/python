@@ -1,0 +1,46 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 简述DNS地址记录中类型NS、A的含义</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>NS记录为域名服务器记录（本域权威DNS的FQDN）；</p> 
+    <p>A记录为正向解析记录（FQDN --&gt; IP地址）。</p> 
+   </div> 
+   <div> 
+    <h3>2 如何配置父DNS服务器实现子域授权</h3> 
+    <p>要求如下：</p> 
+    <p>已知父DNS解析baidu.com域，配置子域解析bj.baidu.com域。</p> 
+    <p>父DNS服务器的域名为dns.baidu.com，地址为192.168.4.7。</p> 
+    <p>子DNS服务器的域名为dns.bj.baidu.com，地址为192.168.4.207。</p> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@svr7 ~]# vim  /var/named/baidu.com.zone.. ..bj.baidu.com. 		IN     NS 		dns.bj.baidu.com.dns.bj.baidu.com. 	IN      A 		192.168.4.207[root@svr7 ~]# systemctl  restart  named</pre> 
+   </div> 
+   <div> 
+    <h3>3 对于DNS服务器来说，递归查询和迭代查询分别表示什么</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>对于一台DNS服务器来说：</p> 
+    <p>若允许递归，则当客户端请求解析的域名非本DNS管辖时，本DNS会向其他DNS服务器代询；</p> 
+    <p>若不允许递归，则当客户端请求解析的域名非本DNS管辖时，本DNS会放弃代询 —— 但是，如果目标地址位于已知的某个授权子域，本DNS会告知客户端对应的子DNS服务器的地址信息（即迭代）。</p> 
+   </div> 
+   <div> 
+    <h3>4 配置缓存DNS服务器时，为客户机提供的解析记录如何获取</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>方式1，全局转发：将请求转发给指定的公共DNS，请求递归服务；</p> 
+    <p>方式2，根域迭代：依次向根、一级、二级……域的DNS服务器迭代。</p> 
+   </div> 
+  </div>  
+ </body>
+</html>

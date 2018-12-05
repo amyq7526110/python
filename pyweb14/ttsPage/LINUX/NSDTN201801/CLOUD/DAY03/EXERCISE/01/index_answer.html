@@ -1,0 +1,51 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 如何通过命令行管理云主机类型</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>列出所有的云主机类型</p> 
+    <pre class="code">[root@openstack ~(keystone_admin)]# openstack flavor list</pre> 
+    <p>创建一个云主机类型</p> 
+    <pre class="code">[root@openstack ~(keystone_admin)]# openstack flavor create --public demo.tiny --id auto --ram 512 --disk 10 --vcpus 1</pre> 
+    <p>删除云主机类型</p> 
+    <pre class="code">[root@openstack ~(keystone_admin)]# openstack flavor delete demo.tiny</pre> 
+   </div> 
+   <div> 
+    <h3>2 如何通过命令行管理镜像</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>上传镜像</p> 
+    <pre class="code">[root@vh02 ~(keystone_admin)]# openstack image create --disk-format qcow2 --min-disk 10 --min-ram 512 --file /root/small.img small_rhel6</pre> 
+    <p>列出镜像</p> 
+    <pre class="code">[root@vh02 ~(keystone_admin)]# openstack image list</pre> 
+    <p>查看镜像详情</p> 
+    <pre class="code">[root@vh02 ~(keystone_admin)]# openstack image show small_rhel6</pre> 
+   </div> 
+   <div> 
+    <h3>3 阐述Openstack网络类型有哪些</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>项目网络：由Neutron提供的项目内部网络，网络间可用VLAN隔离</p> 
+    <p>外部网络：可以让虚拟机接入外部网络，但需要配置浮动IP地址</p> 
+    <p>提供商网络：将实例连接到现有网络，实现虚拟机实例与外部系统共享同一二层网络</p> 
+   </div> 
+   <div> 
+    <h3>4 阐述浮动IP地址的作用</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>浮动IP地址用于从外界访问虚拟机实例，只能从现有浮动IP地址池中分配，创建外部网络时，浮动IP地址池被定义</p> 
+    <p>虚拟机实例起动后，可以为其关联一个浮动IP地址，也可以解除IP地址绑定，解除绑定后，再绑定时，不保证绑定原来的IP地址</p> 
+   </div> 
+  </div>  
+ </body>
+</html>

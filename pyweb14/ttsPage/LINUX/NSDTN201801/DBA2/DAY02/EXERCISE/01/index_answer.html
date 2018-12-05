@@ -1,0 +1,44 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 请简述数据读写分离的原理</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>原理：</p> 
+    <p>多台MySQL服务器，分别提供读、写服务，均衡流量，通过主从复制保持数据一致性，由MySQL代理面向客户端，收到SQL写请求时，交给服务器A处理，收到SQL读请求时，交给服务器B处理，具体区分策略由服务设置</p> 
+   </div> 
+   <div> 
+    <h3>2 简述什么是MySQL多实例，多实例的优点是什么？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>在一台物理主机上运行多个数据库服务</p> 
+    <p>优点：节约运维成本，提高硬件利用率</p> 
+   </div> 
+   <div> 
+    <h3>3 简述配置多实例的步骤</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1、安装支持多实例服务的软件包</p> 
+    <p>2、修改主配置文件</p> 
+    <p>3、初始化授权库</p> 
+    <p>4、启动服务</p> 
+    <p>5、客户端访问测试</p> 
+   </div> 
+   <div> 
+    <h3>4 MYSQL为什么需要性能调优</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>可以提高MySQL系统的性能、响应速度，替换有问题的硬件（CPU/磁盘/内存等），服务程序的运行参数调整，对SQL查询进行优化</p> 
+   </div> 
+  </div>  
+ </body>
+</html>

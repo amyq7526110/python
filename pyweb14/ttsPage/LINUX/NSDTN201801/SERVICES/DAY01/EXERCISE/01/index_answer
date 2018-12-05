@@ -1,0 +1,65 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 简述Linux目录/boot、/dev、/etc、/home、/var、/tmp的用途</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <ul class="list"> 
+     <li>/boot：存放Linux内核、引导配置等启动文件。 </li> 
+     <li>/dev：存放硬盘、键盘、鼠标、光驱等各种设备文件。 </li> 
+     <li>/etc：存放各种配置文件、配置目录。 </li> 
+     <li>/home：存放普通用户的默认工作文件夹（即宿主目录、家目录）。 </li> 
+     <li>/var：存放日志文件、用户邮箱目录、进程运行数据等变化的文档。 </li> 
+     <li>/tmp：存放系统运行过程中使用的一些临时文件。 </li> 
+    </ul> 
+   </div> 
+   <div> 
+    <h3>2 使用date命令按“yyyy-mm-dd HH:MM”格式显示/设置日期时间</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>按格式显示日期时间：</p> 
+    <pre class="code">[root@svr7 ~]# date  +&quot;%Y-%m-%d %H:%M&quot;2016-12-21 16:04</pre> 
+    <p>按格式设置日期时间：</p> 
+    <pre class="code">[root@svr7 ~]# date -s &quot;2016-12-21 17:01&quot;2016年 12月 21日 星期三 17:01:00 CST</pre> 
+   </div> 
+   <div> 
+    <h3>3 简述yum客户端仓库配置文件的内容</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@svr7 ~]# vim  /etc/yum.repos.d/自定义名称.repo [仓库ID]name = 仓库描述baseurl = 软件仓库的访问地址gpgcheck = 0</pre> 
+   </div> 
+   <div> 
+    <h3>4 vim编辑器的删除、复制、粘贴操作</h3> 
+    <p>使用vim编辑器时，在命令模式下按（ ）可删除当前光标行，按（ ）可复制当前行，按（ ）将剪贴板中的文本粘贴到当前行之后。</p> 
+    <p class="answerTitle">参考答案</p> 
+    <p>使用vim编辑器时，在命令模式下按（ dd ）可删除当前光标行，按（ yy ）可复制当前行，按（ p ）将剪贴板中的文本粘贴到当前行之后。</p> 
+   </div> 
+   <div> 
+    <h3>5 简述源码编译安装软件的主要步骤及各自的作用</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1）tar解包：解压、释放安装包内的文件</p> 
+    <p>2）./configure配置：针对当前系统环境指定安装目录、选择功能等设置。</p> 
+    <p>3）make编译：将源代码编译成二进制的可执行程序、库文件等数据。</p> 
+    <p>4）make install：将编译好的程序文件、配置文档等复制到对应的安装目录。</p> 
+   </div> 
+   <div> 
+    <h3>6 将RHEL7系统的默认运行级别设为文本模式</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1）修改默认运行级别（target）</p> 
+    <pre class="code">[root@svr7 ~]# systemctl  set-default  multi-user.target Removed symlink /etc/systemd/system/default.target.Created symlink from /etc/systemd/system/default.target to /usr/lib/systemd/system/multi-user.target.</pre> 
+    <p>2）确认修改结果</p> 
+    <pre class="code">[root@svr7 ~]# systemctl  get-default multi-user.target</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

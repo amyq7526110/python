@@ -1,0 +1,56 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 简述MongoDB软件的特点</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1）安装简单</p> 
+    <p>2）面向文档存储，操作比较简单容易</p> 
+    <p>3）支持丰富的查询表达</p> 
+    <p>4）可以设置任何属性的索引</p> 
+    <p>5）支持主流编程语言RUBY|PYTHON|JAVA|PHP|C++</p> 
+    <p>6）支持副本集，分片</p> 
+   </div> 
+   <div> 
+    <h3>2 如何启动和停止MongoDB服务</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>启动MongoDB服务</p> 
+    <pre class="code">[root@mysql51 mongodb]# mongod -f /usr/local/mongodb/etc/mongodb.confabout to fork child process, waiting until server is ready for connections.forked process: 2423child process started successfully, parent exiting   </pre> 
+    <p>如果启动失败，可能原因是选项不存在或者路径出错</p> 
+    <p>停止MongoDB服务</p> 
+    <p>注意：要指定数据库目录停止服务，不然停止不了</p> 
+    <pre class="code">[root@mysql51 mongodb]# mongod  --dbpath=/usr/local/mongodb/data/db/  --shutdown     killing process with pid: 2423</pre> 
+   </div> 
+   <div> 
+    <h3>3 简述数据库名称规范要求</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1）不能是空字符串（&quot;&quot;)</p> 
+    <p>2）不得含有' '（空格)、. 、$、/、\和\0 (空字符)</p> 
+    <p>3）应全部小写</p> 
+    <p>4）最多64字节</p> 
+   </div> 
+   <div> 
+    <h3>4 基本数据类型有哪些</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>字符string、布尔bool、空null、数值、数组array、代码、日期、对象、内嵌、正则表达式</p> 
+   </div> 
+   <div> 
+    <h3>5 使用MongoDB数据库时如何导出数据</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">mongoexport  --host  192.168.4.51 --port 27077  -d  ddsdb  -c t1 -f name --type=csv    -o /root/lig1.csv</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

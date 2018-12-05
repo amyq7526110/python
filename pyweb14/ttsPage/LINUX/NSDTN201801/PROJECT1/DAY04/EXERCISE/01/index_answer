@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 传输层有哪些协议，各有什么特点？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>TCP（Transmission Control Protocol）</p> 
+    <p>传输控制协议</p> 
+    <p>可靠的、面向连接的协议</p> 
+    <p>传输效率低</p> 
+    <p>UDP（User Datagram Protocol）</p> 
+    <p>用户数据报协议</p> 
+    <p>不可靠的、无连接的服务</p> 
+    <p>传输效率高</p> 
+   </div> 
+   <div> 
+    <h3>2 描述TCP三次握手以及四次断开的过程</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>三次握手</p> 
+    <p>/</p> 
+    <p>四次断开</p> 
+    <p>/</p> 
+   </div> 
+   <div> 
+    <h3>3 SMTP、DNS、Telnet、TFTP、NTP分别是什么协议，使用了什么端口？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>SMTP 简单邮件传输协议 端口号25</p> 
+    <p>DNS 域名系统 端口号53</p> 
+    <p>Telnet 远程登录 端口号23</p> 
+    <p>TFTP 简单文件传输协议 端口号69</p> 
+    <p>NTP 网络时间协议 端口号123</p> 
+   </div> 
+   <div> 
+    <h3>4 ACL常见类型有哪些，各有什么区别？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>标准ACL</p> 
+    <p>基于源IP地址过滤数据包</p> 
+    <p>标准访问控制列表的访问控制列表号是1～99</p> 
+    <p>扩展ACL</p> 
+    <p>基于源IP地址、目的IP地址、指定协议、端口来过滤数据包</p> 
+    <p>扩展访问控制列表的访问控制列表号是100～199</p> 
+   </div> 
+   <div> 
+    <h3>5 NAT的作用是什么？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>通过将内部网络的私有IP地址翻译成全球唯一的公网IP地址，使内部网络可以连接到互联网等外部网络上。</p> 
+   </div> 
+   <div> 
+    <h3>6 私有IP地址分类有哪些？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>A类 10.0.0.0~10.255.255.255</p> 
+    <p>B类 172.16.0.0~172.31.255.255</p> 
+    <p>C类 192.168.0.0~192.168.255.255</p> 
+   </div> 
+   <div> 
+    <h3>7 NAT实现方式有哪些？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>静态转换（Static Translation）</p> 
+    <p>端口多路复用（Port Address Translation，PAT）</p> 
+   </div> 
+  </div>  
+ </body>
+</html>

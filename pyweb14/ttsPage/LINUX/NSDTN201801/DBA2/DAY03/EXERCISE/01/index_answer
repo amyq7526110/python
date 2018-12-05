@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 简述什么是MHA</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>MHA（Master High Availability）</p> 
+    <p>由日本DeNA公司youshimaton开发</p> 
+    <p>是一套优秀的实现MySQL高可用的解决方案</p> 
+    <p>数据库的自动故障切换操作能做到在0~30秒之内</p> 
+    <p>MHA能确保在故障切换过程中保证数据的一致性，以达到真正意义上的高可用</p> 
+   </div> 
+   <div> 
+    <h3>2 MHA有几部分组成</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>MHA Manager（管理节点），可以单独部署在一台独立的机器上，管理其他节点，也可以部署在一台slave节点上</p> 
+    <p>MHA Node（数据节点），运行在每台MySQL服务器上</p> 
+   </div> 
+   <div> 
+    <h3>3 简述MHA的原理</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>该软件由两部分组成：MHA Manager（管理节点）和MHA Node（数据节点）。MHA Manager可以单独部署在一台独立的机器上管理多个master-slave集群，也可以部署在一台slave节点上。MHA Node运行在每台MySQL服务器上，MHA Manager会定时探测集群中的master节点，当master出现故障时，它可以自动将最新数据的slave提升为新的master，然后将所有其他的slave重新指向新的master。整个故障转移过程对应用程序完全透明</p> 
+   </div> 
+   <div> 
+    <h3>4 manager的工具有哪些</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>masterha_check_ssh 检查MHA的SSH配置状况 masterha_check_repl 检查MySQL复制状况 masterha_manger 启动MHA masterha_check_status 检测当前MHA运行状态 masterha_master_monitor 检测master是否宕机 masterha_master_switch 控制故障转移（自动或者手动） masterha_conf_host 添加或删除配置的server信息</p> 
+   </div> 
+   <div> 
+    <h3>5 如何添加主从同步授权用户</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">mysql&gt; set  global  relay_log_purge=off; 	mysql&gt; grant  replication slave  on  *.*  to repluser@&quot;%&quot;  identified by &quot;123456&quot;;</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

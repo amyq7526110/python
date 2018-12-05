@@ -1,0 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 简述什么是副本集</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>也称为MongoDB复制</p> 
+    <p>指在多个服务器上存储数据副本，并实现数据同步</p> 
+    <p>提高数据可用性、安全性，方便数据故障恢复</p> 
+   </div> 
+   <div> 
+    <h3>2 简述MongoDB副本集的工作原理</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>至少需要两个节点。其中一个是主节点，负责处理客户端请求，其余是从节点，负责复制主节点数据</p> 
+    <p>主节点记录所有操作oplog，从节点定期轮询主节点获取这些操作，然后对自己的数据副本执行这些操作，从而保证从节点的数据与主节点一致</p> 
+   </div> 
+   <div> 
+    <h3>3 如何配置MongoDB的节点信息</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@nondodb1 ~]# mongo  --host  192.168.4.51config = {_id:&quot;rs1&quot;, members:[{_id:0,host:&quot;192.168.4.51:27077&quot;},  {_id:1,host:&quot;192.168.4.52:27078&quot;},{_id:2,host:&quot;192.168.4.53:27079&quot;}]};</pre> 
+   </div> 
+   <div> 
+    <h3>4 使用MongoDB数据库时如何查询文档</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>格式： db.集合名.find()</p> 
+    <pre class="code">&gt; db.user.find()</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

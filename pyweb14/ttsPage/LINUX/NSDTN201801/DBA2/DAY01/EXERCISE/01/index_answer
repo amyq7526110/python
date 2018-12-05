@@ -1,0 +1,56 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 简述MySQL 主从同步中，主数据库服务器要做哪些配置？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>第1步：用户授权</p> 
+    <pre class="code">mysql&gt; grant replication slave on  *.*  to  用户名@”从数据库服务器ip地址”  identified  by  “密码”;</pre> 
+    <p>第2步：启用binlog日志并指定server_id</p> 
+    <pre class="code">[root@server0 ~]#vim /etc/my.cnf[mysqld]log-bin=日志文件名server_id=数字:wq[root@server0 ~]# Service  mysql   restart</pre> 
+   </div> 
+   <div> 
+    <h3>2 简述在主从同步结构中，slave服务器IO线程和SQL线程各自的作用。</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>IO线程的作用：把主数据库服务器binlog日志里的sql命令拷贝到本机的中继日志文件里。</p> 
+    <p>SQL线程的作用： 执行本机中继日志文件中的sql命令，把数据写进本机的数据库里。</p> 
+   </div> 
+   <div> 
+    <h3>3 简述MySQL 主从同步结构模式种类。</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>主从同步结构模式如下：一主一从结构 、一主多从结构 、主从从结构 、主主结构</p> 
+   </div> 
+   <div> 
+    <h3>4 阐述如下命令选项的作用。</h3> 
+    <pre class="code">/usr/local/bin/mysql-proxy  -P 192.168.4.100:3306  -b 192.168.4.10:3306   -r  192.168.4.20:3306  -s  rw-splitting.lua  &amp;</pre> 
+    <p class="answerTitle">参考答案</p> 
+    <p>-P 设置服务监控的ip地址和端口号</p> 
+    <p>-b 设置处理写请求服务器的ip地址和端口号</p> 
+    <p>-r 设置处理读请求服务器的ip地址和端口号</p> 
+    <p>-s 设置服务运行时调用的脚本</p> 
+    <p>&amp; 把服务置入终端后台运行</p> 
+   </div> 
+   <div> 
+    <h3>5 阐述如下参数的作用。</h3> 
+    <p>log-error 、general-log、slow-query-log、log-bin</p> 
+    <p class="answerTitle">参考答案</p> 
+    <p>log-error : 启用错误日志</p> 
+    <p>general-log：启用查询日志</p> 
+    <p>slow-query-log：启用慢查询日志</p> 
+    <p>log-bin：启用二进制日志</p> 
+   </div> 
+  </div>  
+ </body>
+</html>

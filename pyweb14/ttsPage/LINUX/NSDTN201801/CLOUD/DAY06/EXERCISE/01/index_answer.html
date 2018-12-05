@@ -1,0 +1,50 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 Dockerfile语法格式都有什么</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>Dockerfile语法格式：</p> 
+    <p>FROM 基础镜像</p> 
+    <p>MAINTAINER 镜像创建者信息(说明)</p> 
+    <p>EXPOSE 开放的端口</p> 
+    <p>ENV 设置环境变量</p> 
+    <p>ADD 复制文件到镜像</p> 
+    <p>RUN 制作镜像时执行的命令,可以有多个</p> 
+    <p>WORKDIR 定义容器默认工作目录</p> 
+    <p>CMD 容器启动时执行的命令,仅可以有一条CMD</p> 
+   </div> 
+   <div> 
+    <h3>2 如何定义一个私有仓库</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@docker1 oo]# vim /etc/docker/daemon.json	//不写这个文件会报错{&quot;insecure-registries&quot; : [&quot;192.168.1.10:5000&quot;]	//使用私有仓库运行容器}[root@docker1 oo]# systemctl restart docker[root@docker1 oo]# docker run -d -p 5000:5000 registry273be3d1f3280b392cf382f4b74fea53aed58968122eff69fd016f638505ee0e[root@docker1 oo]# curl 192.168.1.10:5000/v2/{}</pre> 
+   </div> 
+   <div> 
+    <h3>3 如何查看私有仓库</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1）查看里面有什么镜像</p> 
+    <pre class="code">[root@docker1 oo]# curl  http://192.168.1.10:5000/v2/_catalog{&quot;repositories&quot;:[&quot;busybox&quot;,&quot;myos&quot;]}</pre> 
+    <p>2）查看里面的镜像标签</p> 
+    <pre class="code">[root@docker1 oo]# curl  http://192.168.1.10:5000/v2/busybox/tags/list {&quot;name&quot;:&quot;busybox&quot;,&quot;tags&quot;:[&quot;latest&quot;]}[root@docker1 oo]# curl  http://192.168.1.10:5000/v2/myos/tags/list {&quot;name&quot;:&quot;myos&quot;,&quot;tags&quot;:[&quot;http&quot;]}</pre> 
+   </div> 
+   <div> 
+    <h3>4 如何新建Docker网络模型</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>新建docker1网络模型</p> 
+    <pre class="code">[root@docker1 ~]# docker  network  create  --subnet=172.30.0.0/16 docker01</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

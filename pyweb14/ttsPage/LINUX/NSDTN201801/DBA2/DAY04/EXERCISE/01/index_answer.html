@@ -1,0 +1,48 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 简述什么是视图</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1）是一种虚拟存在的表</p> 
+    <p>2）内容与真实的表相似，包含一系列带有名称的列和行数据。</p> 
+    <p>3）视图并不在数据库中以存储的数据的形式存在。</p> 
+    <p>4）行和列的数据来自定义视图时查询所引用的基本表，并且在具体引用视图时动态生成。</p> 
+    <p>更新视图的数据，就是更新基表的数据</p> 
+    <p>更新基表数据，视图的数据也会跟着改变</p> 
+   </div> 
+   <div> 
+    <h3>2 视图的优点有哪些</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>简单： 使用视图的用户完全不需要关心视图中的数据是通过什么查询得到的。</p> 
+    <p>视图中的数据对用户来说已经是过滤好的符合条件的结果集。</p> 
+    <p>安全：</p> 
+    <p>用户只能看到视图中的数据。</p> 
+    <p>数据独立：</p> 
+    <p>一旦视图的结构确定了，可以屏蔽表结构变化对用户的影响。</p> 
+   </div> 
+   <div> 
+    <h3>3 如何创建视图</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">mysql&gt; create view v1 as select * from user;</pre> 
+   </div> 
+   <div> 
+    <h3>4 简述什么是存储过程。</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>存储过程，相当于是MySQL语句组成的脚本，指的是数据库中保存的一系列SQL命令的集合，可以在存储过程中使用变量、条件判断、流程控制等</p> 
+   </div> 
+  </div>  
+ </body>
+</html>

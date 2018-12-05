@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 描述BIND配置view视图的语法框架</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">view  &quot;视图1&quot; {    match-clients { 来源地址1; ...;  };    zone  &quot;tedu.cn&quot; IN {        .. ..    };};view  &quot;视图2&quot; {    match-clients { 来源地址2; ... ; };    zone  &quot;tedu.cn&quot;  IN {        .. ..    };};.. ..  </pre> 
+   </div> 
+   <div> 
+    <h3>2 RAID0、RAID1、RAID5、RAID6分别指什么，简述各自的特点</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>RAID即廉价冗余磁盘阵列，指通过硬件/软件技术将多个较小/低速的磁盘整合成一个大磁盘使用的一种存储技术，其不仅可存储数据，还可以实现一定程度的冗余保障，具有“速度快、安全性高”的优势。</p> 
+    <p>RAID0、RAID1、RAID5的含义及特点如下：</p> 
+    <ul class="list"> 
+     <li>RAID0：条带模式，由两个或两个以上的磁盘组成，同一份文档分散在不同的磁盘中，并行写入，提高写效率。 </li> 
+     <li>RAID1：镜像模式，由至少两个磁盘组成，同一份文件被分别写入到不同的磁盘中，每份磁盘数据一样，实现容错，提高读效率。 </li> 
+     <li>RAID5：分布式奇偶校验的高效阵列模式，结合RAID0和RAID1的好处，同时避免它们的缺点。需要至少3块大小相同的磁盘组成，其中1块盘的容量用来存储校验数据。 </li> 
+     <li>RAID6：高性价比/可靠模式，相当于扩展的RAID5阵列，提供2份独立校验方案。需要至少4块大小相同的磁盘组成，其中2块盘的容量用来存储校验数据。 </li> 
+    </ul> 
+   </div> 
+   <div> 
+    <h3>3 使用top命令监控进程</h3> 
+    <p>执行“dd if=/dev/sda of=/dev/null &amp;”命令，然后查找出系统中CPU占用最高的进程，并杀死此该进程。</p> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1）启用后台任务</p> 
+    <pre class="code">[root@svr7 ~]# dd  if=/dev/zero  of=/dev/null  &amp;[1] 27691</pre> 
+    <p>2）通过top命令对进程排名，默认情况下排第1位的进程CPU占用最高</p> 
+    <p>查看进程排名：</p> 
+    <pre class="code">[root@svr7 ~]# toptop - 11:07:18 up 3 days, 14:44,  4 users,  load average: 0.23, 0.21, 0.09Tasks: 150 total,   3 running, 146 sleeping,   0 stopped,   1 zombieCpu(s):  3.0%us, 16.2%sy,  0.0%ni,  0.0%id, 76.4%wa,  3.7%hi,  0.7%si,  0.0%stMem:   1023848k total,  1015420k used,     8428k free,   532008k buffersSwap:  4056360k total,      200k used,  4056160k free,    82580k cached  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND27691 root      18   0 63204  600  504 R 19.7  0.1   0:04.38 dd  265 root      10  -5     0    0    0 S  0.7  0.0   0:02.42 kswapd027694 root      15   0 12764 1140  836 R  0.3  0.1   0:00.01 top    1 root      15   0 10372  696  588 S  0.0  0.1   0:01.31 init    2 root      RT  -5     0    0    0 S  0.0  0.0   0:00.00 migration/0    3 root      34  19     0    0    0 S  0.0  0.0   0:00.00 ksoftirqd/0    4 root      10  -5     0    0    0 S  0.0  0.0   2:33.94 events/0    5 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 khelper   14 root      16  -5     0    0    0 S  0.0  0.0   0:00.00 kthread   18 root      10  -5     0    0    0 S  0.0  0.0   0:01.46 kblockd/0   19 root      20  -5     0    0    0 S  0.0  0.0   0:00.00 kacpid  187 root      19  -5     0    0    0 S  0.0  0.0   0:00.00 cqueue/0  190 root      10  -5     0    0    0 S  0.0  0.0   0:00.22 khubd  192 root      10  -5     0    0    0 S  0.0  0.0   0:00.00 kseriod  262 root      15   0     0    0    0 S  0.0  0.0   0:00.01 khungtaskd  263 root      25   0     0    0    0 S  0.0  0.0   0:00.00 pdflush  264 root      15   0     0    0    0 S  0.0  0.0   0:10.22 pdflush</pre> 
+    <p>按k键输入要结束的进程id，等待杀死对应的进程：</p> 
+    <pre class="code">.. ..PID to kill: 27691Kill PID 27691 with signal [15]:</pre> 
+   </div> 
+   <div> 
+    <h3>4 杀死名称以rh开头的所有进程</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1）找出目标进程</p> 
+    <pre class="code">[root@svr7 ~]# pgrep -l ^rh790 rhsmcertd1308 rhnsd</pre> 
+    <p>2）杀死这些进程</p> 
+    <pre class="code">[root@svr7 ~]# pkill ^rh</pre> 
+    <p>3）确认结果</p> 
+    <pre class="code">[root@svr7 ~]# pgrep -l ^rh[root@svr7 ~]#</pre> 
+   </div> 
+   <div> 
+    <h3>5 列出2016年12月份与系统服务httpd相关的日志消息</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>使用journalctl命令，结合选项-u指定服务类别，结合选项--since、--until指定日期时间区间：</p> 
+    <pre class="code">[root@svr7 ~]# journalctl  -u httpd  --since=&quot;2016-12-01&quot; --until=&quot;2016-12-31 23:59:59&quot;-- Logs begin at 四 2016-12-15 10:39:14 CST, end at 三 2016-12-21 17:54:47 CST. --12月 15 10:39:32 svr7.tedu.cn systemd[1]: Starting The Apache HTTP Server...12月 15 10:39:35 svr7.tedu.cn httpd[792]: AH00557: httpd: apr_sockaddr_info_get() f12月 15 10:39:35 svr7.tedu.cn httpd[792]: AH00558: httpd: Could not reliably determ12月 15 10:39:35 svr7.tedu.cn systemd[1]: Started The Apache HTTP Server.12月 15 11:05:05 svr7.tedu.cn systemd[1]: Started The Apache HTTP Server.12月 15 11:05:06 svr7.tedu.cn systemd[1]: Started The Apache HTTP Server... ..</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

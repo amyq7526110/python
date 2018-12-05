@@ -1,0 +1,36 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 简述postfix邮件服务配置中myorigin、mydestination语句的含义</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">myorigin = desktop0.example.com  		//向外发邮件时标记的来源域mydestination = 						//判断为本域邮件的依据</pre> 
+   </div> 
+   <div> 
+    <h3>2 简述使用mail命令发信、收信的基本操作</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>mail 发信操作：</p> 
+    <pre class="code">mail  -s  '邮件标题'  收件人[@收件域]... </pre> 
+    <p>mail 收信操作：</p> 
+    <pre class="code">mail  [-u  用户名]</pre> 
+   </div> 
+   <div> 
+    <h3>3 如何将空闲分区/dev/vdb7配置为交换分区并实现开机自动启用</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@server0 ~]# mkswap  /dev/vdb7  	        		//格式化交换分区Setting up swapspace version 1, size = 524284 KiBno label, UUID=26b95ed8-e648-4d30-bea3-de48494bbdfe[root@server0 ~]# vim  /etc/fstab .. ../dev/vdb7       swap    swap    defaults    0    0[root@server0 ~]# swapon  -a 						//启动fstab可用交换设备[root@server0 ~]# swapon  -s 						//查看Filename	Type		Size  	Used	Priority/dev/vdb7          partition	524284		-1</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

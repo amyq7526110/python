@@ -1,0 +1,45 @@
+html {
+    font-size: 20px;
+}
+
+#s1 {
+    font-size: 200%;
+    color: antiquewhite;
+}
+
+#s2 {
+    font-size: 2cm;
+    color: #cccccc;      /*灰色*/
+}
+
+#s3 {
+    font-size: 5mm;
+    color: #fc8;        /*ffcc88*/
+}
+
+#s4 {
+    font-size: 20pt;
+    color: #46f6fd;
+}
+
+#s5 {
+    font-size: 20px;
+}
+#s6 {
+    font-size: 30px;
+}
+
+#s7 {
+    font-size: 30px;
+}
+
+#s8 {
+    font-size: 2em;
+}
+
+#s9 {
+    font-size: 2rem;
+}
+p {
+    color: tomato;
+}

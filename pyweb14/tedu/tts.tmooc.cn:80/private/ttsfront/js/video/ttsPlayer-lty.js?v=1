@@ -1,0 +1,52 @@
+/*----------------------加载视频浏览器相关代码开始-----------------------------------------*/
+
+//cur_video_url 当前视频路径 
+function createVideo(cur_video_url,callback){
+   //1.实例化播放器
+   window.ins=new XDYplayer({
+       video:{
+           src:cur_video_url
+       }
+   });
+   //2.调用跑马灯
+   setPaoMaDeng();
+   var video_=$(".xdyplayer-video"); /*获取video标签*/
+   
+   window.xdyplayer={
+        getCurrentTime:function(){
+            return video_[0].currentTime;
+        },
+        getDuration:function(){
+            return video_[0].duration;
+        }
+   };
+   //3.实例化后的回调函数
+    if(callback && typeof(callback) == 'function') {
+        callback(video_);
+    }
+}
+/*-------跑马灯-------------*/
+function setPaoMaDeng(){
+    var stuCode=$("#stuCode").val();
+    if(stuCode){
+        window.ins.setWatermark({
+                watermarkName:stuCode,//String 内容
+                total:1,//Number 数量(最小值为1)
+                fontSize:"20px",//String 字体大小
+                color:"#1a8bc1",//String 字体颜色
+                opacity:0.1,//Number 字体透明度 范围0-1
+                minSpeed:0.1,//Number 范围0.1-1
+                maxSpeed:0.2 //Number 范围0.2-1
+              });
+    }
+    
+}
+
+    /*----------------------加载视频浏览器相关代码结束-----------------------------------------*/
+
+
+
+
+/*lty end*/
+
+

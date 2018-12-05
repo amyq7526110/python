@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>my form</title>
+    <script>
+        function showme() {
+            alert('Hello World')
+
+        }
+    </script>
+</head>
+<body>
+<textarea name="texinfo" id="" cols="30" rows="10"></textarea>
+<hr>
+<form action="">
+    <select name="teacher" id="teacher" multiple>
+        <option value="nb">牛本</option>
+        <option value="wk">王开</option>
+        <option value="flj">庞丽经</option>
+        <option value="dmy">丁名义</option>
+        <option value="lx">李欣</option>
+    </select>
+    <input type="submit" >
+</form>
+<hr>
+<form action="" method="post" >
+    <input type="file">
+    <input type="submit" value="上传">
+</form>
+<hr>
+<input type="button" value="警告" onclick="showme()">
+<hr>
+<form action="">
+    <lable>用户名：</lable>
+    <input type="text">
+    <lable>密码：</lable>
+    <input type="password">
+    <input type="submit" value="登陆">
+    <input type="reset" value="重置">
+</form>
+<hr>
+<form action="">
+    你最喜欢的科目是什么？<br>
+    <input type="checkbox" name="lesson" value="linux"><label >linux</label><br>
+    <label ><input type="checkbox" name="lesson" value="network">network</label><br>
+    <input type="checkbox" name="lesson" id="python" value="python"><label for="python">python</label><br>
+    <br>
+    <input type="submit"    value="提交">
+</form>
+<hr>
+<form action="">
+    你最喜欢的科目是什么？<br>
+    <input type="radio" name="lesson" value="linux"><label >linux</label><br>
+    <label ><input type="radio" name="lesson" value="network">network</label><br>
+    <input type="radio" name="lesson" id="py" value="python"><label for="py">python</label><br>
+    <br>
+    <input type="submit"    value="提交">
+</form>
+<hr>
+<form action="http://www.sogou.com/web" target="_blank">
+    <input type="text" placeholder="关键字" name="query">
+    <input type="submit" value="搜狗搜索">
+</form>
+<hr>
+<form action="http://cn.bing.com/search" target="_blank">
+    <input type="text" placeholder="关键字" name="q">
+    <input type="submit" value="必应搜索">
+</form>
+<hr>
+<form action="http://www.baidu.com/s" target="_blank">
+    <input type="text" placeholder="关键字" name="wd">
+    <input type="submit" value="百度搜索">
+</form>
+<hr>
+<form action="">
+    <lable>用户名：</lable>
+    <input type="text">
+    <lable>密码：</lable>
+    <input type="password">
+    <input type="submit" value="登陆">
+
+</form>
+</body>
+</html>

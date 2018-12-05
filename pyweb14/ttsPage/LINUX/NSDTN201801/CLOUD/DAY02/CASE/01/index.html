@@ -1,0 +1,236 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>CASE</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <script type="text/javascript" src="index.files/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script>
+    <script type="text/javascript" src="index.files/main.js">
+    </script>
+    <link type="text/css" href="index.files/index.css" rel="Stylesheet" />
+    <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" />
+  </head>
+  <body>
+    <div class="source_style_case">
+      <a name="page_top_case" id="top_anchor" />
+      <a id="link_top" href="#page_top_case">Top</a>
+      <h1>NSD CLOUD DAY02</h1>
+      <ol class="index">
+        <li>
+          <a href="#case1">案例1：配置yum仓库</a>
+        </li>
+        <li>
+          <a href="#case2">案例2：配置DNS服务器：</a>
+        </li>
+        <li>
+          <a href="#case3">案例3：配置NTP服务器</a>
+        </li>
+        <li>
+          <a href="#case4">案例4：环境准备</a>
+        </li>
+        <li>
+          <a href="#case5">案例5：部署Openstack：</a>
+        </li>
+        <li>
+          <a href="#case6">案例6：网络管理</a>
+        </li>
+        <li>
+          <a href="#case7">案例7：管理项目</a>
+        </li>
+      </ol>
+      <a name="case1">
+      </a>
+      <h2>1 案例1：配置yum仓库</h2>
+      <h3>1.1 问题</h3>
+      <p>本案例要求把三个镜像配置yum源：</p>
+      <ul class="list">
+        <li>CentOS7-1708光盘内容作为仓库源</li>
+        <li>配置 RHEL7-extars内容加入仓库源</li>
+        <li>RHEL7OSP-10光盘中包含多个目录，每个目录都是仓库源（可以使用脚本生成）</li>
+      </ul>
+      <h3>1.2 步骤</h3>
+      <p>实现此案例需要按照如下步骤进行。</p>
+      <p class="number">步骤一：配置 yum仓库</p>
+      <p>警告：仅yum配置的第一个源（系统源）为gpgcheck=1需要导入公钥，其他的都是gpgcheck=0，否则安装会报错。</p>
+      <pre class="code">[root@room9pc01 ~]# mkdir /var/ftp/system  [root@room9pc01 ~]# mkdir /var/ftp/extras [root@room9pc01 ~]# mkdir /var/ftp/HEL7OSP[root@room9pc01 ~]# vim /etc/fstab/iso/RHEL7OSP-10.iso  /var/ftp/HEL7OSP iso9660 defaults 0 0/iso/CentOS7-1708.iso  /var/ftp/system iso9660 defaults 0 0/iso/RHEL7-extras.iso  /var/ftp/extras iso9660 defaults 0 0[root@room9pc01 ~]# mount –amount: /dev/loop0 is write-protected, mounting read-onlymount: /dev/loop1 is write-protected, mounting read-onlymount: /dev/loop2 is write-protected, mounting read-only[root@room9pc01 ~]# vim /etc/yum.repos.d/local.repo[local_repo]name=CentOS-$releasever - Basebaseurl="ftp://192.168.1.254/system"enabled=1gpgcheck=1[local_extras]name=extrasbaseurl="ftp://192.168.1.254/extras"enabled=1gpgcheck=0[1local_devtools-rpms]name=devtools-rpmsbaseurl="ftp://192.168.1.254/HEL7OSP/rhel-7-server-openstack-10-devtools-rpms"enabled=1gpgcheck=0[2local_optools-rpms]name=optools-rpmsbaseurl="ftp://192.168.1.254/HEL7OSP/rhel-7-server-openstack-10-optools-rpms"enabled=1gpgcheck=0[3local_rpms]name=rpmsbaseurl="ftp://192.168.1.254/HEL7OSP/rhel-7-server-openstack-10-rpms"enabled=1gpgcheck=0[4local_tools-rpms]name=tools-rpmsbaseurl="ftp://192.168.1.254/HEL7OSP/rhel-7-server-openstack-10-tools-rpms"enabled=1gpgcheck=0[5local_mon-rpms]name=mon-rpmsbaseurl="ftp://192.168.1.254/HEL7OSP/rhel-7-server-rhceph-2-mon-rpms"enabled=1gpgcheck=0[6local_osd-rpms]name=osd-rpmsbaseurl="ftp://192.168.1.254/HEL7OSP/rhel-7-server-rhceph-2-osd-rpms"enabled=1gpgcheck=0[7local_rhceph-2-tools-rpms]name=rhceph-2-tools-rpmsbaseurl="ftp://192.168.1.254/HEL7OSP/rhel-7-server-rhceph-2-tools-rpms"enabled=1gpgcheck=0[8local_agent-rpms]name=agent-rpmsbaseurl="ftp://192.168.1.254/HEL7OSP/rhel-7-server-rhscon-2-agent-rpms"enabled=1gpgcheck=0[9local_installer-rpms]name=installer-rpmsbaseurl="ftp://192.168.1.254/HEL7OSP/rhel-7-server-rhscon-2-installer-rpms"enabled=1gpgcheck=0[10local_rhscon-2-main-rpms]name=rhscon-2-main-rpmsbaseurl="ftp://192.168.1.254/HEL7OSP/rhel-7-server-rhscon-2-main-rpms"enabled=1gpgcheck=0</pre>
+      <a name="case2">
+      </a>
+      <h2>2 案例2：配置DNS服务器：</h2>
+      <h3>2.1 问题</h3>
+      <p>本案例要求掌握DNS服务器的配置：</p>
+      <ul class="list">
+        <li>允许DNS服务器为所有的客户端提供服务</li>
+        <li>解析域名openstack.tedu.cn</li>
+        <li>解析域名nova.tedu.cn</li>
+      </ul>
+      <h3>2.2 方案</h3>
+      <p>此实验的整体方案需要三台机器，openstack作为主节点，nova作为额外节点，真机做为DNS和NTP的服务器(这里不再在表-1中体现，在真机上面直接配置即可)，提供域名解析和时间同步服务，具体情况如表-1所示：</p>
+      <div class="table">
+        <p>表-1</p>
+        <img src="index.files/table001.png" />
+      </div>
+      <ul class="list">
+        <li></li>
+      </ul>
+      <h3>2.3 步骤</h3>
+      <p>实现此案例需要按照如下步骤进行。</p>
+      <p class="number">步骤一：配置DNS（真机操作）</p>
+      <pre class="code">[root@room9pc01 ~]# yum -y install bind bind-chroot[root@room9pc01 ~]# vim /etc/named.confoptions {        listen-on port 53 { 192.168.1.3; };		//修改ip	       allow-query     { any; };				//允许所有        recursion yes;        forwarders { 172.40.1.10; };    //转发dns,真机的服务器地址        dnssec-enable no;        dnssec-validation no;};[root@room9pc01 ~]# systemctl restart named</pre>
+      <p class="number">步骤二：两台虚拟机配置静态ip</p>
+      <p>注意：两台主机同样操作，改一下ip即可（以openstack.tedu.cn为例）</p>
+      <pre class="code">[root@localhost ~]# echo openstack.tedu.cn &gt; /etc/hostname [root@localhost ~]# hostname openstack.tedu.cn	//另外一台主机改名为nova.tedu.cn [root@openstack ~]# vim /etc/sysconfig/network-scripts/ifcfg-eth0# Generated by dracut initrdDEVICE="eth0"ONBOOT="yes"IPV6INIT="no"IPV4_FAILURE_FATAL="no"NM_CONTROLLED="no"TYPE="Ethernet"BOOTPROTO="static"IPADDR="192.168.1.1"PREFIX=24GATEWAY=192.168.1.254[root@openstack ~]# systemctl restart network</pre>
+      <p class="number">步骤三：域名解析</p>
+      <pre class="code"> [root@openstack ~]# vim /etc/hosts 	//在openstack.tedu.cn和nova.tedu.cn主机上面操作192.168.1.1 openstack.tedu.cn192.168.1.2 nova.tedu.cn</pre>
+      <p>测试能否ping通，如图-1所示：</p>
+      <div class="image">
+        <img src="index.files/image001.png" />
+        <p>图-1</p>
+      </div>
+      <a name="case3">
+      </a>
+      <h2>3 案例3：配置NTP服务器</h2>
+      <h3>3.1 问题</h3>
+      <p>本案例要求配置NTP时间同步服务器：</p>
+      <ul class="list">
+        <li>将NTP服务与DNS服务部署在同一台主机上</li>
+        <li>确认NTP服务器的时区是东八区</li>
+        <li>确认NTP服务器的时间准确</li>
+        <li>计划安装openstack的服务器与NTP服务器进行时间校正</li>
+      </ul>
+      <h3>3.2 步骤</h3>
+      <p>实现此案例需要按照如下步骤进行。</p>
+      <p class="number">步骤一：配置NTP时间同步（真机操作）</p>
+      <pre class="code">[root@room9pc01 ~]# yum -y install chrony[root@room9pc01 ~]# vim /etc/chrony.confserver ntp1.aliyun.com iburstbindacqaddress 0.0.0.0allow 0/0			//允许所有人使用我的时间服务器 cmdallow 127.0.0.1	  //控制指令[root@room9pc01 ~]# systemctl restart chronyd[root@room9pc01 ~]# netstat -antup | grep chronydudp        0      0 0.0.0.0:123             0.0.0.0:*                           23036/chronyd       udp        0      0 127.0.0.1:323           0.0.0.0:*                           23036/chronyd[root@room9pc01 ~]# chronyc sources -v    //出现*号代表NTP时间可用^* 120.25.115.20                 2   6    17    62   -753us[-7003us] +/-   24ms</pre>
+      <a name="case4">
+      </a>
+      <h2>4 案例4：环境准备</h2>
+      <h3>4.1 问题</h3>
+      <p>本案例要求准备基础环境，为安装openstack做准备：</p>
+      <ul class="list">
+        <li>准备openstack的基础环境</li>
+      </ul>
+      <h3>4.2 步骤</h3>
+      <p>实现此案例需要按照如下步骤进行。</p>
+      <p class="number">步骤一：准备基础环境</p>
+      <p>1）配置yum源</p>
+      <p>备注：只有系统源的gpgcheck=1，其他的都是gpgcheck=0）</p>
+      <pre class="code">[root@room9pc01 ~]# scp /etc/yum.repos.d/local.repo \ 192.168.1.1:/etc/yum.repos.d/		//拷贝给openstack.tedu.cn这台主机[root@room9pc01 ~]# scp /etc/yum.repos.d/local.repo \ 192.168.1.2:/etc/yum.repos.d/   //拷贝给nova.tedu.cn这台主机</pre>
+      <p class="number">步骤二：配置ip</p>
+      <p>备注：  配置eth0为公共网络，网络地址192.168.1.0/24（已经配置过）</p>
+      <p>配置eth1为隧道接口，网络地址192.168.2.0/24</p>
+      <p>1）给openstack.tedu.cn主机添加eth1网卡</p>
+      <pre class="code">[root@room9pc01 networks]# virsh -c qemu:///system attach-interface openstack bridge private2 --model virtioInterface attached successfully    //添加成功 [root@openstack ~]# cd /etc/sysconfig/network-scripts[root@openstack network-scripts]# cp ifcfg-eth0 ifcfg-eth1[root@openstack network-scripts]# vim ifcfg-eth1# Generated by dracut initrdDEVICE="eth1"ONBOOT="yes"IPV6INIT="no"IPV4_FAILURE_FATAL="no"NM_CONTROLLED="no"TYPE="Ethernet"BOOTPROTO="static"IPADDR="192.168.2.1"PREFIX=24GATEWAY=192.168.1.254[root@openstack network-scripts]# systemctl restart network</pre>
+      <p>2）给nova.tedu.cn主机添加eth1网卡</p>
+      <pre class="code">[root@room9pc01 networks]# virsh -c qemu:///system attach-interface nova bridge private2 --model virtioInterface attached successfully	//添加成功[root@nova ~]# cd /etc/sysconfig/network-scripts[root@nova network-scripts]# cp ifcfg-eth0 ifcfg-eth1[root@nova network-scripts]# vim ifcfg-eth1# Generated by dracut initrdDEVICE="eth1"ONBOOT="yes"IPV6INIT="no"IPV4_FAILURE_FATAL="no"NM_CONTROLLED="no"TYPE="Ethernet"BOOTPROTO="static"IPADDR="192.168.2.2"PREFIX=24GATEWAY=192.168.1.254[root@openstack network-scripts]# systemctl restart network</pre>
+      <p>3）配置卷组（openstack主机上面操作）</p>
+      <pre class="code">[root@room9pc01 images]# qemu-img  create -f qcow2 disk.img 50GFormatting 'disk.img', fmt=qcow2 size=53687091200 encryption=off cluster_size=65536 lazy_refcounts=off [root@room9pc01 networks]# virsh -c qemu:///system attach-disk openstack \ /var/lib/libvirt/images/disk.img vdb --subdriver qcow2 --sourcetype fileDisk attached successfully		//添加成功[root@openstack ~]# yum install lvm2 [root@openstack ~]# pvcreate /dev/vdb [root@openstack ~]# vgcreate cinder-volumes /dev/vdb</pre>
+      <p>4）安装openstack的依赖包（openstack.tedu.cn和nova.tedu.cn主机上面</p>
+      <pre class="code">[root@openstack ~]# yum install -y qemu-kvm libvirt-client libvirt-daemon libvirt-daemon-driver-qemu python-setuptools [root@nova ~]# yum install -y qemu-kvm libvirt-client libvirt-daemon libvirt-daemon-driver-qemu python-setuptools</pre>
+      <a name="case5">
+      </a>
+      <h2>5 案例5：部署Openstack：</h2>
+      <h3>5.1 问题</h3>
+      <p>本案例要求通过packstack完成以下配置：</p>
+      <ul class="list">
+        <li>通过packstack部署Openstack</li>
+        <li>根据相关日志文件进行排错</li>
+      </ul>
+      <h3>5.2 步骤</h3>
+      <p>实现此案例需要按照如下步骤进行。</p>
+      <p class="number">步骤一：安装packstack</p>
+      <pre class="code">[root@openstack ~]# yum install -y openstack-packstack[root@openstack ~]# packstack --gen-answer-file answer.ini  //answer.ini与answer.txt是一样的，只是用vim打开answer.ini文件有颜色Packstack changed given value  to required value /root/.ssh/id_rsa.pub[root@openstack ~]# vim answer.ini  11 CONFIG_DEFAULT_PASSWORD=redhat  //密码  42 CONFIG_SWIFT_INSTALL=n  75 CONFIG_NTP_SERVERS=192.168.1.3   //时间服务器的地址 554 CONFIG_CINDER_VOLUMES_CREATE=n    //创建卷,已经手动创建过了 840 CONFIG_NEUTRON_ML2_TYPE_DRIVERS=flat,vxlan   //驱动类型 876 CONFIG_NEUTRON_ML2_VXLAN_GROUP=239.1.1.5  //设置组播地址,最后一个随意不能为0和255,其他固定 910 CONFIG_NEUTRON_OVS_BRIDGE_MAPPINGS=physnet1:br-ex  //物理网桥的名称 921 CONFIG_NEUTRON_OVS_BRIDGE_IFACES=br-ex:eth0   //br-ex桥的名称与eth0连接，管理eth0,网桥与哪个物理网卡连接 936 CONFIG_NEUTRON_OVS_TUNNEL_IF=eth11179 CONFIG_PROVISION_DEMO=n   //DEMO是否测试 [root@openstack ~]# packstack    --answer-file=answer.ini **** Installation completed successfully ******		//出现这个为成功</pre>
+      <p class="number">步骤二：安装openstack可能会出现的错误以及排错方法</p>
+      <p>1）ntp时间不同步，如图-2所示：</p>
+      <div class="image">
+        <img src="index.files/image002.png" />
+        <p>图-2</p>
+      </div>
+      <p>解决办法：查看ntp时间服务器，是否出现*号，若没有，查看配置文件，配置ntp服务器步骤在案例3，可以参考</p>
+      <pre class="code">[root@room9pc01 ~]# chronyc sources -v    //出现*号代表NTP时间可用^* 120.25.115.20 2   6    17    62   -753us[-7003us] +/-   24ms[root@openstack ~]# chronyc sources -v^* 192.168.1.3   3   9   377   504    +50us[  -20us] +/-   24ms[root@nova ~]# chronyc sources -v^* 192.168.1.3    3   9   377   159   -202us[ -226us] +/-   24ms</pre>
+      <p>2）网桥名称写错，如图-3所示：</p>
+      <div class="image">
+        <img src="index.files/image003.png" />
+        <p>图-3</p>
+      </div>
+      <p>解决办法：检查配置文件</p>
+      <pre class="code">[root@openstack ~]# vim answer.ini...921 CONFIG_NEUTRON_OVS_BRIDGE_IFACES=br-ex:eth0   //br-ex桥的名称与eth0连接，管理eth0,网桥与哪个物理网卡连接...</pre>
+      <p>3）若/root/.ssh/id_rsa.pub，提示password，同样是配置文件没有写对，如图-4所示：</p>
+      <div class="image">
+        <img src="index.files/image004.png" />
+        <p>图-4</p>
+      </div>
+      <p>4）yum源没有配置正确，如图-5所示：</p>
+      <div class="image">
+        <img src="index.files/image005.png" />
+        <p>图-5</p>
+      </div>
+      <p>解决办法：检查yum是否为10731个软件包，查看是否是yum源没有配置正确，之后安装oprnstack-dashboard</p>
+      <p>备注：除了系统源gpgcheck=1之外，其他都是gpgcheck=0</p>
+      <p>5）出现Cannot allocate memory,如图-6所示：</p>
+      <div class="image">
+        <img src="index.files/image006.png" />
+        <p>图-6</p>
+      </div>
+      <p>解决办法：</p>
+      <p>内存不足，重新启动主机</p>
+      <a name="case6">
+      </a>
+      <h2>6 案例6：网络管理</h2>
+      <h3>6.1 问题</h3>
+      <p>本案例要求运用OVS完成以下配置：</p>
+      <ul class="list">
+        <li>查看外部OVS网桥及其端口</li>
+        <li>验证OVS配置</li>
+      </ul>
+      <h3>6.2 步骤</h3>
+      <p>实现此案例需要按照如下步骤进行。</p>
+      <p class="number">步骤一：查看外部OVS网桥</p>
+      <p>1）查看br-ex网桥配置（br-ex为OVS网桥设备）</p>
+      <pre class="code">[root@openstack ~]# cat /etc/sysconfig/network-scripts/ifcfg-br-ex ONBOOT="yes"NM_CONTROLLED="no" IPADDR="192.168.1.1"PREFIX=24GATEWAY=192.168.1.254DEVICE=br-exNAME=br-exDEVICETYPE=ovsOVSBOOTPROTO="static"TYPE=OVSBridge</pre>
+      <p>2）查看eth0网卡配置（该网卡为OVS网桥的接口）</p>
+      <pre class="code">[root@nova ~]# cat /etc/sysconfig/network-scripts/ifcfg-eth0 DEVICE=eth0NAME=eth0DEVICETYPE=ovsTYPE=OVSPortOVS_BRIDGE=br-exONBOOT=yesBOOTPROTO=none</pre>
+      <p>3）验证OVS配置</p>
+      <pre class="code">[root@nova ~]# ovs-vsctl show    Bridge br-ex        Controller "tcp:127.0.0.1:6633"            is_connected: true        fail_mode: secure        Port br-ex            Interface br-ex                type: internal        Port phy-br-ex            Interface phy-br-ex                type: patch                options: {peer=int-br-ex}        Port "eth0"            Interface "eth0"    ovs_version: "2.5.0"</pre>
+      <a name="case7">
+      </a>
+      <h2>7 案例7：管理项目</h2>
+      <h3>7.1 问题</h3>
+      <p>本案例要求通过Horizon完成以下操作：</p>
+      <ul class="list">
+        <li>创建名为myproject的项目</li>
+        <li>查看项目信息</li>
+        <li>更新vcpu配额为30</li>
+        <li>删除myproject</li>
+        <li></li>
+      </ul>
+      <h3>7.2 步骤</h3>
+      <p>实现此案例需要按照如下步骤进行。</p>
+      <p class="number">步骤一：浏览器访问openstack</p>
+      <p>1）浏览器访问</p>
+      <pre class="code">[root@openstack conf.d]# firefox 192.168.1.1  //访问失败</pre>
+      <p>2）需要改配置文件并重新加载</p>
+      <pre class="code">[root@openstack ~]# cd /etc/httpd/conf.d/[root@openstack conf.d]# vi 15-horizon_vhost.conf     35   WSGIProcessGroup apache     36   WSGIApplicationGroup %{GLOBAL}     //添加这一行[root@openstack conf.d]# apachectl  graceful  //重新载入配置文件</pre>
+      <p>3）浏览器访问，出现页面，如图-6所示：</p>
+      <div class="image">
+        <img src="index.files/image007.png" />
+        <p>图-6</p>
+      </div>
+      <p>3）查看默认用户名和密码</p>
+      <pre class="code">[root@openstack conf.d]# cd[root@openstack ~]# lsanswer.ini   keystonerc_admin   //keystonerc_admin生成的文件，里面有用户名和密码[root@openstack ~]# cat keystonerc_admin unset OS_SERVICE_TOKEN    export OS_USERNAME=admin  //用户名    export OS_PASSWORD=1bb4c987345c45ba  //密码    export OS_AUTH_URL=http://192.168.1.1:5000/v2.0    export PS1='[\u@\h \W(keystone_admin)]\$ 'export OS_TENANT_NAME=adminexport OS_REGION_NAME=RegionOne</pre>
+      <p>4）在火狐浏览器中输入用户名和密码，登录后页面如图-7所示：</p>
+      <div class="image">
+        <img src="index.files/image008.png" />
+        <p>图-7</p>
+      </div>
+      <p>4）创建名为myproject的项目</p>
+      <pre class="code">[root@openstack ~]# source ~/keystonerc_admin  //初始化环境变量[root@openstack ~(keystone_admin)]# openstack project create myproject+-------------+----------------------------------+| Field       | Value                            |+-------------+----------------------------------+| description | None                             || enabled     | True                             || id          |f73949e2701346328faf5c1272414cd0|| name        | myproject                        |+-------------+----------------------------------+</pre>
+      <p>5）查看项目信息</p>
+      <pre class="code">[root@openstack ~(keystone_admin)]# openstack project list+----------------------------------+-----------+| ID                                  | Name      |+----------------------------------+-----------+| 3fd5bffd734543d39cf742492273a47f | services  || 7f0b43274a9f4e149357fc8393ff2c68 | admin     || f73949e2701346328faf5c1272414cd0 | myproject |+----------------------------------+-----------+</pre>
+      <p>6）更新vcpu配额为30</p>
+      <pre class="code">[root@openstack ~(keystone_admin)]# nova quota-update --cores 30 myproject</pre>
+      <p>7）删除myproject</p>
+      <pre class="code">[root@openstack ~(keystone_admin)]# openstack project delete myproject</pre>
+    </div>
+  </body>
+</html>

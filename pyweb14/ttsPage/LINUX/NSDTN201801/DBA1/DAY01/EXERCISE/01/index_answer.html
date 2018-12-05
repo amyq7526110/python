@@ -1,0 +1,64 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 简述当前主流数据库服务软件有哪些？开源且跨平台的数据库软件有哪些？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>当前主流的数据库服务器软件有： Oracle 、 DB2 、 SQL SERVER 、MySQL 等 ，其中只有MySQL是既开源又跨平台的数据库服务软件。</p> 
+   </div> 
+   <div> 
+    <h3>2 简述MySQL数据库的服务进程叫什么名字？默认监听端口是多少？默认数据库目录是？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>服务进程名：mysqld</p> 
+    <p>默认监听端口号：3306</p> 
+    <p>默认数据库目录：/var/lib/mysql</p> 
+   </div> 
+   <div> 
+    <h3>3 简述MySQL默认的4个库叫什么名字？哪个库里的数据不占用物理磁盘空间？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>MySQL默认的4个库分别是 information_schema 、performance_schema 、mysql 、test 其中information_schema库不占用物理磁盘空间。</p> 
+   </div> 
+   <div> 
+    <h3>4 请列出MySQL常用的数据类型，并写出定义这些数据类型所使用的关键字。</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>MySQL常用的数据类型有：字符类型、数值类型、日期时间类型、枚举类型</p> 
+    <p>字符类型：　char　、　varchar　、　blob、　text</p> 
+    <p>数值类型：　tinyint 、smallint　、int　、bigint 、float 、 double</p> 
+    <p>日期时间类型： year 、 date 、 time 、 datetime 、 timestamp</p> 
+    <p>枚举类型： enum 、 set</p> 
+   </div> 
+   <div> 
+    <h3>5 简述以下MySQL函数的功能。</h3> 
+    <p>year() 、date()　、month() 、day()　、time()、now()</p> 
+    <p class="answerTitle">参考答案</p> 
+    <p>year()　获取指定时间中的年</p> 
+    <p>date()　获取指定时间中的年月日</p> 
+    <p>month() 获取指定时间中的月</p> 
+    <p>day()　 获取指定时间中的日期</p> 
+    <p>time()　获取指定时间中的时间（小时分钟秒）</p> 
+    <p>now()　 获取当前时间（年月日小时分钟秒）</p> 
+   </div> 
+   <div> 
+    <h3>6 在studentdb库里创建stu_info表，结构要求如图-1所示。</h3> 
+    <div class="image"> 
+     <img src="index.files/image001.png" /> 
+     <p>图-1</p> 
+    </div> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">create  database  studentdb;create  table  studentdb.stuinfo(stu_id int(2),name  varchar(10),age  tinyint(2) unsigned,sex  enum(“boy”,”girl”),likes set(“book”,”music”,”game”,”film”));</pre> 
+   </div> 
+  </div>  
+ </body>
+</html>

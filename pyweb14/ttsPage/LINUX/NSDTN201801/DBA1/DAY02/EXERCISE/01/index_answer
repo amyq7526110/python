@@ -1,0 +1,70 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 简述索引的优点与缺点，默认情况下表使用哪个文件保存表的索引信息？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <ul class="list"> 
+     <li>索引的优点：加快查询表记录的速度。 </li> 
+     <li>索引的缺点：会减慢写的速度(如： insert 、update )，占用物理存储空间。 </li> 
+     <li>Innodb存储引擎的表使用 表名.ibd 文件存储索引信息。 </li> 
+     <li>Myisam存储引擎的表使用 表名.MYI 文件存储索引信息。 </li> 
+    </ul> 
+   </div> 
+   <div> 
+    <h3>2 列举出常用的3种索引类型，并说明约束规则。</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>1）index普通索引</p> 
+    <ul class="list"> 
+     <li>一个表中可以有多个INDEX字段 </li> 
+     <li>字段的值允许有重复，且可以赋NULL值 </li> 
+     <li>经常把做查询条件的字段设置为INDEX字段 </li> 
+     <li>INDEX字段的KEY标志是MUL </li> 
+    </ul> 
+    <p>2）primary key 主键</p> 
+    <ul class="list"> 
+     <li>一个表中只能有一个primary key字段 </li> 
+     <li>对应的字段值不允许有重复，且不允许赋NULL值 </li> 
+     <li>如果有多个字段都作为PRIMARY KEY，称为复合主键，必须一起创建。 </li> 
+     <li>主键字段的KEY标志是PRI 、通常与 AUTO_INCREMENT 连用 </li> 
+     <li>经常把表中能够唯一标识记录的字段设置为主键字段[如：记录编号字段] </li> 
+    </ul> 
+    <p>3）foreign key 外键</p> 
+    <ul class="list"> 
+     <li>表的存储引擎必须是innodb </li> 
+     <li>字段的数据类型要匹配 </li> 
+     <li>被参考的字段必须是key 中的一种 (通常使用primary key) </li> 
+    </ul> 
+   </div> 
+   <div> 
+    <h3>3 根据图-1显示，修改studentdb.stu_info表的结构,原表结构见DAY01练习的图-1。</h3> 
+    <div class="image"> 
+     <img src="index.files/image001.png" /> 
+     <p>图-1</p> 
+    </div> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">mysql&gt; alter table studentdb.stuinfo  add  id int(2) zerofill  primary key auto_increment first;mysql&gt; create unique index stu_id on studentdb.stuinfo(stu_id);mysql&gt; alter table studentdb.stuinfo add mail varchar(50) default &quot;student@tedu.cn&quot; after name;mysql&gt; alter table studentdb.stuinfo add tel char(11) not null ,add qq varchar(11);mysql&gt; alter table studentdb.stuinfo add pay float(7,2) not null default 18800 after sex;mysql&gt; create index name on studentdb.stuinfo(name);</pre> 
+   </div> 
+   <div> 
+    <h3>4 简述在表中创建外键字段要满足那些条件？</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>foreign key 外键使用规则如下：</p> 
+    <p>表的存储引擎必须是innodb</p> 
+    <p>字段的数据类型要匹配</p> 
+    <p>被参考的字段必须是key 中的一种 (通常使用primary key)</p> 
+   </div> 
+  </div>  
+ </body>
+</html>

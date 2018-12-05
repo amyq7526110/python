@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head> 
+  <title>EXERCISE</title> 
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+  <script type="text/javascript" src="index.files/jquery.min.js">
+    </script> 
+  <script type="text/javascript" src="index.files/jquery.snippet.js">
+    </script> 
+  <script type="text/javascript" src="index.files/main.js">
+    </script> 
+  <link type="text/css" href="index.files/index.css" rel="Stylesheet" /> 
+  <link type="text/css" href="index.files/jquery.snippet.css" rel="Stylesheet" /> 
+ </head> 
+ <body> 
+  <div class="source_style_exercise"> 
+   <div> 
+    <h3>1 在SMB服务器上添加一个名为vina的共享用户，密码设为1234</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@server0 ~]# useradd  vina  					//添加同名系统用户[root@server0 ~]# pdbedit  -a  vina  				//添加共享用户new password:  									//输入设置的密码1234retype new password: 								//确认密码.. ..</pre> 
+   </div> 
+   <div> 
+    <h3>2 访问服务器server0提供的SMB共享common，测试密码及查看资源是否可用</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@desktop0 ~]# smbclient  -U  harry  //server0/commonEnter harry's password:  						//此处输共享密码smb: \&gt; ls 									//访问测试smb: \&gt; quit[root@desktop0 ~]# </pre> 
+   </div> 
+   <div> 
+    <h3>3 在服务器server0上通过NFS共享/usr/src目录，允许任何人访问</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <pre class="code">[root@server0 ~]# vim  /etc/exports /usr/src		*(ro).. ..[root@server0 ~]# systemctl  restart  nfs-server</pre> 
+   </div> 
+   <div> 
+    <h3>4 列出普通NFS服务端和客户端用到的系统服务名称</h3> 
+    <p class="answerTitle">参考答案</p> 
+    <p>普通NFS：服务端（nfs-server）、客户端（无）</p> 
+   </div> 
+  </div>  
+ </body>
+</html>
